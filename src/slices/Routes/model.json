@@ -1,0 +1,44 @@
+{
+  "id": "route_card",
+  "type": "SharedSlice",
+  "name": "Routes",
+  "description": "RouteCard",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "cta": {
+          "type": "Text",
+          "config": {
+            "label": "cta",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {
+        "route_card": {
+          "type": "Link",
+          "config": {
+            "label": "route card",
+            "select": "document",
+            "customtypes": [
+              "route_card"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

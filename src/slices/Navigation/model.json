@@ -1,0 +1,161 @@
+{
+  "id": "navigation",
+  "type": "SharedSlice",
+  "name": "Navigation",
+  "description": "Navigation",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_1": {
+          "type": "Link",
+          "config": {
+            "label": "page 1",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "page_2": {
+          "type": "Link",
+          "config": {
+            "label": "page 2",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "page_3": {
+          "type": "Link",
+          "config": {
+            "label": "page 3",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "page_4": {
+          "type": "Link",
+          "config": {
+            "label": "page 4",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "negative",
+      "name": "Negative",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_1": {
+          "type": "Link",
+          "config": {
+            "label": "page 1",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "page_2": {
+          "type": "Link",
+          "config": {
+            "label": "page 2",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "page_3": {
+          "type": "Link",
+          "config": {
+            "label": "page 3",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "page_4": {
+          "type": "Link",
+          "config": {
+            "label": "page 4",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "positive",
+      "name": "Positive",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "page_1": {
+          "type": "Link",
+          "config": {
+            "label": "page 1",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "page_2": {
+          "type": "Link",
+          "config": {
+            "label": "page 2",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "logo": {
+          "type": "Image",
+          "config": {
+            "label": "logo",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "page_3": {
+          "type": "Link",
+          "config": {
+            "label": "page 3",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "page_4": {
+          "type": "Link",
+          "config": {
+            "label": "page 4",
+            "placeholder": "",
+            "select": null
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

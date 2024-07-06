@@ -27,7 +27,28 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "rich_text": {
+            "footer": {
+              "type": "SharedSlice"
+            },
+            "custom_budgets": {
+              "type": "SharedSlice"
+            },
+            "testimonails": {
+              "type": "SharedSlice"
+            },
+            "how_does_it_work": {
+              "type": "SharedSlice"
+            },
+            "contact_us": {
+              "type": "SharedSlice"
+            },
+            "route_card": {
+              "type": "SharedSlice"
+            },
+            "hero": {
+              "type": "SharedSlice"
+            },
+            "navigation": {
               "type": "SharedSlice"
             }
           }

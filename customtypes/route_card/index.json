@@ -1,0 +1,53 @@
+{
+  "format": "custom",
+  "id": "route_card",
+  "label": "route",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "days": {
+        "type": "Text",
+        "config": {
+          "label": "days",
+          "placeholder": ""
+        }
+      },
+      "price": {
+        "type": "Text",
+        "config": {
+          "label": "price",
+          "placeholder": ""
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "subtitle",
+          "placeholder": ""
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "route_image": {
+        "type": "Image",
+        "config": {
+          "label": "route image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

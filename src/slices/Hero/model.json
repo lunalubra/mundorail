@@ -1,0 +1,119 @@
+{
+  "id": "hero",
+  "type": "SharedSlice",
+  "name": "Hero",
+  "description": "Hero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "hero": {
+          "type": "Image",
+          "config": {
+            "label": "hero",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "title",
+            "placeholder": ""
+          }
+        },
+        "cta": {
+          "type": "Text",
+          "config": {
+            "label": "cta",
+            "placeholder": ""
+          }
+        },
+        "secondary_title": {
+          "type": "Text",
+          "config": {
+            "label": "secondary title",
+            "placeholder": ""
+          }
+        },
+        "secondary_description": {
+          "type": "Text",
+          "config": {
+            "label": "secondary description",
+            "placeholder": ""
+          }
+        },
+        "secondary_image": {
+          "type": "Image",
+          "config": {
+            "label": "secondary image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "first_option": {
+          "type": "Text",
+          "config": {
+            "label": "first option",
+            "placeholder": ""
+          }
+        },
+        "second_option": {
+          "type": "Text",
+          "config": {
+            "label": "second option",
+            "placeholder": ""
+          }
+        },
+        "third_option": {
+          "type": "Text",
+          "config": {
+            "label": "third option",
+            "placeholder": ""
+          }
+        },
+        "forth_option": {
+          "type": "Text",
+          "config": {
+            "label": "forth option",
+            "placeholder": ""
+          }
+        },
+        "fifth_option": {
+          "type": "Text",
+          "config": {
+            "label": "fifth option",
+            "placeholder": ""
+          }
+        },
+        "sixth_option": {
+          "type": "Text",
+          "config": {
+            "label": "sixth option",
+            "placeholder": ""
+          }
+        },
+        "seventh_option": {
+          "type": "Text",
+          "config": {
+            "label": "seventh option",
+            "placeholder": ""
+          }
+        },
+        "eight_option": {
+          "type": "Text",
+          "config": {
+            "label": "eight option",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

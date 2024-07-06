@@ -1,0 +1,115 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"hero": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+					"width": 6000,
+					"height": 4000
+				},
+				"url": "https://images.unsplash.com/photo-1547394765-185e1e68f34e",
+				"width": 6000,
+				"height": 4000,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"title": {
+				"__TYPE__": "FieldContent",
+				"value": "basket",
+				"type": "Text"
+			},
+			"cta": {
+				"__TYPE__": "FieldContent",
+				"value": "age",
+				"type": "Text"
+			},
+			"secondary_title": {
+				"__TYPE__": "FieldContent",
+				"value": "sail",
+				"type": "Text"
+			},
+			"secondary_description": {
+				"__TYPE__": "FieldContent",
+				"value": "fog",
+				"type": "Text"
+			},
+			"secondary_image": {
+				"origin": {
+					"id": "main",
+					"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+					"width": 3560,
+					"height": 5340
+				},
+				"url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+				"width": 3560,
+				"height": 5340,
+				"edit": {
+					"zoom": 1,
+					"crop": {
+						"x": 0,
+						"y": 0
+					},
+					"background": "transparent"
+				},
+				"credits": null,
+				"alt": null,
+				"__TYPE__": "ImageContent",
+				"thumbnails": {}
+			},
+			"first_option": {
+				"__TYPE__": "FieldContent",
+				"value": "information",
+				"type": "Text"
+			},
+			"second_option": {
+				"__TYPE__": "FieldContent",
+				"value": "flower",
+				"type": "Text"
+			},
+			"third_option": {
+				"__TYPE__": "FieldContent",
+				"value": "open",
+				"type": "Text"
+			},
+			"forth_option": {
+				"__TYPE__": "FieldContent",
+				"value": "necessary",
+				"type": "Text"
+			},
+			"fifth_option": {
+				"__TYPE__": "FieldContent",
+				"value": "soon",
+				"type": "Text"
+			},
+			"sixth_option": {
+				"__TYPE__": "FieldContent",
+				"value": "check",
+				"type": "Text"
+			},
+			"seventh_option": {
+				"__TYPE__": "FieldContent",
+				"value": "like",
+				"type": "Text"
+			},
+			"eight_option": {
+				"__TYPE__": "FieldContent",
+				"value": "better",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

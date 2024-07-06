@@ -1,0 +1,40 @@
+{
+  "format": "custom",
+  "id": "testimonail",
+  "label": "testimonail",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID"
+        },
+        "type": "UID"
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "name",
+          "placeholder": ""
+        }
+      },
+      "review": {
+        "type": "StructuredText",
+        "config": {
+          "label": "review",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "number_of_starts_from_1_to_5": {
+        "type": "Number",
+        "config": {
+          "label": "number of starts from 1 to 5",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}

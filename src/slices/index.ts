@@ -3,5 +3,12 @@
 import dynamic from "next/dynamic";
 
 export const components = {
-  rich_text: dynamic(() => import("./RichText")),
+  contact_us: dynamic(() => import("./ContactUs")),
+  custom_budgets: dynamic(() => import("./CustomBudgets")),
+  footer: dynamic(() => import("./Footer")),
+  hero: dynamic(() => import("./Hero")),
+  how_does_it_work: dynamic(() => import("./HowDoesItWork")),
+  navigation: dynamic(() => import("./Navigation")),
+  route_card: dynamic(() => import("./Routes")),
+  testimonails: dynamic(() => import("./Testimonial")),
 };

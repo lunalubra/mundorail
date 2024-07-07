@@ -9,7 +9,7 @@ export const FooterContainer = styled.section`
   color: white;
   margin: auto;
   gap: 50px;
-  padding-bottom: 82px;
+  padding: 0 16px 82px;
 
   & > img {
     position: absolute;
@@ -20,11 +20,15 @@ export const FooterContainer = styled.section`
   p {
     all: unset;
     display: block;
+    max-width: 100%;
   }
 
   & > p {
     width: 746px;
     text-align: center;
+  }
+
+  @media only screen and (max-width: 768px) {
   }
 `;
 

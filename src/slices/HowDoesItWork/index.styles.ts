@@ -8,6 +8,9 @@ export const Container = styled.section`
   align-items: center;
   gap: 72px;
   margin-top: 76px;
+  @media only screen and (max-width: 768px) {
+    padding: 54px;
+  }
 `;
 
 export const Title = styled.h4`
@@ -44,6 +47,9 @@ export const Card = styled.div`
     all: unset;
     font-size: 42px;
     line-height: 110%;
+    @media only screen and (max-width: 768px) {
+      font-size: 24px;
+    }
 
     strong {
       display: block;
@@ -54,9 +60,18 @@ export const Card = styled.div`
     all: unset;
     font-size: 20px;
 
+    @media only screen and (max-width: 768px) {
+      font-size: 16px;
+    }
+
     strong {
       color: #27bd83;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    width: 250px;
+    height: 225px;
   }
 `;
 

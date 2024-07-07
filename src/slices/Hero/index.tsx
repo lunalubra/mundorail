@@ -1,11 +1,12 @@
 "use client";
-import { animate, motion, useMotionValue } from "framer-motion";
+import { animate, useMotionValue } from "framer-motion";
 import { useEffect, useState } from "react";
 import useMeasure from "react-use-measure";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
+import { useMediaQuery } from "usehooks-ts";
 
 const Carousel = ({ carouselOptions }: { carouselOptions: string[] }) => {
   const carouselOptionsCopy = [...carouselOptions];
@@ -48,22 +49,24 @@ const Carousel = ({ carouselOptions }: { carouselOptions: string[] }) => {
   }, [rerender, xTranslation, duration, width, mustFinish]);
 
   return (
-    <S.Carousel
-      style={{ x: xTranslation }}
-      ref={ref}
-      onHoverStart={() => {
-        setMustFinish(true);
-        setDuration(SLOW_DURATION);
-      }}
-      onHoverEnd={() => {
-        setMustFinish(true);
-        setDuration(FAST_DURATION);
-      }}
-    >
-      {...carouselOptionsCopy.map((item, idx) => (
-        <span key={item + idx.toString()}>{item}</span>
-      ))}
-    </S.Carousel>
+    <S.CarouselContainer>
+      <S.Carousel
+        style={{ x: xTranslation }}
+        ref={ref}
+        onHoverStart={() => {
+          setMustFinish(true);
+          setDuration(SLOW_DURATION);
+        }}
+        onHoverEnd={() => {
+          setMustFinish(true);
+          setDuration(FAST_DURATION);
+        }}
+      >
+        {...carouselOptionsCopy.map((item, idx) => (
+          <span key={item + idx.toString()}>{item}</span>
+        ))}
+      </S.Carousel>
+    </S.CarouselContainer>
   );
 };
 
@@ -76,6 +79,7 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const firstSectionOfTitle = slice.primary.title!.split(" ")[0];
   const secondSectionOfTitle = slice.primary
     .title!.split(" ")!
@@ -105,7 +109,8 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <S.MainContentContainer>
         <S.MainContent>
           <S.Title>
-            {firstSectionOfTitle} <span>{secondSectionOfTitle}</span>
+            {firstSectionOfTitle} {isMobile && <br />}{" "}
+            <span>{secondSectionOfTitle}</span>
           </S.Title>
           <S.Button>{slice.primary.cta}</S.Button>
         </S.MainContent>

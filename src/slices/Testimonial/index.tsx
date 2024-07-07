@@ -8,7 +8,7 @@ import { createClient } from "@/prismicio";
 import ActiveStart from "../../lib/ActiveStart";
 import InactiveStart from "../../lib/InactiveStart";
 import { useEffect, useRef, useState } from "react";
-import { useInterval } from "usehooks-ts";
+import { useInterval, useMediaQuery } from "usehooks-ts";
 
 /**
  * Props for `Testimonial`.
@@ -21,21 +21,23 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonailsSlice>;
 
 // eslint-disable-next-line @next/next/no-async-client-component
 const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   const [activeTab, setActiveTab] = useState(1);
   const [testimonials, setTestimonials] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const client = createClient();
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(isMobile ? false : true);
 
   useEffect(() => {
+    if (isMobile) return;
     if (carouselRef.current) {
       carouselRef.current.scrollTo({
         left: activeTab === 1 ? 0 : (activeTab - 1) * 1108,
         behavior: "smooth"
       });
     }
-  }, [activeTab]);
+  }, [activeTab, isMobile]);
 
   useEffect(() => {
     const getTestimonials = async () => {
@@ -62,7 +64,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
 
   useInterval(
     () => {
-      setActiveTab(tabsNumber === activeTab ? 1 : activeTab + 1);
+      if (!isMobile) setActiveTab(tabsNumber === activeTab ? 1 : activeTab + 1);
     },
     isAutoPlaying ? 10000 : null
   );
@@ -97,18 +99,20 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
             </S.Testimonial>
           ))}
         </S.Testimonials>
-        <S.TestimonialsControllers>
-          {Array.from(Array(tabsNumber).keys()).map((_, index) => (
-            <S.TestimonialController
-              $isActive={activeTab === index + 1}
-              onClick={() => {
-                setActiveTab(index + 1);
-                setIsAutoPlaying(false);
-              }}
-              key={index}
-            />
-          ))}
-        </S.TestimonialsControllers>
+        {!isMobile && (
+          <S.TestimonialsControllers>
+            {Array.from(Array(tabsNumber).keys()).map((_, index) => (
+              <S.TestimonialController
+                $isActive={activeTab === index + 1}
+                onClick={() => {
+                  setActiveTab(index + 1);
+                  setIsAutoPlaying(false);
+                }}
+                key={index}
+              />
+            ))}
+          </S.TestimonialsControllers>
+        )}
       </S.Content>
     </S.TestimonialsContainer>
   );

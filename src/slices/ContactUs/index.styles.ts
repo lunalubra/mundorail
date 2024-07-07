@@ -23,6 +23,10 @@ export const ContactUsContainer = styled.section`
     max-height: 720px;
     object-fit: cover;
     object-position: 50% 50%;
+    @media only screen and (max-width: 768px) {
+      max-height: 850px;
+      height: 850px;
+    }
   }
 
   &::before {
@@ -41,6 +45,11 @@ export const ContactUsContainer = styled.section`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 1) 150%
     );
+
+    @media only screen and (max-width: 768px) {
+      max-height: 850px;
+      height: 850px;
+    }
   }
 `;
 
@@ -63,6 +72,14 @@ export const MainContentWrapper = styled.div`
   strong {
     color: #27bd83;
   }
+
+  @media only screen and (max-width: 768px) {
+    max-width: calc(100% - 64px);
+
+    p  {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const MainContent = styled.div`
@@ -71,7 +88,11 @@ export const MainContent = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  width: 100%;
+  width: calc(100% - 64px);
   max-width: 1280px;
   margin-left: 85px;
+
+  @media only screen and (max-width: 768px) {
+    margin-left: 32px;
+  }
 `;

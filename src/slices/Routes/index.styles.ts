@@ -26,7 +26,7 @@ export const RoutesSectionContainer = styled.section`
   align-items: center;
   gap: 64px;
   margin: auto;
-  padding: 54px;
+  padding: 54px 0 54px 54px;
   max-width: 1280px;
 `;
 
@@ -37,15 +37,29 @@ export const CardContainer = styled.div`
   border-radius: 18px;
   display: flex;
   flex-direction: column;
+  min-width: 364px;
   width: 364px;
   height: 455px;
   position: relative;
+  transform-origin: top left;
+  @media only screen and (max-width: 768px) {
+    transform: scale(0.7);
+    box-shadow: unset;
+  }
 `;
 
 export const CardsSection = styled.div`
   display: flex;
   align-items: center;
   gap: 24px;
+  width: 100%;
+  overflow-x: auto;
+  @media only screen and (max-width: 768px) {
+    gap: 0;
+    & > *:not(:first-child) {
+      margin-left: -80px;
+    }
+  }
 `;
 
 export const CardDays = styled.div`

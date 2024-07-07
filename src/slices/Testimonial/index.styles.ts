@@ -6,6 +6,10 @@ export const TestimonialsContainer = styled.section`
   height: 540px;
   color: white;
   margin-top: 110px;
+  @media only screen and (max-width: 768px) {
+    padding-top: 72px;
+    height: 700px;
+  }
 
   img {
     position: absolute;
@@ -31,6 +35,15 @@ export const Content = styled.div`
   & > p:first-of-type  {
     all: unset;
     font-size: 48px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 32px;
+      text-align: center;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    padding: 16px 0 16px 16px;
   }
 `;
 
@@ -39,8 +52,9 @@ export const Testimonials = styled.div`
   gap: 42px;
   width: 100%;
   max-width: 1067px;
-  overflow-x: hidden;
+  overflow-x: auto;
   scroll-behavior: smooth;
+  padding-right: 16px;
 `;
 
 export const Testimonial = styled.div`
@@ -68,6 +82,13 @@ export const Testimonial = styled.div`
     strong {
       color: #27bd83;
     }
+  }
+
+  @media only screen and (max-width: 768px) {
+    min-width: 275px;
+    width: 275px;
+    height: 352px;
+    justify-content: space-around;
   }
 `;
 

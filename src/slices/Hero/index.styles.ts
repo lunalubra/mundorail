@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const Spacer = styled.div`
-  height: 100%;
-  width: 100%;
-`;
-
 export const HeroContainer = styled.section`
   width: 100%;
   height: 100%;
@@ -16,6 +11,11 @@ export const HeroContainer = styled.section`
     max-height: 720px;
     object-fit: cover;
     object-position: 50% 50%;
+
+    @media only screen and (max-width: 768px) {
+      max-height: 100vh;
+      height: 100vh;
+    }
   }
 
   &::before {
@@ -34,21 +34,30 @@ export const HeroContainer = styled.section`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 1) 150%
     );
+
+    @media only screen and (max-width: 768px) {
+      max-height: 100vh;
+      height: 100vh;
+    }
   }
 `;
 
 export const Title = styled.h1`
   all: unset;
-
   font-size: 60px;
   line-height: 74px;
   font-style: italic;
   color: white;
+  text-align: center;
 
   span {
     font-style: normal;
     color: #27bd83;
     font-weight: 700;
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 48px;
   }
 `;
 
@@ -58,6 +67,10 @@ export const MainContentContainer = styled.div`
   left: 0;
   width: 100%;
   height: 720px;
+
+  @media only screen and (max-width: 768px) {
+    height: 100vh;
+  }
 `;
 
 export const MainContent = styled.section`
@@ -115,6 +128,16 @@ export const SecondaryContent = styled.section`
     left: 0;
     width: 324px;
     height: 324px;
+
+    @media only screen and (max-width: 768px) {
+      position: absolute;
+
+      top: -32px;
+      left: unset;
+      right: 8px;
+      width: 124px;
+      height: 124px;
+    }
   }
 `;
 
@@ -125,6 +148,11 @@ export const SecondaryTextContainer = styled.div`
   margin-top: 54px;
   width: 100%;
   height: 100%;
+  @media only screen and (max-width: 768px) {
+    padding: 0 32px;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
 `;
 
 export const SecondaryTitle = styled.h2`
@@ -132,12 +160,19 @@ export const SecondaryTitle = styled.h2`
   font-size: 42px;
   font-weight: 500;
   line-height: 52px;
+  @media only screen and (max-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 export const SecondaryDescription = styled.p`
   all: unset;
   font-size: 20px;
   line-height: 28px;
+  @media only screen and (max-width: 768px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `;
 
 export const Carousel = styled(motion.div)`
@@ -150,4 +185,9 @@ export const Carousel = styled(motion.div)`
   font-weight: 700;
   line-height: 73px;
   text-transform: uppercase;
+`;
+
+export const CarouselContainer = styled.div`
+  width: 100%;
+  overflow-x: hidden;
 `;

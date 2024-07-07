@@ -5,6 +5,7 @@ import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { PrismicRichText } from "@prismicio/react";
+import { useMediaQuery } from "usehooks-ts";
 
 /**
  * Props for `HowDoesItWork`.
@@ -19,6 +20,8 @@ export type HowDoesItWorkProps =
 const HowDoesItWork = async ({
   slice
 }: HowDoesItWorkProps): Promise<JSX.Element> => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   const client = createClient();
 
   const cards = await Promise.all(
@@ -50,7 +53,7 @@ const HowDoesItWork = async ({
           </S.Card>
         ))}
       </S.CardsContainer>
-      <S.Button>{slice.primary.cta}</S.Button>
+      {!isMobile && <S.Button>{slice.primary.cta}</S.Button>}
     </S.Container>
   );
 };

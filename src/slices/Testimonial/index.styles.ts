@@ -43,7 +43,7 @@ export const Content = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    padding: 16px 0 16px 16px;
+    padding: 16px 0;
   }
 `;
 
@@ -54,7 +54,7 @@ export const Testimonials = styled.div`
   max-width: 1067px;
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-right: 16px;
+  padding: 0 16px;
 `;
 
 export const Testimonial = styled.div`
@@ -89,6 +89,10 @@ export const Testimonial = styled.div`
     width: 275px;
     height: 352px;
     justify-content: space-around;
+
+    .name {
+      font-size: 38px;
+    }
   }
 `;
 

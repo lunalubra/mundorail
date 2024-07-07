@@ -8,6 +8,7 @@ export const Container = styled.section`
   align-items: center;
   gap: 72px;
   margin-top: 76px;
+
   @media only screen and (max-width: 768px) {
     padding: 54px;
   }
@@ -17,6 +18,10 @@ export const Title = styled.h4`
   all: unset;
   font-size: 48px;
   color: #001159;
+  @media only screen and (max-width: 768px) {
+    font-size: 42px;
+    text-align: center;
+  }
 `;
 
 export const CardsContainer = styled.div`
@@ -70,8 +75,9 @@ export const Card = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    width: 250px;
-    height: 225px;
+    width: 300px;
+    height: 175px;
+    gap: 16px;
   }
 `;
 

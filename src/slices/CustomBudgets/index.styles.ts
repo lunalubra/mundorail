@@ -41,6 +41,17 @@ export const CustomBudgetsContainer = styled.section`
       color: #27bd83;
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    padding: 32px;
+    & > p:first-of-type {
+      all: unset;
+      font-size: 38px;
+    }
+    & > p:not(:first-of-type) {
+      font-size: 16px;
+    }
+  }
 `;
 
 export const Button = styled.button`

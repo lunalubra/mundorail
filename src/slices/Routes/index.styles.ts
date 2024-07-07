@@ -4,6 +4,7 @@ export const Title = styled.h3`
   all: unset;
   font-size: 48px;
   line-height: 58px;
+  padding-left: 54px;
 `;
 
 export const Button = styled.button`
@@ -26,7 +27,7 @@ export const RoutesSectionContainer = styled.section`
   align-items: center;
   gap: 64px;
   margin: auto;
-  padding: 54px 0 54px 54px;
+  padding: 54px 0;
   max-width: 1280px;
 `;
 
@@ -55,6 +56,8 @@ export const CardsSection = styled.div`
   width: 100%;
   overflow-x: auto;
   @media only screen and (max-width: 768px) {
+    padding-left: 54px;
+
     gap: 0;
     & > *:not(:first-child) {
       margin-left: -80px;

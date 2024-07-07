@@ -24,8 +24,9 @@ export const ContactUsContainer = styled.section`
     object-fit: cover;
     object-position: 50% 50%;
     @media only screen and (max-width: 768px) {
-      max-height: 850px;
-      height: 850px;
+      max-height: 700px;
+      height: 700px;
+      object-position: 60% 50%;
     }
   }
 
@@ -43,12 +44,12 @@ export const ContactUsContainer = styled.section`
     background: linear-gradient(
       225deg,
       rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 1) 150%
+      rgba(0, 0, 0, 1) 100%
     );
 
     @media only screen and (max-width: 768px) {
-      max-height: 850px;
-      height: 850px;
+      max-height: 700px;
+      height: 700px;
     }
   }
 `;
@@ -66,7 +67,6 @@ export const MainContentWrapper = styled.div`
     display: block;
     font-size: 20px;
     line-height: 140%;
-    font-weight: 500;
   }
 
   strong {
@@ -74,10 +74,10 @@ export const MainContentWrapper = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    max-width: calc(100% - 64px);
+    max-width: calc(80% - 64px);
 
     p  {
-      font-size: 18px;
+      font-size: 17px;
     }
   }
 `;
@@ -93,6 +93,6 @@ export const MainContent = styled.div`
   margin-left: 85px;
 
   @media only screen and (max-width: 768px) {
-    margin-left: 32px;
+    margin-left: 8px;
   }
 `;

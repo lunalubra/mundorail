@@ -1,10 +1,11 @@
 "use client";
 
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import { createClient } from "@/prismicio";
 import { Content, isFilled } from "@prismicio/client";
 import * as S from "./index.styles";
 import { PrismicNextImage } from "@prismicio/next";
+import { useRef } from "react";
 
 /**
  * Props for `RouteCard`.
@@ -18,6 +19,7 @@ export type RouteCardProps = SliceComponentProps<Content.RouteCardSlice>;
 // eslint-disable-next-line @next/next/no-async-client-component
 const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
   const client = createClient();
+  const cardsContainerRef = useRef(null);
 
   const cards = await Promise.all(
     slice.items.map((item) => {
@@ -35,8 +37,10 @@ const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <S.Title>{slice.primary.title}</S.Title>
-      <S.CardsSection>
+      <S.Title>
+        <PrismicRichText field={slice.primary.title} />
+      </S.Title>
+      <S.CardsSection ref={cardsContainerRef}>
         {cards.map((card) => (
           <S.CardContainer key={card?.uid}>
             <S.CardTopSection>
@@ -57,7 +61,10 @@ const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
           </S.CardContainer>
         ))}
       </S.CardsSection>
-      <S.Button>{slice.primary.cta}</S.Button>
+      {/* <S.Line>
+        <S.Indicator />
+      </S.Line> */}
+      {slice.primary.cta && <S.Button>{slice.primary.cta}</S.Button>}
     </S.RoutesSectionContainer>
   );
 };

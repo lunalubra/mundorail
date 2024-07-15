@@ -4,14 +4,14 @@ export const CustomBudgetsContainer = styled.div`
   position: relative;
   width: 100%;
   height: 550px;
-  margin-top: 110px;
-  color: #001159;
+  color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  margin: 72px 0 120px;
+  margin-top: 72px;
+  padding-top: 72px;
 
   img {
     position: absolute;
@@ -29,6 +29,8 @@ export const CustomBudgetsContainer = styled.div`
     line-height: 58.44px;
     text-align: center;
     max-width: 564px;
+    position: relative;
+    z-index: 10;
   }
 
   & > p:not(:first-of-type) {
@@ -37,6 +39,8 @@ export const CustomBudgetsContainer = styled.div`
     font-weight: 500;
     line-height: 28px;
     max-width: 508px;
+    position: relative;
+    z-index: 10;
     strong {
       color: #27bd83;
     }
@@ -45,12 +49,27 @@ export const CustomBudgetsContainer = styled.div`
   @media only screen and (max-width: 768px) {
     padding: 32px;
     & > p:first-of-type {
-      all: unset;
       font-size: 38px;
     }
     & > p:not(:first-of-type) {
       font-size: 16px;
     }
+  }
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    max-height: 550px;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background: linear-gradient(
+      360deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 1) 150%
+    );
   }
 `;
 
@@ -63,7 +82,9 @@ export const Button = styled.button`
   border-radius: 1000px;
   cursor: pointer;
   width: min-content;
+  position: relative;
+  z-index: 10;
 
-  color: #001159;
-  border-color: #001159;
+  color: white;
+  border-color: white;
 `;

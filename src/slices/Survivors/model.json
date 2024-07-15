@@ -1,8 +1,8 @@
 {
-  "id": "route_card",
+  "id": "survivors",
   "type": "SharedSlice",
-  "name": "Routes",
-  "description": "RouteCard",
+  "name": "Survivors",
+  "description": "Survivors",
   "variations": [
     {
       "id": "default",
@@ -12,35 +12,24 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
+        "description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
         "cta": {
           "type": "Text",
           "config": {
             "label": "cta",
             "placeholder": ""
           }
-        },
-        "title": {
-          "type": "StructuredText",
-          "config": {
-            "label": "title",
-            "placeholder": "",
-            "allowTargetBlank": true,
-            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
-          }
         }
       },
-      "items": {
-        "route_card": {
-          "type": "Link",
-          "config": {
-            "label": "route card",
-            "select": "document",
-            "customtypes": [
-              "route_card"
-            ]
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }

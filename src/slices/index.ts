@@ -3,12 +3,18 @@
 import dynamic from "next/dynamic";
 
 export const components = {
+  advantages: dynamic(() => import("./Advantages")),
   contact_us: dynamic(() => import("./ContactUs")),
   custom_budgets: dynamic(() => import("./CustomBudgets")),
   footer: dynamic(() => import("./Footer")),
+  for_more_info_contact: dynamic(() => import("./ForMoreInfoContact")),
   hero: dynamic(() => import("./Hero")),
   how_does_it_work: dynamic(() => import("./HowDoesItWork")),
+  insurance: dynamic(() => import("./Insurance")),
+  mundorail_routes: dynamic(() => import("./MundorailRoutes")),
   navigation: dynamic(() => import("./Navigation")),
+  our_routes: dynamic(() => import("./OurRoutes")),
   route_card: dynamic(() => import("./Routes")),
+  survivors: dynamic(() => import("./Survivors")),
   testimonails: dynamic(() => import("./Testimonial")),
 };

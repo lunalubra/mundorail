@@ -48,6 +48,12 @@ export type HowDoesItWorkDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | AdvantagesSlice
+  | ForMoreInfoContactSlice
+  | InsuranceSlice
+  | SurvivorsSlice
+  | MundorailRoutesSlice
+  | OurRoutesSlice
   | FooterSlice
   | CustomBudgetsSlice
   | TestimonailsSlice
@@ -204,6 +210,78 @@ export type RouteCardDocument<Lang extends string = string> =
   >;
 
 /**
+ * Content for routes documents
+ */
+interface RoutesDocumentData {
+  /**
+   * title field in *routes*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * long title field in *routes*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes.long_title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  long_title: prismic.RichTextField;
+
+  /**
+   * short description field in *routes*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes.short_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  short_description: prismic.RichTextField;
+
+  /**
+   * description field in *routes*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * background image field in *routes*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes.background_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
+ * routes document from Prismic
+ *
+ * - **API ID**: `routes`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type RoutesDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<RoutesDocumentData>, "routes", Lang>;
+
+/**
  * Content for testimonail documents
  */
 interface TestimonailDocumentData {
@@ -261,7 +339,83 @@ export type AllDocumentTypes =
   | HowDoesItWorkDocument
   | PageDocument
   | RouteCardDocument
+  | RoutesDocument
   | TestimonailDocument;
+
+/**
+ * Primary content in *Advantages → Primary*
+ */
+export interface AdvantagesSliceDefaultPrimary {
+  /**
+   * Title field in *Advantages → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advantages.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Advantages → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advantages.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * cta field in *Advantages → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advantages.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+
+  /**
+   * image field in *Advantages → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: advantages.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for Advantages Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AdvantagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AdvantagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Advantages*
+ */
+type AdvantagesSliceVariation = AdvantagesSliceDefault;
+
+/**
+ * Advantages Shared Slice
+ *
+ * - **API ID**: `advantages`
+ * - **Description**: Advantages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AdvantagesSlice = prismic.SharedSlice<
+  "advantages",
+  AdvantagesSliceVariation
+>;
 
 /**
  * Primary content in *ContactUs → Primary*
@@ -484,6 +638,81 @@ type FooterSliceVariation = FooterSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
+
+/**
+ * Primary content in *ForMoreInfoContact → Primary*
+ */
+export interface ForMoreInfoContactSliceDefaultPrimary {
+  /**
+   * title field in *ForMoreInfoContact → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: for_more_info_contact.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitle field in *ForMoreInfoContact → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: for_more_info_contact.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * cta field in *ForMoreInfoContact → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: for_more_info_contact.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+
+  /**
+   * background image field in *ForMoreInfoContact → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: for_more_info_contact.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for ForMoreInfoContact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ForMoreInfoContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ForMoreInfoContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ForMoreInfoContact*
+ */
+type ForMoreInfoContactSliceVariation = ForMoreInfoContactSliceDefault;
+
+/**
+ * ForMoreInfoContact Shared Slice
+ *
+ * - **API ID**: `for_more_info_contact`
+ * - **Description**: ForMoreInfoContact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ForMoreInfoContactSlice = prismic.SharedSlice<
+  "for_more_info_contact",
+  ForMoreInfoContactSliceVariation
+>;
 
 /**
  * Primary content in *Hero → Primary*
@@ -728,6 +957,171 @@ export type HowDoesItWorkSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *Insurance → Primary*
+ */
+export interface InsuranceSliceDefaultPrimary {
+  /**
+   * Title field in *Insurance → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * Subtitle field in *Insurance → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.primary.subtitle
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitle: prismic.RichTextField;
+
+  /**
+   * description field in *Insurance → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * cta field in *Insurance → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+
+  /**
+   * preview field in *Insurance → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.primary.preview
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  preview: prismic.RichTextField;
+
+  /**
+   * full_insurance field in *Insurance → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.primary.full_insurance
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  full_insurance: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Insurance Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InsuranceSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<InsuranceSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Insurance*
+ */
+type InsuranceSliceVariation = InsuranceSliceDefault;
+
+/**
+ * Insurance Shared Slice
+ *
+ * - **API ID**: `insurance`
+ * - **Description**: Insurance
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type InsuranceSlice = prismic.SharedSlice<
+  "insurance",
+  InsuranceSliceVariation
+>;
+
+/**
+ * Primary content in *MundorailRoutes → Primary*
+ */
+export interface MundorailRoutesSliceDefaultPrimary {
+  /**
+   * title field in *MundorailRoutes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mundorail_routes.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * cta field in *MundorailRoutes → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mundorail_routes.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *MundorailRoutes → Items*
+ */
+export interface MundorailRoutesSliceDefaultItem {
+  /**
+   * routes field in *MundorailRoutes → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mundorail_routes.items[].routes
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  routes: prismic.ContentRelationshipField<"routes">;
+}
+
+/**
+ * Default variation for MundorailRoutes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MundorailRoutesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<MundorailRoutesSliceDefaultPrimary>,
+  Simplify<MundorailRoutesSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *MundorailRoutes*
+ */
+type MundorailRoutesSliceVariation = MundorailRoutesSliceDefault;
+
+/**
+ * MundorailRoutes Shared Slice
+ *
+ * - **API ID**: `mundorail_routes`
+ * - **Description**: MundorailRoutes
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type MundorailRoutesSlice = prismic.SharedSlice<
+  "mundorail_routes",
+  MundorailRoutesSliceVariation
+>;
+
+/**
  * Primary content in *Navigation → Primary*
  */
 export interface NavigationSliceDefaultPrimary {
@@ -952,19 +1346,84 @@ export type NavigationSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *Routes → Primary*
+ * Primary content in *OurRoutes → Primary*
  */
-export interface RouteCardSliceDefaultPrimary {
+export interface OurRoutesSliceDefaultPrimary {
   /**
-   * title field in *Routes → Primary*
+   * title field in *OurRoutes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_routes.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *OurRoutes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_routes.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * cta field in *OurRoutes → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: route_card.primary.title
+   * - **API ID Path**: our_routes.primary.cta
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.KeyTextField;
+  cta: prismic.KeyTextField;
 
+  /**
+   * image field in *OurRoutes → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_routes.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for OurRoutes Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurRoutesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OurRoutesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OurRoutes*
+ */
+type OurRoutesSliceVariation = OurRoutesSliceDefault;
+
+/**
+ * OurRoutes Shared Slice
+ *
+ * - **API ID**: `our_routes`
+ * - **Description**: OurRoutes
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurRoutesSlice = prismic.SharedSlice<
+  "our_routes",
+  OurRoutesSliceVariation
+>;
+
+/**
+ * Primary content in *Routes → Primary*
+ */
+export interface RouteCardSliceDefaultPrimary {
   /**
    * cta field in *Routes → Primary*
    *
@@ -974,6 +1433,16 @@ export interface RouteCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   cta: prismic.KeyTextField;
+
+  /**
+   * title field in *Routes → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
 }
 
 /**
@@ -1019,6 +1488,61 @@ type RouteCardSliceVariation = RouteCardSliceDefault;
 export type RouteCardSlice = prismic.SharedSlice<
   "route_card",
   RouteCardSliceVariation
+>;
+
+/**
+ * Primary content in *Survivors → Primary*
+ */
+export interface SurvivorsSliceDefaultPrimary {
+  /**
+   * description field in *Survivors → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: survivors.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * cta field in *Survivors → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: survivors.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Survivors Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SurvivorsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<SurvivorsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Survivors*
+ */
+type SurvivorsSliceVariation = SurvivorsSliceDefault;
+
+/**
+ * Survivors Shared Slice
+ *
+ * - **API ID**: `survivors`
+ * - **Description**: Survivors
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type SurvivorsSlice = prismic.SharedSlice<
+  "survivors",
+  SurvivorsSliceVariation
 >;
 
 /**
@@ -1108,9 +1632,15 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       RouteCardDocument,
       RouteCardDocumentData,
+      RoutesDocument,
+      RoutesDocumentData,
       TestimonailDocument,
       TestimonailDocumentData,
       AllDocumentTypes,
+      AdvantagesSlice,
+      AdvantagesSliceDefaultPrimary,
+      AdvantagesSliceVariation,
+      AdvantagesSliceDefault,
       ContactUsSlice,
       ContactUsSliceDefaultPrimary,
       ContactUsSliceVariation,
@@ -1123,6 +1653,10 @@ declare module "@prismicio/client" {
       FooterSliceDefaultPrimary,
       FooterSliceVariation,
       FooterSliceDefault,
+      ForMoreInfoContactSlice,
+      ForMoreInfoContactSliceDefaultPrimary,
+      ForMoreInfoContactSliceVariation,
+      ForMoreInfoContactSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
@@ -1132,6 +1666,15 @@ declare module "@prismicio/client" {
       HowDoesItWorkSliceDefaultItem,
       HowDoesItWorkSliceVariation,
       HowDoesItWorkSliceDefault,
+      InsuranceSlice,
+      InsuranceSliceDefaultPrimary,
+      InsuranceSliceVariation,
+      InsuranceSliceDefault,
+      MundorailRoutesSlice,
+      MundorailRoutesSliceDefaultPrimary,
+      MundorailRoutesSliceDefaultItem,
+      MundorailRoutesSliceVariation,
+      MundorailRoutesSliceDefault,
       NavigationSlice,
       NavigationSliceDefaultPrimary,
       NavigationSliceNegativePrimary,
@@ -1140,11 +1683,19 @@ declare module "@prismicio/client" {
       NavigationSliceDefault,
       NavigationSliceNegative,
       NavigationSlicePositive,
+      OurRoutesSlice,
+      OurRoutesSliceDefaultPrimary,
+      OurRoutesSliceVariation,
+      OurRoutesSliceDefault,
       RouteCardSlice,
       RouteCardSliceDefaultPrimary,
       RouteCardSliceDefaultItem,
       RouteCardSliceVariation,
       RouteCardSliceDefault,
+      SurvivorsSlice,
+      SurvivorsSliceDefaultPrimary,
+      SurvivorsSliceVariation,
+      SurvivorsSliceDefault,
       TestimonailsSlice,
       TestimonailsSliceDefaultPrimary,
       TestimonailsSliceDefaultItem,

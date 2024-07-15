@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const HeroContainer = styled.section`
+export const HeroContainer = styled.div`
   width: 100%;
   height: 100%;
 
@@ -73,7 +73,7 @@ export const MainContentContainer = styled.div`
   }
 `;
 
-export const MainContent = styled.section`
+export const MainContent = styled.div`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -112,7 +112,7 @@ export const SecondaryContentContainer = styled.div`
   padding-bottom: 32px;
 `;
 
-export const SecondaryContent = styled.section`
+export const SecondaryContent = styled.div`
   max-width: 1280px;
   margin: auto;
   position: relative;

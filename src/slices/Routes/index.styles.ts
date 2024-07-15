@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-export const Title = styled.h3`
-  all: unset;
-  font-size: 48px;
-  line-height: 58px;
-  padding-left: 54px;
+export const Title = styled.div`
+  color: #001159;
+  p {
+    all: unset;
+    font-size: 48px;
+    line-height: 58px;
+  }
 `;
 
 export const Button = styled.button`
@@ -18,10 +20,9 @@ export const Button = styled.button`
 
   color: #001159;
   border-color: #001159;
-  /* background-color: rgb(0, 17, 89, 0.08); */
 `;
 
-export const RoutesSectionContainer = styled.section`
+export const RoutesSectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,25 +44,55 @@ export const CardContainer = styled.div`
   height: 455px;
   position: relative;
   transform-origin: top left;
-  @media only screen and (max-width: 768px) {
-    transform: scale(0.7);
-    box-shadow: unset;
-  }
 `;
 
 export const CardsSection = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 24px;
   width: 100%;
-  overflow-x: auto;
-  @media only screen and (max-width: 768px) {
-    padding-left: 54px;
+  flex-wrap: wrap;
 
-    gap: 0;
-    & > *:not(:first-child) {
-      margin-left: -80px;
+  @media only screen and (max-width: 768px) {
+    ::-webkit-scrollbar {
+      display: none;
     }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-left: 54px;
+    justify-content: unset;
+  }
+`;
+
+export const Line = styled.div`
+  width: 100px;
+  height: 2px;
+  border-radius: 100px;
+  background-color: #001159;
+
+  @media only screen and (min-width: 768px) {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
+  }
+`;
+
+export const Indicator = styled.div`
+  transform: translateY(-33%);
+  width: 20px;
+  height: 6px;
+  border-radius: 100px;
+  background-color: #001159;
+
+  @media only screen and (min-width: 768px) {
+    width: 0;
+    height: 0;
+    display: none;
+    visibility: hidden;
   }
 `;
 

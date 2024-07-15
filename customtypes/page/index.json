@@ -27,6 +27,24 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "advantages": {
+              "type": "SharedSlice"
+            },
+            "for_more_info_contact": {
+              "type": "SharedSlice"
+            },
+            "insurance": {
+              "type": "SharedSlice"
+            },
+            "survivors": {
+              "type": "SharedSlice"
+            },
+            "mundorail_routes": {
+              "type": "SharedSlice"
+            },
+            "our_routes": {
+              "type": "SharedSlice"
+            },
             "footer": {
               "type": "SharedSlice"
             },

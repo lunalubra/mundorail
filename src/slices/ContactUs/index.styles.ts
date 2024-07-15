@@ -11,10 +11,9 @@ export const Button = styled.button`
   width: min-content;
 
   color: white;
-  /* background-color: rgb(0, 17, 89, 0.08); */
 `;
 
-export const ContactUsContainer = styled.section`
+export const ContactUsContainer = styled.div`
   position: relative;
 
   img {

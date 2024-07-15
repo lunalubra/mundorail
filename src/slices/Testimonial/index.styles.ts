@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const TestimonialsContainer = styled.section`
+export const TestimonialsContainer = styled.div`
   position: relative;
   width: 100%;
   height: 540px;

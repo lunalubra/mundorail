@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse nisi sint labore exercitation. Lorem excepteur tempor dolor officia."
+						}
+					}
+				]
+			},
+			"cta": {
+				"__TYPE__": "FieldContent",
+				"value": "advice",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

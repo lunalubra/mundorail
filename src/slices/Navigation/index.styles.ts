@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { PrismicNextLink } from "@prismicio/next";
 
-export const NavigationContainer = styled.section`
+export const NavigationContainer = styled.div`
   position: absolute;
   top: 0;
   left: 50%;
@@ -24,7 +24,7 @@ export const Link = styled(PrismicNextLink)`
   text-transform: uppercase;
 `;
 
-export const MobileContainer = styled.section`
+export const MobileContainer = styled.div`
   position: absolute;
   left: 24px;
   top: 32px;
@@ -84,4 +84,36 @@ export const MobileLink = styled(PrismicNextLink)`
   &:active {
     font-style: italic;
   }
+`;
+
+export const FixedContainer = styled.div`
+  background-color: #001159;
+  position: relative;
+  padding: 32px;
+
+  svg {
+    width: 32px;
+    height: auto;
+  }
+
+  img {
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+`;
+
+export const FixedNavigationContainer = styled.div`
+  background-color: #001159;
+  width: 100%;
+`;
+
+export const InternalContainer = styled.div`
+  max-width: 1280px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: auto;
+  padding: 55px 32px;
 `;

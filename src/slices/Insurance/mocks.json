@@ -1,0 +1,69 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Esse ad proident laborum nisi officia dolor Lorem duis aliqua nulla."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ut dolor deserunt labore ut tempor."
+						}
+					}
+				]
+			},
+			"cta": {
+				"__TYPE__": "FieldContent",
+				"value": "room",
+				"type": "Text"
+			},
+			"preview": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Adipisicing magna aliquip qui. Enim ea cupidatat cupidatat pariatur aute cillum do ex nisi ut pariatur pariatur adipisicing velit. Culpa velit ut consectetur ut dolor anim enim reprehenderit excepteur ullamco commodo."
+						}
+					}
+				]
+			},
+			"full_insurance": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Voluptate consequat aute anim dolore. Minim consequat id irure."
+						}
+					}
+				]
+			},
+			"description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum nostrud sint officia nisi velit ipsum ea."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

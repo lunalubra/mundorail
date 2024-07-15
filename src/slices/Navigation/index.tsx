@@ -21,16 +21,26 @@ export type NavigationProps = SliceComponentProps<Content.NavigationSlice>;
 const Navigation = ({ slice }: NavigationProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isFixedSpace = slice.variation !== "default";
 
   if (isMobile) {
     return (
       <>
-        <S.MobileContainer>
-          <div onClick={() => setIsModalOpen(true)}>
-            <MenuIcon />
-          </div>
-          <PrismicNextImage field={slice.primary.logo} alt="" />
-        </S.MobileContainer>
+        {isFixedSpace ? (
+          <S.FixedContainer>
+            <div onClick={() => setIsModalOpen(true)}>
+              <MenuIcon />
+            </div>
+            <PrismicNextImage field={slice.primary.logo} alt="" />
+          </S.FixedContainer>
+        ) : (
+          <S.MobileContainer>
+            <div onClick={() => setIsModalOpen(true)}>
+              <MenuIcon />
+            </div>
+            <PrismicNextImage field={slice.primary.logo} alt="" />
+          </S.MobileContainer>
+        )}
         {isModalOpen && (
           <S.ModalContainer>
             <S.TopSection>
@@ -46,6 +56,23 @@ const Navigation = ({ slice }: NavigationProps): JSX.Element => {
           </S.ModalContainer>
         )}
       </>
+    );
+  }
+
+  if (isFixedSpace) {
+    return (
+      <S.FixedNavigationContainer
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        <S.InternalContainer>
+          <S.Link field={slice.primary.page_1}>Inicio</S.Link>
+          <S.Link field={slice.primary.page_2}>Rutas</S.Link>
+          <PrismicNextImage field={slice.primary.logo} alt="" />
+          <S.Link field={slice.primary.page_3}>Nosotros</S.Link>
+          <S.Link field={slice.primary.page_4}>Contactanos</S.Link>
+        </S.InternalContainer>
+      </S.FixedNavigationContainer>
     );
   }
 

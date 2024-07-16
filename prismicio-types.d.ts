@@ -48,6 +48,9 @@ export type HowDoesItWorkDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | RoutesConditionsSlice
+  | RouteHeroSlice
+  | RoutesDescriptionSlice
   | AdvantagesSlice
   | ForMoreInfoContactSlice
   | InsuranceSlice
@@ -171,17 +174,6 @@ interface RouteCardDocumentData {
   subtitle: prismic.KeyTextField;
 
   /**
-   * title field in *route*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: route_card.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  title: prismic.KeyTextField;
-
-  /**
    * route image field in *route*
    *
    * - **Field Type**: Image
@@ -191,6 +183,61 @@ interface RouteCardDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   route_image: prismic.ImageField<never>;
+
+  /**
+   * description field in *route*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * notes field in *route*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.notes
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  notes: prismic.RichTextField;
+
+  /**
+   * conditions field in *route*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.conditions
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  conditions: prismic.RichTextField;
+
+  /**
+   * signature image field in *route*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.signature_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  signature_image: prismic.ImageField<never>;
+
+  /**
+   * title field in *route*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
 }
 
 /**
@@ -1491,6 +1538,161 @@ export type RouteCardSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *RouteHero → Primary*
+ */
+export interface RouteHeroSliceDefaultPrimary {
+  /**
+   * route field in *RouteHero → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_hero.primary.route
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  route: prismic.ContentRelationshipField;
+}
+
+/**
+ * Default variation for RouteHero Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RouteHeroSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RouteHeroSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RouteHero*
+ */
+type RouteHeroSliceVariation = RouteHeroSliceDefault;
+
+/**
+ * RouteHero Shared Slice
+ *
+ * - **API ID**: `route_hero`
+ * - **Description**: RouteHero
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RouteHeroSlice = prismic.SharedSlice<
+  "route_hero",
+  RouteHeroSliceVariation
+>;
+
+/**
+ * Primary content in *RoutesConditions → Primary*
+ */
+export interface RoutesConditionsSliceDefaultPrimary {
+  /**
+   * route field in *RoutesConditions → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes_conditions.primary.route
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  route: prismic.ContentRelationshipField<"route_card">;
+}
+
+/**
+ * Default variation for RoutesConditions Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoutesConditionsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RoutesConditionsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RoutesConditions*
+ */
+type RoutesConditionsSliceVariation = RoutesConditionsSliceDefault;
+
+/**
+ * RoutesConditions Shared Slice
+ *
+ * - **API ID**: `routes_conditions`
+ * - **Description**: RoutesConditions
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoutesConditionsSlice = prismic.SharedSlice<
+  "routes_conditions",
+  RoutesConditionsSliceVariation
+>;
+
+/**
+ * Primary content in *RoutesDescription → Primary*
+ */
+export interface RoutesDescriptionSliceDefaultPrimary {
+  /**
+   * routes field in *RoutesDescription → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes_description.primary.routes
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  routes: prismic.ContentRelationshipField<"routes">;
+
+  /**
+   * alternative title field in *RoutesDescription → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes_description.primary.alternative_title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  alternative_title: prismic.RichTextField;
+
+  /**
+   * cta field in *RoutesDescription → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: routes_description.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for RoutesDescription Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoutesDescriptionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<RoutesDescriptionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *RoutesDescription*
+ */
+type RoutesDescriptionSliceVariation = RoutesDescriptionSliceDefault;
+
+/**
+ * RoutesDescription Shared Slice
+ *
+ * - **API ID**: `routes_description`
+ * - **Description**: RoutesDescription
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type RoutesDescriptionSlice = prismic.SharedSlice<
+  "routes_description",
+  RoutesDescriptionSliceVariation
+>;
+
+/**
  * Primary content in *Survivors → Primary*
  */
 export interface SurvivorsSliceDefaultPrimary {
@@ -1692,6 +1894,18 @@ declare module "@prismicio/client" {
       RouteCardSliceDefaultItem,
       RouteCardSliceVariation,
       RouteCardSliceDefault,
+      RouteHeroSlice,
+      RouteHeroSliceDefaultPrimary,
+      RouteHeroSliceVariation,
+      RouteHeroSliceDefault,
+      RoutesConditionsSlice,
+      RoutesConditionsSliceDefaultPrimary,
+      RoutesConditionsSliceVariation,
+      RoutesConditionsSliceDefault,
+      RoutesDescriptionSlice,
+      RoutesDescriptionSliceDefaultPrimary,
+      RoutesDescriptionSliceVariation,
+      RoutesDescriptionSliceDefault,
       SurvivorsSlice,
       SurvivorsSliceDefaultPrimary,
       SurvivorsSliceVariation,

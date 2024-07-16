@@ -1,0 +1,45 @@
+{
+  "id": "routes_description",
+  "type": "SharedSlice",
+  "name": "RoutesDescription",
+  "description": "RoutesDescription",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "routes": {
+          "type": "Link",
+          "config": {
+            "label": "routes",
+            "select": "document",
+            "customtypes": [
+              "routes"
+            ]
+          }
+        },
+        "alternative_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "alternative title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "cta": {
+          "type": "Text",
+          "config": {
+            "label": "cta",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

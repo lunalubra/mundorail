@@ -1,0 +1,32 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"routes": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
+			},
+			"alternative_title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum excepteur ullamco amet anim qui quis reprehenderit do adipisicing aute consequat fugiat. Fugiat deserunt consectetur anim. Laboris sunt veniam et enim Lorem enim Lorem cupidatat nostrud ut sit commodo mollit Lorem."
+						}
+					}
+				]
+			},
+			"cta": {
+				"__TYPE__": "FieldContent",
+				"value": "under",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

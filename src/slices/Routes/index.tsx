@@ -6,6 +6,7 @@ import { Content, isFilled } from "@prismicio/client";
 import * as S from "./index.styles";
 import { PrismicNextImage } from "@prismicio/next";
 import { useRef } from "react";
+import { useRouter } from "next/navigation";
 
 /**
  * Props for `RouteCard`.
@@ -20,6 +21,7 @@ export type RouteCardProps = SliceComponentProps<Content.RouteCardSlice>;
 const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
   const client = createClient();
   const cardsContainerRef = useRef(null);
+  const router = useRouter();
 
   const cards = await Promise.all(
     slice.items.map((item) => {
@@ -42,7 +44,10 @@ const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
       </S.Title>
       <S.CardsSection ref={cardsContainerRef}>
         {cards.map((card) => (
-          <S.CardContainer key={card?.uid}>
+          <S.CardContainer
+            key={card?.uid}
+            onClick={() => router.push("/" + card?.uid)}
+          >
             <S.CardTopSection>
               <S.CardDays>
                 {card?.data.days} <span>días</span>
@@ -56,7 +61,7 @@ const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
             </S.CardTopSection>
             <S.CardBottomSection>
               <span>{card?.data.subtitle}</span>
-              <p>{card?.data.title}</p>
+              <PrismicRichText field={card?.data.title} />
             </S.CardBottomSection>
           </S.CardContainer>
         ))}

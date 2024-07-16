@@ -27,6 +27,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "routes_conditions": {
+              "type": "SharedSlice"
+            },
+            "route_hero": {
+              "type": "SharedSlice"
+            },
+            "routes_description": {
+              "type": "SharedSlice"
+            },
             "advantages": {
               "type": "SharedSlice"
             },

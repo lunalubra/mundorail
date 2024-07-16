@@ -15,6 +15,9 @@ export const components = {
   navigation: dynamic(() => import("./Navigation")),
   our_routes: dynamic(() => import("./OurRoutes")),
   route_card: dynamic(() => import("./Routes")),
+  route_hero: dynamic(() => import("./RouteHero")),
+  routes_conditions: dynamic(() => import("./RoutesConditions")),
+  routes_description: dynamic(() => import("./RoutesDescription")),
   survivors: dynamic(() => import("./Survivors")),
   testimonails: dynamic(() => import("./Testimonial")),
 };

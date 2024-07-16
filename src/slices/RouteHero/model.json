@@ -1,0 +1,26 @@
+{
+  "id": "route_hero",
+  "type": "SharedSlice",
+  "name": "RouteHero",
+  "description": "RouteHero",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "route": {
+          "type": "Link",
+          "config": {
+            "label": "route",
+            "select": "document"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

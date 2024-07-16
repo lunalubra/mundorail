@@ -1,0 +1,29 @@
+{
+  "id": "routes_conditions",
+  "type": "SharedSlice",
+  "name": "RoutesConditions",
+  "description": "RoutesConditions",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "route": {
+          "type": "Link",
+          "config": {
+            "label": "route",
+            "select": "document",
+            "customtypes": [
+              "route_card"
+            ]
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

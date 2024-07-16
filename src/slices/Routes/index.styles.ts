@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 export const Title = styled.div`
   color: #001159;
+  text-align: center;
+
   p {
     all: unset;
     font-size: 48px;
@@ -44,6 +46,11 @@ export const CardContainer = styled.div`
   height: 455px;
   position: relative;
   transform-origin: top left;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: -10px 25px 40px 0px #27bd83;
+  }
 `;
 
 export const CardsSection = styled.div`
@@ -55,6 +62,7 @@ export const CardsSection = styled.div`
   flex-wrap: wrap;
 
   @media only screen and (max-width: 768px) {
+    padding-bottom: 64px;
     ::-webkit-scrollbar {
       display: none;
     }

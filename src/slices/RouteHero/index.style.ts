@@ -15,8 +15,8 @@ export const ShareButton = styled.div`
   background-color: #27bd83;
   border-radius: 100000px;
   padding: 8px 16px;
-  align-self: flex-end;
-  margin: 16px 16px 0 0;
+  align-self: flex-start;
+  margin: 16px;
   cursor: pointer;
 `;
 

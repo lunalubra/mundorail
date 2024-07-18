@@ -48,6 +48,9 @@ export type HowDoesItWorkDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | ContactFormSlice
+  | ReasonsSlice
+  | OurTeamSlice
   | HotelsSlice
   | RoutesConditionsSlice
   | RouteHeroSlice
@@ -136,6 +139,49 @@ interface PageDocumentData {
  */
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
+
+/**
+ * Content for reasons documents
+ */
+interface ReasonsDocumentData {
+  /**
+   * title field in *reasons*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *reasons*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+}
+
+/**
+ * reasons document from Prismic
+ *
+ * - **API ID**: `reasons`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ReasonsDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<ReasonsDocumentData>,
+    "reasons",
+    Lang
+  >;
 
 /**
  * Content for route documents
@@ -239,6 +285,17 @@ interface RouteCardDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * pdf field in *route*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.pdf
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  pdf: prismic.LinkToMediaField;
 }
 
 /**
@@ -386,6 +443,7 @@ export type TestimonailDocument<Lang extends string = string> =
 export type AllDocumentTypes =
   | HowDoesItWorkDocument
   | PageDocument
+  | ReasonsDocument
   | RouteCardDocument
   | RoutesDocument
   | TestimonailDocument;
@@ -463,6 +521,81 @@ type AdvantagesSliceVariation = AdvantagesSliceDefault;
 export type AdvantagesSlice = prismic.SharedSlice<
   "advantages",
   AdvantagesSliceVariation
+>;
+
+/**
+ * Primary content in *ContactForm → Primary*
+ */
+export interface ContactFormSliceDefaultPrimary {
+  /**
+   * title field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * subtitile field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.subtitile
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  subtitile: prismic.RichTextField;
+
+  /**
+   * description field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * cta field in *ContactForm → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ContactForm Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactFormSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ContactForm*
+ */
+type ContactFormSliceVariation = ContactFormSliceDefault;
+
+/**
+ * ContactForm Shared Slice
+ *
+ * - **API ID**: `contact_form`
+ * - **Description**: ContactForm
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactFormSlice = prismic.SharedSlice<
+  "contact_form",
+  ContactFormSliceVariation
 >;
 
 /**
@@ -1551,6 +1684,151 @@ export type OurRoutesSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *OurTeam → Primary*
+ */
+export interface OurTeamSliceDefaultPrimary {
+  /**
+   * title field in *OurTeam → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_team.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *OurTeam → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_team.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *OurTeam → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: our_team.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for OurTeam Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurTeamSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<OurTeamSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *OurTeam*
+ */
+type OurTeamSliceVariation = OurTeamSliceDefault;
+
+/**
+ * OurTeam Shared Slice
+ *
+ * - **API ID**: `our_team`
+ * - **Description**: OurTeam
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type OurTeamSlice = prismic.SharedSlice<
+  "our_team",
+  OurTeamSliceVariation
+>;
+
+/**
+ * Primary content in *Reasons → Primary*
+ */
+export interface ReasonsSliceDefaultPrimary {
+  /**
+   * title field in *Reasons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Reasons → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * cta field in *Reasons → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Reasons → Items*
+ */
+export interface ReasonsSliceDefaultItem {
+  /**
+   * reasons field in *Reasons → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.items[].reasons
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  reasons: prismic.ContentRelationshipField<"reasons">;
+}
+
+/**
+ * Default variation for Reasons Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReasonsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ReasonsSliceDefaultPrimary>,
+  Simplify<ReasonsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Reasons*
+ */
+type ReasonsSliceVariation = ReasonsSliceDefault;
+
+/**
+ * Reasons Shared Slice
+ *
+ * - **API ID**: `reasons`
+ * - **Description**: Reasons
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ReasonsSlice = prismic.SharedSlice<
+  "reasons",
+  ReasonsSliceVariation
+>;
+
+/**
  * Primary content in *Routes → Primary*
  */
 export interface RouteCardSliceDefaultPrimary {
@@ -1915,6 +2193,8 @@ declare module "@prismicio/client" {
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
+      ReasonsDocument,
+      ReasonsDocumentData,
       RouteCardDocument,
       RouteCardDocumentData,
       RoutesDocument,
@@ -1926,6 +2206,10 @@ declare module "@prismicio/client" {
       AdvantagesSliceDefaultPrimary,
       AdvantagesSliceVariation,
       AdvantagesSliceDefault,
+      ContactFormSlice,
+      ContactFormSliceDefaultPrimary,
+      ContactFormSliceVariation,
+      ContactFormSliceDefault,
       ContactUsSlice,
       ContactUsSliceDefaultPrimary,
       ContactUsSliceVariation,
@@ -1976,6 +2260,15 @@ declare module "@prismicio/client" {
       OurRoutesSliceDefaultPrimary,
       OurRoutesSliceVariation,
       OurRoutesSliceDefault,
+      OurTeamSlice,
+      OurTeamSliceDefaultPrimary,
+      OurTeamSliceVariation,
+      OurTeamSliceDefault,
+      ReasonsSlice,
+      ReasonsSliceDefaultPrimary,
+      ReasonsSliceDefaultItem,
+      ReasonsSliceVariation,
+      ReasonsSliceDefault,
       RouteCardSlice,
       RouteCardSliceDefaultPrimary,
       RouteCardSliceDefaultItem,

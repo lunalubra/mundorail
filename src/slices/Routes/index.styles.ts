@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Title = styled.div`
   color: #001159;
   text-align: center;
-
   p {
     all: unset;
     font-size: 48px;

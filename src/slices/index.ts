@@ -4,6 +4,7 @@ import dynamic from "next/dynamic";
 
 export const components = {
   advantages: dynamic(() => import("./Advantages")),
+  contact_form: dynamic(() => import("./ContactForm")),
   contact_us: dynamic(() => import("./ContactUs")),
   custom_budgets: dynamic(() => import("./CustomBudgets")),
   footer: dynamic(() => import("./Footer")),
@@ -15,6 +16,8 @@ export const components = {
   mundorail_routes: dynamic(() => import("./MundorailRoutes")),
   navigation: dynamic(() => import("./Navigation")),
   our_routes: dynamic(() => import("./OurRoutes")),
+  our_team: dynamic(() => import("./OurTeam")),
+  reasons: dynamic(() => import("./Reasons")),
   route_card: dynamic(() => import("./Routes")),
   route_hero: dynamic(() => import("./RouteHero")),
   routes_conditions: dynamic(() => import("./RoutesConditions")),

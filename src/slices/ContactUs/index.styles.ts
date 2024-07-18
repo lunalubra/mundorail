@@ -61,6 +61,12 @@ export const MainContentWrapper = styled.div`
   gap: 34px;
   color: white;
 
+  h1 {
+    all: unset;
+    font-size: 60px;
+    font-weight: 400;
+  }
+
   p {
     all: unset;
     display: block;

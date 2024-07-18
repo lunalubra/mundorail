@@ -19,7 +19,6 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonailsSlice>;
  * Component for "Testimonial" Slices.
  */
 
-// eslint-disable-next-line @next/next/no-async-client-component
 const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [activeTab, setActiveTab] = useState(1);
@@ -85,7 +84,9 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
           {testimonials.map((testimonial) => (
             <S.Testimonial key={testimonial?.uid}>
               <p className="name">{testimonial?.data.name}</p>
-              <PrismicRichText field={testimonial?.data.review} />
+              {testimonial?.data.review.length && (
+                <PrismicRichText field={testimonial?.data.review} />
+              )}
               <div>
                 {Array.from(Array(5).keys()).map((_, index) =>
                   testimonial?.data.number_of_starts_from_1_to_5! >=

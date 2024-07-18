@@ -11,6 +11,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { useMediaQuery } from "usehooks-ts";
 import SeparatorImage from "../../lib/RouteSeparator.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 /**
  * Props for `RouteHero`.
@@ -23,6 +24,7 @@ export type RouteHeroProps = SliceComponentProps<Content.RouteHeroSlice>;
 const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const client = createClient();
+  const router = useRouter();
 
   const [route, setRoute] =
     useState<
@@ -63,9 +65,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <S.ShareButton
-        onClick={() => navigator.clipboard.writeText(location.href)}
-      >
+      <S.ShareButton onClick={() => router.push((route?.data.pdf as any).url)}>
         <ShareIcons />
       </S.ShareButton>
       {isMobile && (
@@ -116,7 +116,9 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
         <S.Description>
           <PrismicRichText field={route?.data.description} />
         </S.Description>
-        <S.Button>Ver itinerario</S.Button>
+        <S.Button onClick={() => router.push((route?.data.pdf as any).url)}>
+          Ver itinerario
+        </S.Button>
         <S.Disclaimer>
           *En Mundorail trabajamos exclusivamente con mayoristas.{" "}
           <strong>

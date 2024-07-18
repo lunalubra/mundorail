@@ -27,6 +27,15 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact_form": {
+              "type": "SharedSlice"
+            },
+            "reasons": {
+              "type": "SharedSlice"
+            },
+            "our_team": {
+              "type": "SharedSlice"
+            },
             "hotels": {
               "type": "SharedSlice"
             },

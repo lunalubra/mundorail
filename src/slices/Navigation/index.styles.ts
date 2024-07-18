@@ -16,11 +16,11 @@ export const NavigationContainer = styled.div`
   padding: 55px 32px;
 `;
 
-export const Link = styled(PrismicNextLink)`
+export const Link = styled(PrismicNextLink)<{ isPositive?: boolean }>`
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
-  color: white;
+  color: ${(props) => (props.isPositive ? "#001159" : "white")};
   text-transform: uppercase;
 `;
 
@@ -86,14 +86,18 @@ export const MobileLink = styled(PrismicNextLink)`
   }
 `;
 
-export const FixedContainer = styled.div`
-  background-color: #001159;
+export const FixedContainer = styled.div<{ isPositive?: boolean }>`
+  background-color: ${(props) => (props.isPositive ? "white" : "#001159")};
+
   position: relative;
   padding: 32px;
 
   svg {
     width: 32px;
     height: auto;
+    path {
+      fill: #001159;
+    }
   }
 
   img {
@@ -104,8 +108,8 @@ export const FixedContainer = styled.div`
   }
 `;
 
-export const FixedNavigationContainer = styled.div`
-  background-color: #001159;
+export const FixedNavigationContainer = styled.div<{ isPositive?: boolean }>`
+  background-color: ${(props) => (props.isPositive ? "white" : "#001159")};
   width: 100%;
 `;
 

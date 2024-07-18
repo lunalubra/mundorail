@@ -5,7 +5,7 @@ import { createClient } from "@/prismicio";
 import { Content, isFilled } from "@prismicio/client";
 import * as S from "./index.styles";
 import { PrismicNextImage } from "@prismicio/next";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 /**
@@ -17,22 +17,39 @@ export type RouteCardProps = SliceComponentProps<Content.RouteCardSlice>;
  * Component for "RouteCard" Slices.
  */
 
-// eslint-disable-next-line @next/next/no-async-client-component
-const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
+const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
   const client = createClient();
   const cardsContainerRef = useRef(null);
   const router = useRouter();
 
-  const cards = await Promise.all(
-    slice.items.map((item) => {
-      if (
-        isFilled.contentRelationship(item.route_card) &&
-        item.route_card.uid
-      ) {
-        return client.getByUID("route_card", item.route_card.uid);
-      }
-    })
-  );
+  const [routes, setRoutes] = useState<
+    (Content.RouteCardDocument<string> | undefined)[]
+  >([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const getRoutes = async () => {
+      setIsLoading(true);
+      const routes = await Promise.all(
+        slice.items.map((item) => {
+          if (
+            isFilled.contentRelationship(item.route_card) &&
+            item.route_card.uid
+          ) {
+            return client.getByUID("route_card", item.route_card.uid);
+          }
+        })
+      );
+      setRoutes(routes);
+      setIsLoading(false);
+    };
+
+    if (!routes.length && !isLoading) getRoutes();
+  }, [client, isLoading, slice.items, routes.length]);
+
+  if (isLoading) {
+    return <>loading...</>;
+  }
 
   return (
     <S.RoutesSectionContainer
@@ -43,7 +60,7 @@ const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
         <PrismicRichText field={slice.primary.title} />
       </S.Title>
       <S.CardsSection ref={cardsContainerRef}>
-        {cards.map((card) => (
+        {routes.map((card) => (
           <S.CardContainer
             key={card?.uid}
             onClick={() => router.push("/" + card?.uid)}
@@ -66,9 +83,6 @@ const RouteCard = async ({ slice }: RouteCardProps): Promise<JSX.Element> => {
           </S.CardContainer>
         ))}
       </S.CardsSection>
-      {/* <S.Line>
-        <S.Indicator />
-      </S.Line> */}
       {slice.primary.cta && <S.Button>{slice.primary.cta}</S.Button>}
     </S.RoutesSectionContainer>
   );

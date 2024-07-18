@@ -98,15 +98,17 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
   }
 
   return (
-    <S.DesktopContainer
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-      style={{
-        backgroundImage: `url(${route?.data.signature_image.url!})`
-      }}
-    >
-      <PrismicRichText field={route?.data.conditions} />
-    </S.DesktopContainer>
+    <S.BiggerContainer>
+      <S.DesktopContainer
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+        style={{
+          backgroundImage: `url(${route?.data.signature_image.url!})`
+        }}
+      >
+        <PrismicRichText field={route?.data.conditions} />
+      </S.DesktopContainer>
+    </S.BiggerContainer>
   );
 };
 

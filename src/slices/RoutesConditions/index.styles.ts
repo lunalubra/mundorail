@@ -74,11 +74,10 @@ export const BiggerContainer = styled.div`
 `;
 
 export const DesktopContainer = styled.div`
-  margin: 32px;
+  margin: 172px 32px 32px;
   border-radius: 30px;
   padding: 32px 64px;
   background-color: #e7e7e7;
-  margin-top: 172px;
   background-repeat: no-repeat;
   background-position: 100% 25%;
   color: #001159;
@@ -86,6 +85,7 @@ export const DesktopContainer = styled.div`
   flex-direction: column;
   gap: 16px;
   align-items: flex-start;
+  max-width: 1280px;
 
   h6 {
     max-width: 620px;

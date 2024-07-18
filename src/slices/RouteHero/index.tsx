@@ -125,8 +125,6 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
           </strong>
         </S.Disclaimer>
       </S.DesktopContainer>
-      {/* {route?.data.route_image} */}
-      {/* {route?.data.price} */}
     </S.Container>
   );
 };

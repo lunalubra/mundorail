@@ -48,6 +48,7 @@ export type HowDoesItWorkDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | HotelsSlice
   | RoutesConditionsSlice
   | RouteHeroSlice
   | RoutesDescriptionSlice
@@ -932,6 +933,88 @@ type HeroSliceVariation = HeroSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
+
+/**
+ * Primary content in *Hotels → Primary*
+ */
+export interface HotelsSliceDefaultPrimary {
+  /**
+   * title field in *Hotels → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hotels.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *Hotels → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hotels.primary.description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * second description field in *Hotels → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hotels.primary.second_description
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  second_description: prismic.RichTextField;
+
+  /**
+   * images field in *Hotels → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hotels.primary.images
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  images: prismic.ImageField<never>;
+
+  /**
+   * cta field in *Hotels → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hotels.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Hotels Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HotelsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HotelsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Hotels*
+ */
+type HotelsSliceVariation = HotelsSliceDefault;
+
+/**
+ * Hotels Shared Slice
+ *
+ * - **API ID**: `hotels`
+ * - **Description**: Hotels
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HotelsSlice = prismic.SharedSlice<"hotels", HotelsSliceVariation>;
 
 /**
  * Primary content in *HowDoesItWork → Primary*
@@ -1863,6 +1946,10 @@ declare module "@prismicio/client" {
       HeroSliceDefaultPrimary,
       HeroSliceVariation,
       HeroSliceDefault,
+      HotelsSlice,
+      HotelsSliceDefaultPrimary,
+      HotelsSliceVariation,
+      HotelsSliceDefault,
       HowDoesItWorkSlice,
       HowDoesItWorkSliceDefaultPrimary,
       HowDoesItWorkSliceDefaultItem,

@@ -9,6 +9,7 @@ export const components = {
   footer: dynamic(() => import("./Footer")),
   for_more_info_contact: dynamic(() => import("./ForMoreInfoContact")),
   hero: dynamic(() => import("./Hero")),
+  hotels: dynamic(() => import("./Hotels")),
   how_does_it_work: dynamic(() => import("./HowDoesItWork")),
   insurance: dynamic(() => import("./Insurance")),
   mundorail_routes: dynamic(() => import("./MundorailRoutes")),

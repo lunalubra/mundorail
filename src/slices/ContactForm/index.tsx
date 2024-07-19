@@ -17,9 +17,17 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
   const {
     register,
     handleSubmit,
-    formState: { errors }
+    formState: { isValid }
   } = useForm();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = async (data: any) => {
+    console.log(data);
+    const response = await fetch("/api/contact", {
+      method: "post",
+      body: JSON.stringify(data)
+    });
+
+    console.log(response);
+  };
 
   return (
     <S.BigContainer>
@@ -40,11 +48,53 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           <S.Button>{slice.primary.cta}</S.Button>
         </S.LeftContainer>
         <S.RightContainer>
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <input defaultValue="test" {...register("example")} />
-            <input {...register("exampleRequired", { required: true })} />
-            <input type="submit" />
-          </form>
+          <S.InnerContainer onSubmit={handleSubmit(onSubmit)}>
+            <S.InputSection>
+              <S.InputContainer>
+                <S.Label>Nombre</S.Label>
+                <S.Input {...register("name", { required: true })} />
+              </S.InputContainer>
+              <S.InputContainer>
+                <S.Label>Apellido</S.Label>
+                <S.Input {...register("surname", { required: true })} />
+              </S.InputContainer>
+            </S.InputSection>
+            <S.InputContainer>
+              <S.Label>Nombre de la empresa</S.Label>
+              <S.Input {...register("company", { required: true })} />
+            </S.InputContainer>
+            <S.InputSection>
+              <S.InputContainer>
+                <S.Label>Correo electrónico</S.Label>
+                <S.Input {...register("email", { required: true })} />
+              </S.InputContainer>
+              <S.InputContainer>
+                <S.Label>Número de teléfono</S.Label>
+                <S.Input {...register("number", { required: true })} />
+              </S.InputContainer>
+            </S.InputSection>
+            <S.InputContainer>
+              <S.Label>Mensaje (opcional)</S.Label>
+              <S.Input {...register("message")} />
+            </S.InputContainer>
+            <S.BottomSection>
+              <S.CheckboxContainer>
+                <input
+                  type="checkbox"
+                  {...register("checkbox", { required: true })}
+                />
+                <S.Disclaimer>
+                  *Estoy de acuerdo con el Política de privacidad y cómo utiliza
+                  mis datos mundorail.
+                </S.Disclaimer>
+              </S.CheckboxContainer>
+              <S.SubmitButton
+                type="submit"
+                value="Enviar"
+                disabled={!isValid}
+              />
+            </S.BottomSection>
+          </S.InnerContainer>
         </S.RightContainer>
       </S.Container>
     </S.BigContainer>

@@ -16,11 +16,11 @@ export const NavigationContainer = styled.div`
   padding: 55px 32px;
 `;
 
-export const Link = styled(PrismicNextLink)<{ isPositive?: boolean }>`
+export const Link = styled(PrismicNextLink)<{ $isPositive?: boolean }>`
   font-size: 18px;
   font-weight: 500;
   line-height: 22px;
-  color: ${(props) => (props.isPositive ? "#001159" : "white")};
+  color: ${(props) => (props.$isPositive ? "#001159" : "white")};
   text-transform: uppercase;
 `;
 
@@ -86,8 +86,8 @@ export const MobileLink = styled(PrismicNextLink)`
   }
 `;
 
-export const FixedContainer = styled.div<{ isPositive?: boolean }>`
-  background-color: ${(props) => (props.isPositive ? "white" : "#001159")};
+export const FixedContainer = styled.div<{ $isPositive?: boolean }>`
+  background-color: ${(props) => (props.$isPositive ? "white" : "#001159")};
 
   position: relative;
   padding: 32px;
@@ -108,8 +108,8 @@ export const FixedContainer = styled.div<{ isPositive?: boolean }>`
   }
 `;
 
-export const FixedNavigationContainer = styled.div<{ isPositive?: boolean }>`
-  background-color: ${(props) => (props.isPositive ? "white" : "#001159")};
+export const FixedNavigationContainer = styled.div<{ $isPositive?: boolean }>`
+  background-color: ${(props) => (props.$isPositive ? "white" : "#001159")};
   width: 100%;
 `;
 

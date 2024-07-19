@@ -27,7 +27,7 @@ const Navigation = ({ slice }: NavigationProps): JSX.Element => {
     return (
       <>
         {isFixedSpace ? (
-          <S.FixedContainer isPositive={slice.variation === "positive"}>
+          <S.FixedContainer $isPositive={slice.variation === "positive"}>
             <div onClick={() => setIsModalOpen(true)}>
               <MenuIcon />
             </div>
@@ -64,30 +64,30 @@ const Navigation = ({ slice }: NavigationProps): JSX.Element => {
       <S.FixedNavigationContainer
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
-        isPositive={slice.variation === "positive"}
+        $isPositive={slice.variation === "positive"}
       >
         <S.InternalContainer>
           <S.Link
-            isPositive={slice.variation === "positive"}
+            $isPositive={slice.variation === "positive"}
             field={slice.primary.page_1}
           >
             Inicio
           </S.Link>
           <S.Link
-            isPositive={slice.variation === "positive"}
+            $isPositive={slice.variation === "positive"}
             field={slice.primary.page_2}
           >
             Rutas
           </S.Link>
           <PrismicNextImage field={slice.primary.logo} alt="" />
           <S.Link
-            isPositive={slice.variation === "positive"}
+            $isPositive={slice.variation === "positive"}
             field={slice.primary.page_3}
           >
             Nosotros
           </S.Link>
           <S.Link
-            isPositive={slice.variation === "positive"}
+            $isPositive={slice.variation === "positive"}
             field={slice.primary.page_4}
           >
             Contactanos

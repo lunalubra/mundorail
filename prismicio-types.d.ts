@@ -296,6 +296,17 @@ interface RouteCardDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   pdf: prismic.LinkToMediaField;
+
+  /**
+   * special description field in *route*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.special_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  special_description: prismic.RichTextField;
 }
 
 /**
@@ -1120,6 +1131,17 @@ export interface HotelsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   cta: prismic.KeyTextField;
+
+  /**
+   * isSurvivors field in *Hotels → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: hotels.primary.issurvivors
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  issurvivors: prismic.BooleanField;
 }
 
 /**
@@ -1911,6 +1933,17 @@ export interface RouteHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   route: prismic.ContentRelationshipField;
+
+  /**
+   * isSurvivors field in *RouteHero → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: route_hero.primary.issurvivors
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  issurvivors: prismic.BooleanField;
 }
 
 /**
@@ -1956,6 +1989,17 @@ export interface RoutesConditionsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   route: prismic.ContentRelationshipField<"route_card">;
+
+  /**
+   * isSurvivors field in *RoutesConditions → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: routes_conditions.primary.issurvivors
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  issurvivors: prismic.BooleanField;
 }
 
 /**

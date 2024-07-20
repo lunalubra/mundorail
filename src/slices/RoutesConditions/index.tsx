@@ -73,7 +73,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
           backgroundImage: `url(${route?.data.signature_image.url!})`
         }}
       >
-        {/* {firstTitle && <PrismicRichText field={[firstTitle!]} />}
+        {firstTitle && <PrismicRichText field={[firstTitle!]} />}
         {firstConditions.length && (
           <S.ListContainer>
             {firstConditions.map((item, index) => (
@@ -92,7 +92,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
               </S.ListItem>
             ))}
           </S.ListContainer>
-        )} */}
+        )}
       </S.Container>
     );
   }

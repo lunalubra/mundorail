@@ -9,6 +9,10 @@
 					"__TYPE__": "DocumentLink",
 					"id": "mock_document_id"
 				}
+			},
+			"issurvivors": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

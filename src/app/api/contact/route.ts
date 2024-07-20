@@ -1,4 +1,4 @@
-import { NextResponse, NextRequest } from "next/server";
+import { NextResponse } from "next/server";
 const nodemailer = require("nodemailer");
 
 // Handles POST requests to /api

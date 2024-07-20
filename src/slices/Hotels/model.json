@@ -53,6 +53,15 @@
             "label": "cta",
             "placeholder": ""
           }
+        },
+        "issurvivors": {
+          "type": "Boolean",
+          "config": {
+            "label": "isSurvivors",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}

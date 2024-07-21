@@ -21,15 +21,15 @@ export async function generateMetadata(): Promise<Metadata> {
     description: home.data.meta_description,
     openGraph: {
       title: home.data.meta_title ?? undefined,
-      images: [{ url: home.data.meta_image.url ?? "" }],
-    },
+      images: [{ url: home.data.meta_image.url ?? "" }]
+    }
   };
 }
 
 export default async function Index() {
   // The client queries content from the Prismic API
   const client = createClient();
-  const home = await client.getByUID("page", "home");
+  const home = await client.getByUID("page", "inicio");
 
   return <SliceZone slices={home.data.slices} components={components} />;
 }

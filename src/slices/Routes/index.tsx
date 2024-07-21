@@ -77,7 +77,6 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
               </S.CardPrice>
             </S.CardTopSection>
             <S.CardBottomSection>
-              <span>{card?.data.subtitle}</span>
               <PrismicRichText field={card?.data.title} />
             </S.CardBottomSection>
           </S.CardContainer>

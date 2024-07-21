@@ -177,13 +177,14 @@ export const CardBottomSection = styled.div`
   display: flex;
   flex-direction: column;
 
-  span {
-    font-size: 21;
-  }
-
   p {
     all: unset;
+    font-size: 21px;
+    display: block;
+  }
+
+  strong {
     font-size: 34px;
-    font-weight: 600;
+    display: block;
   }
 `;

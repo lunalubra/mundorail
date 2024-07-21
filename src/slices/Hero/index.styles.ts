@@ -178,6 +178,8 @@ export const SecondaryDescription = styled.p`
 `;
 
 export const Carousel = styled(motion.div)`
+  position: relative;
+  left: -2000px;
   width: 100%;
   display: flex;
   align-items: center;

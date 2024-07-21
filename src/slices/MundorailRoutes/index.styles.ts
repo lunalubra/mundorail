@@ -51,6 +51,11 @@ export const RoutesContainer = styled.div`
   padding: 0 20px 10px;
   margin: auto;
   max-width: 100%;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   @media only screen and (min-width: 768px) {
     gap: 50px;
   }

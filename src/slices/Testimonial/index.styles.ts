@@ -55,6 +55,11 @@ export const Testimonials = styled.div`
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 0 16px;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 `;
 
 export const Testimonial = styled.div`

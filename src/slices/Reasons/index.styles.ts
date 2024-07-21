@@ -53,6 +53,11 @@ export const Reasons = styled.div`
     justify-content: unset;
     flex-direction: row;
     overflow-x: auto;
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 `;
 

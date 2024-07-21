@@ -63,7 +63,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
   return (
     <>
       <S.ShareButton
-        isSurvivors={slice.primary.issurvivors}
+        $isSurvivors={slice.primary.issurvivors}
         onClick={() => router.push((route?.data.pdf as any).url)}
       >
         <ShareIcons />
@@ -84,7 +84,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
         </S.ExtraSection>
       )}
       <S.Container
-        isSurvivors={slice.primary.issurvivors}
+        $isSurvivors={slice.primary.issurvivors}
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
@@ -93,13 +93,13 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
             <S.Title>
               <PrismicRichText field={route?.data.title} />
             </S.Title>
-            <S.CardContainer isSurvivors={slice.primary.issurvivors}>
+            <S.CardContainer $isSurvivors={slice.primary.issurvivors}>
               <S.CardTopSection>
-                <S.CardDays isSurvivors={slice.primary.issurvivors}>
+                <S.CardDays $isSurvivors={slice.primary.issurvivors}>
                   {route?.data.days} <span>días</span>
                 </S.CardDays>
                 <PrismicNextImage field={route?.data.route_image} alt="" />
-                <S.CardPrice isSurvivors={slice.primary.issurvivors}>
+                <S.CardPrice $isSurvivors={slice.primary.issurvivors}>
                   <div>*</div>
                   <span>Desde</span>
                   <p>{route?.data.price}€</p>
@@ -114,12 +114,12 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
         {!isMobile && (
           <S.DesktopImage>
             <PrismicNextImage field={route?.data.route_image} alt="" />
-            <S.Price isSurvivors={slice.primary.issurvivors}>
+            <S.Price $isSurvivors={slice.primary.issurvivors}>
               <div>*</div>
               <span>Desde</span>
               <p>{route?.data.price}€</p>
             </S.Price>
-            <S.Note isSurvivors={slice.primary.issurvivors}>
+            <S.Note $isSurvivors={slice.primary.issurvivors}>
               <PrismicRichText field={route?.data.notes} />
             </S.Note>
           </S.DesktopImage>
@@ -133,12 +133,12 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
               <Image alt="" src={SeparatorImage.src} width={500} height={20} />
             </>
           )}
-          <S.Description isSurvivors={slice.primary.issurvivors}>
+          <S.Description $isSurvivors={slice.primary.issurvivors}>
             <PrismicRichText field={route?.data.description} />
           </S.Description>
           <S.Button
             onClick={() => router.push((route?.data.pdf as any).url)}
-            isSurvivors={slice.primary.issurvivors}
+            $isSurvivors={slice.primary.issurvivors}
           >
             Ver itinerario
           </S.Button>

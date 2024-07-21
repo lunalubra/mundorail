@@ -24,4 +24,6 @@ export const components = {
   routes_description: dynamic(() => import("./RoutesDescription")),
   survivors: dynamic(() => import("./Survivors")),
   testimonails: dynamic(() => import("./Testimonial")),
+  trip_recomendations: dynamic(() => import("./TripRecomendations")),
+  why_europe: dynamic(() => import("./WhyEurope")),
 };

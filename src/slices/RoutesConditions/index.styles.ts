@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{ $isSurvivors: boolean }>`
   h6 {
     all: unset;
     font-size: 42px;
@@ -33,7 +33,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ListItem = styled.div`
+export const ListItem = styled.div<{ $isSurvivors: boolean }>`
   ul {
     all: unset;
   }
@@ -45,12 +45,12 @@ export const ListItem = styled.div`
   min-width: 300px;
   width: 300px;
   padding: 32px;
-  background-color: #25be83;
+  background-color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#25be83")};
   color: white;
   border-radius: 30px;
 
   strong {
-    color: #001159;
+    color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
   }
 `;
 
@@ -73,8 +73,8 @@ export const BiggerContainer = styled.div`
   margin: auto;
 `;
 
-export const DesktopContainer = styled.div`
-  margin: 172px 32px 32px;
+export const DesktopContainer = styled.div<{ $isSurvivors: boolean }>`
+  margin: 100px 32px 32px;
   border-radius: 30px;
   padding: 32px 64px;
   background-color: #e7e7e7;
@@ -94,6 +94,7 @@ export const DesktopContainer = styled.div`
     font-weight: 700;
     line-height: 52px;
     text-align: center;
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
   }
 
   li {
@@ -103,7 +104,7 @@ export const DesktopContainer = styled.div`
     text-align: justified;
 
     strong {
-      color: #27bd83;
+      color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#27bd83")};
     }
   }
 `;

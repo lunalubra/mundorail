@@ -1,0 +1,26 @@
+{
+  "id": "why_europe",
+  "type": "SharedSlice",
+  "name": "WhyEurope",
+  "description": "WhyEurope",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {},
+      "items": {
+        "whyeurope": {
+          "type": "Link",
+          "config": {
+            "label": "whyEurope",
+            "select": "document"
+          }
+        }
+      }
+    }
+  ]
+}

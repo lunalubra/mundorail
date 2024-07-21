@@ -38,14 +38,14 @@ const Hotels = ({ slice }: HotelsProps): JSX.Element => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
-        <S.TopSectionContainer>
+        <S.TopSectionContainer $isSurvivors={slice.primary.issurvivors}>
           <PrismicRichText field={slice.primary.title} />
           <PrismicRichText field={slice.primary.description} />
           {isMobile && (
             <S.Link onClick={() => setIsModalOpen(true)}>Ver más</S.Link>
           )}
         </S.TopSectionContainer>
-        <S.BottomSectionContainer>
+        <S.BottomSectionContainer $isSurvivors={slice.primary.issurvivors}>
           <Image
             src={slice.primary.images.url!}
             alt=""

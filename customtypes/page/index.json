@@ -27,6 +27,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "why_europe": {
+              "type": "SharedSlice"
+            },
+            "trip_recomendations": {
+              "type": "SharedSlice"
+            },
             "contact_form": {
               "type": "SharedSlice"
             },

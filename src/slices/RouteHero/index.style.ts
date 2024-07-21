@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ isSurvivors: boolean }>`
-  color: ${(props) => (props.isSurvivors ? "#001159" : "#001159")};
+export const Container = styled.div<{ $isSurvivors: boolean }>`
+  color: ${(props) => (props.$isSurvivors ? "#001159" : "#001159")};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,8 +12,8 @@ export const Container = styled.div<{ isSurvivors: boolean }>`
   padding-top: 64px;
 `;
 
-export const ShareButton = styled.div<{ isSurvivors: boolean }>`
-  background-color: ${(props) => (props.isSurvivors ? "#C4241F" : "#27bd83")};
+export const ShareButton = styled.div<{ $isSurvivors: boolean }>`
+  background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#27bd83")};
   position: absolute;
   top: 0;
   left: 0;
@@ -31,7 +31,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Description = styled.div<{ isSurvivors: boolean }>`
+export const Description = styled.div<{ $isSurvivors: boolean }>`
   p {
     all: unset;
     font-size: 20px;
@@ -40,7 +40,7 @@ export const Description = styled.div<{ isSurvivors: boolean }>`
   }
 
   strong {
-    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#27bd83")};
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#27bd83")};
   }
 `;
 
@@ -48,7 +48,7 @@ export const Notes = styled.div`
   text-align: left;
 `;
 
-export const Button = styled.button<{ isSurvivors: boolean }>`
+export const Button = styled.button<{ $isSurvivors: boolean }>`
   all: unset;
   font-size: 25px;
   line-height: 30px;
@@ -61,16 +61,16 @@ export const Button = styled.button<{ isSurvivors: boolean }>`
   white-space: nowrap;
   margin: auto;
 
-  color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
-  border-color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
+  color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
+  border-color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
 
   @media only screen and (min-width: 768px) {
     margin: unset;
   }
 `;
 
-export const CardContainer = styled.div<{ isSurvivors: boolean }>`
-  background-color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
+export const CardContainer = styled.div<{ $isSurvivors: boolean }>`
+  background-color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
   box-shadow: -10px 25px 40px 0px rgba(0, 0, 0, 0.3);
   color: white;
   border-radius: 18px;
@@ -85,13 +85,13 @@ export const CardContainer = styled.div<{ isSurvivors: boolean }>`
   transform: scale(0.8) translateX(12.5%);
 `;
 
-export const CardDays = styled.div<{ isSurvivors: boolean }>`
+export const CardDays = styled.div<{ $isSurvivors: boolean }>`
   position: absolute;
   top: 11px;
   left: 11px;
   z-index: 2;
   border-radius: 16px;
-  background-color: ${(props) => (props.isSurvivors ? "#C4241F" : "#27bd83")};
+  background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#27bd83")};
   padding: 8px 16px;
   font-size: 33px;
   font-weight: 600;
@@ -101,13 +101,13 @@ export const CardDays = styled.div<{ isSurvivors: boolean }>`
   }
 `;
 
-export const CardPrice = styled.div<{ isSurvivors: boolean }>`
+export const CardPrice = styled.div<{ $isSurvivors: boolean }>`
   position: absolute;
   top: 315px;
   right: 11px;
   z-index: 2;
   border-radius: 16px;
-  background-color: ${(props) => (props.isSurvivors ? "#C4241F" : "#27bd83")};
+  background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#27bd83")};
   font-size: 38px;
   font-weight: 700;
   line-height: 100%;
@@ -115,7 +115,7 @@ export const CardPrice = styled.div<{ isSurvivors: boolean }>`
   width: 170px;
 
   div {
-    color: ${(props) => (props.isSurvivors ? "white" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 0;
     left: 0;
@@ -123,7 +123,7 @@ export const CardPrice = styled.div<{ isSurvivors: boolean }>`
   }
 
   span {
-    color: ${(props) => (props.isSurvivors ? "white" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 3px;
     left: 16px;
@@ -188,7 +188,7 @@ export const DesktopImage = styled.div`
   }
 `;
 
-export const Note = styled.div<{ isSurvivors: boolean }>`
+export const Note = styled.div<{ $isSurvivors: boolean }>`
   text-align: left;
   background-color: #25be83;
   padding: 16px;
@@ -199,7 +199,7 @@ export const Note = styled.div<{ isSurvivors: boolean }>`
 
   p {
     all: unset;
-    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
     font-weight: 700;
   }
 
@@ -208,7 +208,7 @@ export const Note = styled.div<{ isSurvivors: boolean }>`
   }
 `;
 
-export const Price = styled.div<{ isSurvivors: boolean }>`
+export const Price = styled.div<{ $isSurvivors: boolean }>`
   position: absolute;
   top: 64px;
   right: 32px;
@@ -222,7 +222,7 @@ export const Price = styled.div<{ isSurvivors: boolean }>`
   width: 170px;
 
   div {
-    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
     position: absolute;
     top: 0;
     left: 0;
@@ -230,7 +230,7 @@ export const Price = styled.div<{ isSurvivors: boolean }>`
   }
 
   span {
-    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
     position: absolute;
     top: 3px;
     left: 16px;

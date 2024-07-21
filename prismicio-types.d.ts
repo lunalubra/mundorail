@@ -48,6 +48,8 @@ export type HowDoesItWorkDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
+  | WhyEuropeSlice
+  | TripRecomendationsSlice
   | ContactFormSlice
   | ReasonsSlice
   | OurTeamSlice
@@ -451,13 +453,68 @@ export type TestimonailDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for whyEurope documents
+ */
+interface WhyeuropeDocumentData {
+  /**
+   * title field in *whyEurope*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: whyeurope.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * description field in *whyEurope*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: whyeurope.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  description: prismic.RichTextField;
+
+  /**
+   * image field in *whyEurope*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: whyeurope.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+}
+
+/**
+ * whyEurope document from Prismic
+ *
+ * - **API ID**: `whyeurope`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type WhyeuropeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<WhyeuropeDocumentData>,
+    "whyeurope",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | HowDoesItWorkDocument
   | PageDocument
   | ReasonsDocument
   | RouteCardDocument
   | RoutesDocument
-  | TestimonailDocument;
+  | TestimonailDocument
+  | WhyeuropeDocument;
 
 /**
  * Primary content in *Advantages → Primary*
@@ -2232,6 +2289,137 @@ export type TestimonailsSlice = prismic.SharedSlice<
   TestimonailsSliceVariation
 >;
 
+/**
+ * Primary content in *TripRecomendations → Primary*
+ */
+export interface TripRecomendationsSliceDefaultPrimary {
+  /**
+   * title field in *TripRecomendations → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_recomendations.primary.title
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  title: prismic.RichTextField;
+
+  /**
+   * recomendations field in *TripRecomendations → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_recomendations.primary.recomendations
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  recomendations: prismic.RichTextField;
+
+  /**
+   * cta field in *TripRecomendations → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_recomendations.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta: prismic.KeyTextField;
+
+  /**
+   * image field in *TripRecomendations → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_recomendations.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * isSurvivors field in *TripRecomendations → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: trip_recomendations.primary.issurvivors
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  issurvivors: prismic.BooleanField;
+}
+
+/**
+ * Default variation for TripRecomendations Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TripRecomendationsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<TripRecomendationsSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *TripRecomendations*
+ */
+type TripRecomendationsSliceVariation = TripRecomendationsSliceDefault;
+
+/**
+ * TripRecomendations Shared Slice
+ *
+ * - **API ID**: `trip_recomendations`
+ * - **Description**: TripRecomendations
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type TripRecomendationsSlice = prismic.SharedSlice<
+  "trip_recomendations",
+  TripRecomendationsSliceVariation
+>;
+
+/**
+ * Primary content in *WhyEurope → Items*
+ */
+export interface WhyEuropeSliceDefaultItem {
+  /**
+   * whyEurope field in *WhyEurope → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: why_europe.items[].whyeurope
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  whyeurope: prismic.ContentRelationshipField;
+}
+
+/**
+ * Default variation for WhyEurope Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyEuropeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Record<string, never>,
+  Simplify<WhyEuropeSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *WhyEurope*
+ */
+type WhyEuropeSliceVariation = WhyEuropeSliceDefault;
+
+/**
+ * WhyEurope Shared Slice
+ *
+ * - **API ID**: `why_europe`
+ * - **Description**: WhyEurope
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type WhyEuropeSlice = prismic.SharedSlice<
+  "why_europe",
+  WhyEuropeSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -2255,6 +2443,8 @@ declare module "@prismicio/client" {
       RoutesDocumentData,
       TestimonailDocument,
       TestimonailDocumentData,
+      WhyeuropeDocument,
+      WhyeuropeDocumentData,
       AllDocumentTypes,
       AdvantagesSlice,
       AdvantagesSliceDefaultPrimary,
@@ -2349,6 +2539,14 @@ declare module "@prismicio/client" {
       TestimonailsSliceDefaultItem,
       TestimonailsSliceVariation,
       TestimonailsSliceDefault,
+      TripRecomendationsSlice,
+      TripRecomendationsSliceDefaultPrimary,
+      TripRecomendationsSliceVariation,
+      TripRecomendationsSliceDefault,
+      WhyEuropeSlice,
+      WhyEuropeSliceDefaultItem,
+      WhyEuropeSliceVariation,
+      WhyEuropeSliceDefault,
     };
   }
 }

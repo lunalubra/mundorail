@@ -10,7 +10,7 @@ export const Container = styled.div`
   color: #001159;
 `;
 
-export const TopSectionContainer = styled.div`
+export const TopSectionContainer = styled.div<{ $isSurvivors: boolean }>`
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -27,20 +27,27 @@ export const TopSectionContainer = styled.div`
     all: unset;
 
     strong {
-      color: #27bd83;
+      color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#27bd83")};
     }
   }
 
   @media only screen and (min-width: 768px) {
-    background-color: #001159;
+    background-color: ${(props) =>
+      props.$isSurvivors ? "#110DB7" : "#001159"};
     color: white;
     gap: 32px;
     padding: 75px;
     line-height: 140%;
+
+    p:not(:first-of-type) {
+      strong {
+        color: ${(props) => (props.$isSurvivors ? "white" : "#27bd83")};
+      }
+    }
   }
 `;
 
-export const BottomSectionContainer = styled.div`
+export const BottomSectionContainer = styled.div<{ $isSurvivors: boolean }>`
   display: flex;
   justify-content: center;
   padding: 32px;
@@ -48,6 +55,10 @@ export const BottomSectionContainer = styled.div`
   img {
     width: 100%;
     height: auto;
+  }
+
+  strong {
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
   }
 `;
 

@@ -67,6 +67,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
 
     return (
       <S.Container
+        $isSurvivors={slice.primary.issurvivors}
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
         style={{
@@ -77,7 +78,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
         {firstConditions.length && (
           <S.ListContainer>
             {firstConditions.map((item, index) => (
-              <S.ListItem key={index}>
+              <S.ListItem $isSurvivors={slice.primary.issurvivors} key={index}>
                 <PrismicRichText field={[item!]} />
               </S.ListItem>
             ))}
@@ -87,7 +88,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
         {secondConditions.length && (
           <S.ListContainer>
             {secondConditions.map((item, index) => (
-              <S.ListItem key={index}>
+              <S.ListItem $isSurvivors={slice.primary.issurvivors} key={index}>
                 <PrismicRichText field={[item!]} />
               </S.ListItem>
             ))}
@@ -100,6 +101,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
   return (
     <S.BiggerContainer>
       <S.DesktopContainer
+        $isSurvivors={slice.primary.issurvivors}
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
         style={{

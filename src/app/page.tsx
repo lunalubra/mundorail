@@ -14,7 +14,7 @@ import { components } from "@/slices";
 
 export async function generateMetadata(): Promise<Metadata> {
   const client = createClient();
-  const home = await client.getByUID("page", "home");
+  const home = await client.getByUID("page", "inicio");
 
   return {
     title: prismic.asText(home.data.title),

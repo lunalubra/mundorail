@@ -22,6 +22,7 @@ export const ShareButton = styled.div<{ $isSurvivors: boolean }>`
   align-self: flex-start;
   margin: 16px;
   cursor: pointer;
+  z-index: 100000;
 `;
 
 export const Title = styled.div`

@@ -23,7 +23,7 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
   const client = createClient();
 
   const [howDoesItWork, setHowDoesItWork] = useState<
-    (Content.HowDoesItWorkDocument<string> | undefined)[]
+    (Content.ReasonsDocument<string> | undefined)[]
   >([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -36,10 +36,7 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
             isFilled.contentRelationship(item.how_does_it_work) &&
             item.how_does_it_work.uid
           ) {
-            return client.getByUID(
-              "how_does_it_work",
-              item.how_does_it_work.uid
-            );
+            return client.getByUID("reasons", item.how_does_it_work.uid);
           }
         })
       );

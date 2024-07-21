@@ -2,7 +2,7 @@
 
 import { useScroll, useTransform } from "framer-motion";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage } from "@prismicio/next";
+import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { useMediaQuery } from "usehooks-ts";
@@ -89,7 +89,9 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
             {firstSectionOfTitle} {isMobile && <br />}{" "}
             <span>{secondSectionOfTitle}</span>
           </S.Title>
-          <S.Button>{slice.primary.cta}</S.Button>
+          <S.Button field={slice.primary.cta}>
+            {slice.primary.cta_text}
+          </S.Button>
         </S.MainContent>
       </S.MainContentContainer>
       <S.SecondaryContentContainer>

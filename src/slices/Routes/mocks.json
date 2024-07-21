@@ -18,6 +18,13 @@
 						}
 					}
 				]
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
 			}
 		},
 		"items": [

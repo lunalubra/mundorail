@@ -82,7 +82,9 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
           </S.CardContainer>
         ))}
       </S.CardsSection>
-      {slice.primary.cta && <S.Button>{slice.primary.cta}</S.Button>}
+      {slice.primary.cta && (
+        <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
+      )}
     </S.RoutesSectionContainer>
   );
 };

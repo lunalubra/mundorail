@@ -68,21 +68,23 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
       >
         <ShareIcons />
       </S.ShareButton>
-      {!isMobile && route?.data.special_description && (
-        <S.ExtraSection
-          style={{
-            backgroundImage: `url(${slice.primary.background_image.url!})`
-          }}
-        >
-          <S.ExtraSectionTitle>
-            <PrismicRichText field={route?.data.title} />
-          </S.ExtraSectionTitle>
-          <S.ExtraSectionDescription>
-            <PrismicRichText field={route?.data.special_description} />
-          </S.ExtraSectionDescription>
-          <S.ExtraSectionButton>Contáctanos</S.ExtraSectionButton>
-        </S.ExtraSection>
-      )}
+      {!isMobile &&
+        route?.data.special_description &&
+        slice.primary.background_image.url && (
+          <S.ExtraSection
+            style={{
+              backgroundImage: `url(${slice.primary.background_image.url})`
+            }}
+          >
+            <S.ExtraSectionTitle>
+              <PrismicRichText field={route?.data.title} />
+            </S.ExtraSectionTitle>
+            <S.ExtraSectionDescription>
+              <PrismicRichText field={route?.data.special_description} />
+            </S.ExtraSectionDescription>
+            <S.ExtraSectionButton>Contáctanos</S.ExtraSectionButton>
+          </S.ExtraSection>
+        )}
       <S.Container
         $isSurvivors={slice.primary.issurvivors}
         data-slice-type={slice.slice_type}

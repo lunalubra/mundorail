@@ -27,13 +27,6 @@
             "placeholder": ""
           }
         },
-        "cta": {
-          "type": "Text",
-          "config": {
-            "label": "cta",
-            "placeholder": ""
-          }
-        },
         "secondary_title": {
           "type": "Text",
           "config": {
@@ -109,6 +102,22 @@
           "type": "Text",
           "config": {
             "label": "eight option",
+            "placeholder": ""
+          }
+        },
+        "cta": {
+          "type": "Link",
+          "config": {
+            "label": "cta",
+            "placeholder": "",
+            "allowTargetBlank": false,
+            "select": null
+          }
+        },
+        "cta_text": {
+          "type": "Text",
+          "config": {
+            "label": "cta_text",
             "placeholder": ""
           }
         }

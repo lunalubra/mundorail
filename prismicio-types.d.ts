@@ -988,16 +988,6 @@ export interface HeroSliceDefaultPrimary {
   title: prismic.KeyTextField;
 
   /**
-   * cta field in *Hero → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: hero.primary.cta
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  cta: prismic.KeyTextField;
-
-  /**
    * secondary title field in *Hero → Primary*
    *
    * - **Field Type**: Text
@@ -1106,6 +1096,26 @@ export interface HeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   eight_option: prismic.KeyTextField;
+
+  /**
+   * cta field in *Hero → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.cta
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta: prismic.LinkField;
+
+  /**
+   * cta_text field in *Hero → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.primary.cta_text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_text: prismic.KeyTextField;
 }
 
 /**
@@ -1930,6 +1940,16 @@ export interface RouteCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   title: prismic.RichTextField;
+
+  /**
+   * cta_link field in *Routes → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.primary.cta_link
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_link: prismic.LinkField;
 }
 
 /**

@@ -2,6 +2,7 @@
 
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { PrismicNextLink } from "@prismicio/next";
 
 export const HeroContainer = styled.div`
   width: 100%;
@@ -89,7 +90,7 @@ export const MainContent = styled.div`
   overflow: hidden;
 `;
 
-export const Button = styled.button`
+export const Button = styled(PrismicNextLink)`
   all: unset;
   font-size: 25px;
   line-height: 30px;

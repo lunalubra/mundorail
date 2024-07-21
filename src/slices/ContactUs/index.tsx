@@ -22,7 +22,9 @@ const ContactUs = ({ slice }: ContactUsProps): JSX.Element => {
       <S.MainContent>
         <S.MainContentWrapper>
           <PrismicRichText field={slice.primary.text} />
-          <S.Button>{slice.primary.cta}</S.Button>
+          <S.Button field={slice.primary.cta_link}>
+            {slice.primary.cta}
+          </S.Button>
         </S.MainContentWrapper>
       </S.MainContent>
     </S.ContactUsContainer>

@@ -45,22 +45,28 @@ export const HeroContainer = styled.div`
   }
 `;
 
-export const Title = styled.h1`
-  all: unset;
-  font-size: 60px;
-  line-height: 74px;
-  font-style: italic;
-  color: white;
-  text-align: center;
+export const Title = styled.div`
+  p {
+    all: unset;
+    font-size: 60px;
+    line-height: 74px;
+    font-style: italic;
+    color: white;
+    text-align: center;
+  }
 
-  span {
+  strong {
     font-style: normal;
     color: #27bd83;
     font-weight: 700;
   }
 
   @media only screen and (max-width: 768px) {
-    font-size: 48px;
+    em {
+      line-height: 100%;
+      display: block;
+      font-size: 48px;
+    }
   }
 `;
 
@@ -99,12 +105,6 @@ export const Button = styled(PrismicNextLink)`
   border: 2px solid white;
   border-radius: 1000px;
   cursor: pointer;
-
-  /* &:hover {
-    color: #001159;
-    border-color: #001159;
-    background-color: rgb(0, 17, 89, 0.08);
-  } */
 `;
 
 export const SecondaryContentContainer = styled.div`
@@ -168,13 +168,22 @@ export const SecondaryTitle = styled.h2`
   }
 `;
 
-export const SecondaryDescription = styled.p`
-  all: unset;
-  font-size: 20px;
-  line-height: 28px;
+export const SecondaryDescription = styled.div`
+  p {
+    all: unset;
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  strong {
+    color: #27bd83;
+  }
+
   @media only screen and (max-width: 768px) {
-    font-size: 14px;
-    line-height: 20px;
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
   }
 `;
 

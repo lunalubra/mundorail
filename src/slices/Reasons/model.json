@@ -45,7 +45,7 @@
             "label": "reasons",
             "select": "document",
             "customtypes": [
-              "reasons"
+              "how_does_it_work"
             ]
           }
         }

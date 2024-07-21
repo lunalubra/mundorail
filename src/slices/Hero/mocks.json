@@ -26,19 +26,9 @@
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
 			},
-			"title": {
-				"__TYPE__": "FieldContent",
-				"value": "basket",
-				"type": "Text"
-			},
 			"secondary_title": {
 				"__TYPE__": "FieldContent",
 				"value": "sail",
-				"type": "Text"
-			},
-			"secondary_description": {
-				"__TYPE__": "FieldContent",
-				"value": "fog",
 				"type": "Text"
 			},
 			"secondary_image": {
@@ -115,6 +105,28 @@
 				"__TYPE__": "FieldContent",
 				"value": "store",
 				"type": "Text"
+			},
+			"title": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis cillum ea nostrud in dolore minim. Mollit aliqua eiusmod officia dolor veniam sint eu officia elit incididunt dolor ea. Labore consectetur do enim fugiat veniam amet."
+						}
+					}
+				]
+			},
+			"secondary_description": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laborum tempor minim dolore enim commodo officia cupidatat. Non culpa est cillum deserunt ad nulla. In nostrud aute commodo est voluptate occaecat excepteur eu quis eu laboris incididunt sunt do aliquip."
+						}
+					}
+				]
 			}
 		},
 		"items": []

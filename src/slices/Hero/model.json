@@ -20,24 +20,10 @@
             "thumbnails": []
           }
         },
-        "title": {
-          "type": "Text",
-          "config": {
-            "label": "title",
-            "placeholder": ""
-          }
-        },
         "secondary_title": {
           "type": "Text",
           "config": {
             "label": "secondary title",
-            "placeholder": ""
-          }
-        },
-        "secondary_description": {
-          "type": "Text",
-          "config": {
-            "label": "secondary description",
             "placeholder": ""
           }
         },
@@ -119,6 +105,24 @@
           "config": {
             "label": "cta_text",
             "placeholder": ""
+          }
+        },
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "title",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "secondary_description": {
+          "type": "StructuredText",
+          "config": {
+            "label": "secondary description",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
         }
       },

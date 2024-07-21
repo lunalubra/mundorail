@@ -53,6 +53,14 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "cta link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {}

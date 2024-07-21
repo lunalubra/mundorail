@@ -3,7 +3,7 @@
 import { useScroll, useTransform } from "framer-motion";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
-import { SliceComponentProps } from "@prismicio/react";
+import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { useMediaQuery } from "usehooks-ts";
 
@@ -57,11 +57,6 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const firstSectionOfTitle = slice.primary.title!.split(" ")[0];
-  const secondSectionOfTitle = slice.primary
-    .title!.split(" ")!
-    .filter((_, i) => i !== 0)!
-    .join(" ");
 
   const firstCarouselOptions = [
     slice.primary.first_option,
@@ -86,8 +81,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       <S.MainContentContainer>
         <S.MainContent>
           <S.Title>
-            {firstSectionOfTitle} {isMobile && <br />}{" "}
-            <span>{secondSectionOfTitle}</span>
+            <PrismicRichText field={slice.primary.title} />
           </S.Title>
           <S.Button field={slice.primary.cta}>
             {slice.primary.cta_text}
@@ -100,7 +94,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
           <S.SecondaryTextContainer>
             <S.SecondaryTitle>{slice.primary.secondary_title}</S.SecondaryTitle>
             <S.SecondaryDescription>
-              {slice.primary.secondary_description}
+              <PrismicRichText field={slice.primary.secondary_description} />
             </S.SecondaryDescription>
           </S.SecondaryTextContainer>
         </S.SecondaryContent>

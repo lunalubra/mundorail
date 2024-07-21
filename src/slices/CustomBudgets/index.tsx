@@ -23,7 +23,7 @@ const CustomBudgets = ({ slice }: CustomBudgetsProps): JSX.Element => {
       <PrismicNextImage field={slice.primary.image} alt="" />
       <PrismicRichText field={slice.primary.title} />
       <PrismicRichText field={slice.primary.description} />
-      <S.Button>{slice.primary.cta}</S.Button>
+      <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
     </S.CustomBudgetsContainer>
   );
 };

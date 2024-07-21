@@ -76,7 +76,9 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
           </S.Card>
         ))}
       </S.CardsContainer>
-      {!isMobile && <S.Button>{slice.primary.cta}</S.Button>}
+      {!isMobile && (
+        <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
+      )}
     </S.Container>
   );
 };

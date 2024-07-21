@@ -11,6 +11,10 @@ export const Container = styled.div`
   margin: auto;
   text-align: center;
   padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 `;
 
 export const Button = styled(PrismicNextLink)`

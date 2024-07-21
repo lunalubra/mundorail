@@ -51,7 +51,7 @@ export const Testimonials = styled.div`
   display: flex;
   gap: 42px;
   width: 100%;
-  max-width: 1067px;
+  max-width: 1100px;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding: 0 16px;

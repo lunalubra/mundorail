@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const CustomBudgetsContainer = styled.div`
   position: relative;
   width: 100%;
-  height: 550px;
+  height: 450px;
   margin-top: 110px;
   color: #001159;
   text-align: center;

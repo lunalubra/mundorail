@@ -11,13 +11,15 @@ export const WhyEurope = styled.div`
   color: white;
   display: flex;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+
   @media only screen and (max-width: 768px) {
     height: 800px;
     align-items: flex-start;
     padding-top: 92px;
     background-position: 55%;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 `;
 

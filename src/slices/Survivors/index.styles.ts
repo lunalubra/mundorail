@@ -36,7 +36,7 @@ export const Button = styled(PrismicNextLink)`
   border-radius: 1000px;
   cursor: pointer;
   width: max-content;
-  margin: auto;
+  margin: 42px auto 16px;
 
   color: #001159;
   border-color: #001159;

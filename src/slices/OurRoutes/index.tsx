@@ -28,7 +28,9 @@ const OurRoutes = ({ slice }: OurRoutesProps): JSX.Element => {
           <S.Description>
             <PrismicRichText field={slice.primary.description} />
           </S.Description>
-          <S.Button>{slice.primary.cta}</S.Button>
+          <S.Button field={slice.primary.cta_link}>
+            {slice.primary.cta}
+          </S.Button>
         </S.Content>
       </S.ContentWrapper>
     </S.Container>

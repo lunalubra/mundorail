@@ -31,7 +31,9 @@ const Advantages = ({ slice }: AdvantagesProps): JSX.Element => {
             <PrismicRichText field={slice.primary.description} />
           </S.Description>
           <Icons />
-          <S.Button>{slice.primary.cta}</S.Button>
+          <S.Button field={slice.primary.cta_link}>
+            {slice.primary.cta}
+          </S.Button>
         </S.InternalContainer>
       </S.MediaContainer>
     </S.Container>

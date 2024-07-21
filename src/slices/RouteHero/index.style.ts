@@ -147,6 +147,7 @@ export const CardTopSection = styled.div`
     width: 326px;
     height: 326px;
     margin-top: 27px;
+    background-color: white;
   }
 `;
 

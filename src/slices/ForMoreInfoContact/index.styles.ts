@@ -1,3 +1,4 @@
+import { PrismicNextLink } from "@prismicio/next";
 import styled from "styled-components";
 
 export const CustomBudgetsContainer = styled.div`
@@ -73,7 +74,7 @@ export const CustomBudgetsContainer = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(PrismicNextLink)`
   all: unset;
   font-size: 25px;
   line-height: 30px;

@@ -17,7 +17,10 @@
           "type": "Link",
           "config": {
             "label": "whyEurope",
-            "select": "document"
+            "select": "document",
+            "customtypes": [
+              "whyeurope"
+            ]
           }
         }
       }

@@ -30,7 +30,7 @@ const Survivors = ({ slice }: SurvivorsProps): JSX.Element => {
         <TitleIcon />
       </S.MobileTitle>
       <PrismicRichText field={slice.primary.description} />
-      <S.Button>{slice.primary.cta}</S.Button>
+      <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
       <S.ImagesContainer>
         <Image alt="" src={UltraCoolDiscovery.src} width={300} height={300} />
         <Image alt="" src={coolDiscovery.src} width={300} height={300} />

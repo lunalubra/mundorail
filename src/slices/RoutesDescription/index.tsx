@@ -61,7 +61,9 @@ const RoutesDescription = ({ slice }: RoutesDescriptionProps): JSX.Element => {
       <S.Description>
         <PrismicRichText field={routes?.data.description} />
       </S.Description>
-      {slice.primary.cta && <S.Button>{slice.primary.cta}</S.Button>}
+      {slice.primary.cta && (
+        <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
+      )}
     </S.Container>
   );
 };

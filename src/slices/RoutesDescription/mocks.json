@@ -25,6 +25,13 @@
 				"__TYPE__": "FieldContent",
 				"value": "under",
 				"type": "Text"
+			},
+			"cta_link": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "http://google.com"
+				}
 			}
 		},
 		"items": []

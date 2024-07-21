@@ -168,6 +168,7 @@ export const CardTopSection = styled.div`
     top: 27px;
     left: 50%;
     transform: translateX(-50%);
+    background-color: white;
   }
 `;
 

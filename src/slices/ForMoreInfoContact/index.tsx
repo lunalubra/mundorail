@@ -25,7 +25,7 @@ const ForMoreInfoContact = ({
       <PrismicNextImage field={slice.primary.background_image} alt="" />
       <PrismicRichText field={slice.primary.title} />
       <PrismicRichText field={slice.primary.subtitle} />
-      <S.Button>{slice.primary.cta}</S.Button>
+      <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
     </S.CustomBudgetsContainer>
   );
 };

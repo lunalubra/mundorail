@@ -48,7 +48,9 @@ const Insurance = ({ slice }: InsuranceProps): JSX.Element => {
             <S.InsuranceIconsContainer>
               <InsuranceIcons />
             </S.InsuranceIconsContainer>
-            <S.Button>{slice.primary.cta}</S.Button>
+            <S.Button field={slice.primary.cta_link}>
+              {slice.primary.cta}
+            </S.Button>
           </S.FirstSection>
           <S.SecondSection>
             <S.Header>¿Qué incluye?</S.Header>

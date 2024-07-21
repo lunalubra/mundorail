@@ -27,6 +27,14 @@
             "label": "cta",
             "placeholder": ""
           }
+        },
+        "cta_link": {
+          "type": "Link",
+          "config": {
+            "label": "cta link",
+            "placeholder": "",
+            "select": null
+          }
         }
       },
       "items": {

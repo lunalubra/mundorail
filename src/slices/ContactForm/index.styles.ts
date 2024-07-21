@@ -1,3 +1,4 @@
+import { PrismicNextLink } from "@prismicio/next";
 import styled from "styled-components";
 
 export const BigContainer = styled.div`
@@ -40,7 +41,7 @@ export const InnerContainer = styled.form`
   gap: 16px;
 `;
 
-export const Button = styled.button`
+export const Button = styled(PrismicNextLink)`
   all: unset;
   font-size: 25px;
   line-height: 30px;

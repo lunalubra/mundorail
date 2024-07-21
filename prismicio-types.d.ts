@@ -1944,6 +1944,16 @@ export interface RouteHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   issurvivors: prismic.BooleanField;
+
+  /**
+   * background_image field in *RouteHero → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_hero.primary.background_image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  background_image: prismic.ImageField<never>;
 }
 
 /**

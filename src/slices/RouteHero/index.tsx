@@ -61,73 +61,97 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
   }
 
   return (
-    <S.Container
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <S.ShareButton onClick={() => router.push((route?.data.pdf as any).url)}>
+    <>
+      <S.ShareButton
+        isSurvivors={slice.primary.issurvivors}
+        onClick={() => router.push((route?.data.pdf as any).url)}
+      >
         <ShareIcons />
       </S.ShareButton>
-      {isMobile && (
-        <>
-          <S.Title>
+      {!isMobile && route?.data.special_description && (
+        <S.ExtraSection
+          style={{
+            backgroundImage: `url(${slice.primary.background_image.url!})`
+          }}
+        >
+          <S.ExtraSectionTitle>
             <PrismicRichText field={route?.data.title} />
-          </S.Title>
-          <S.CardContainer>
-            <S.CardTopSection>
-              <S.CardDays>
-                {route?.data.days} <span>días</span>
-              </S.CardDays>
-              <PrismicNextImage field={route?.data.route_image} alt="" />
-              <S.CardPrice>
-                <div>*</div>
-                <span>Desde</span>
-                <p>{route?.data.price}€</p>
-              </S.CardPrice>
-            </S.CardTopSection>
-            <S.CardBottomSection>
-              <PrismicRichText field={route?.data.notes} />
-            </S.CardBottomSection>
-          </S.CardContainer>
-        </>
+          </S.ExtraSectionTitle>
+          <S.ExtraSectionDescription>
+            <PrismicRichText field={route?.data.special_description} />
+          </S.ExtraSectionDescription>
+          <S.ExtraSectionButton>Contáctanos</S.ExtraSectionButton>
+        </S.ExtraSection>
       )}
-      {!isMobile && (
-        <S.DesktopImage>
-          <PrismicNextImage field={route?.data.route_image} alt="" />
-          <S.Price>
-            <div>*</div>
-            <span>Desde</span>
-            <p>{route?.data.price}€</p>
-          </S.Price>
-          <S.Note>
-            <PrismicRichText field={route?.data.notes} />
-          </S.Note>
-        </S.DesktopImage>
-      )}
-      <S.DesktopContainer>
-        {!isMobile && (
+      <S.Container
+        isSurvivors={slice.primary.issurvivors}
+        data-slice-type={slice.slice_type}
+        data-slice-variation={slice.variation}
+      >
+        {isMobile && (
           <>
             <S.Title>
               <PrismicRichText field={route?.data.title} />
             </S.Title>
-            <Image alt="" src={SeparatorImage.src} width={500} height={20} />
+            <S.CardContainer isSurvivors={slice.primary.issurvivors}>
+              <S.CardTopSection>
+                <S.CardDays isSurvivors={slice.primary.issurvivors}>
+                  {route?.data.days} <span>días</span>
+                </S.CardDays>
+                <PrismicNextImage field={route?.data.route_image} alt="" />
+                <S.CardPrice isSurvivors={slice.primary.issurvivors}>
+                  <div>*</div>
+                  <span>Desde</span>
+                  <p>{route?.data.price}€</p>
+                </S.CardPrice>
+              </S.CardTopSection>
+              <S.CardBottomSection>
+                <PrismicRichText field={route?.data.notes} />
+              </S.CardBottomSection>
+            </S.CardContainer>
           </>
         )}
-        <S.Description>
-          <PrismicRichText field={route?.data.description} />
-        </S.Description>
-        <S.Button onClick={() => router.push((route?.data.pdf as any).url)}>
-          Ver itinerario
-        </S.Button>
-        <S.Disclaimer>
-          *En Mundorail trabajamos exclusivamente con mayoristas.{" "}
-          <strong>
-            Para solicitar tu presupuesto no dudes en contactar con tu agencia
-            más cercana.
-          </strong>
-        </S.Disclaimer>
-      </S.DesktopContainer>
-    </S.Container>
+        {!isMobile && (
+          <S.DesktopImage>
+            <PrismicNextImage field={route?.data.route_image} alt="" />
+            <S.Price isSurvivors={slice.primary.issurvivors}>
+              <div>*</div>
+              <span>Desde</span>
+              <p>{route?.data.price}€</p>
+            </S.Price>
+            <S.Note isSurvivors={slice.primary.issurvivors}>
+              <PrismicRichText field={route?.data.notes} />
+            </S.Note>
+          </S.DesktopImage>
+        )}
+        <S.DesktopContainer>
+          {!isMobile && (
+            <>
+              <S.Title>
+                <PrismicRichText field={route?.data.title} />
+              </S.Title>
+              <Image alt="" src={SeparatorImage.src} width={500} height={20} />
+            </>
+          )}
+          <S.Description isSurvivors={slice.primary.issurvivors}>
+            <PrismicRichText field={route?.data.description} />
+          </S.Description>
+          <S.Button
+            onClick={() => router.push((route?.data.pdf as any).url)}
+            isSurvivors={slice.primary.issurvivors}
+          >
+            Ver itinerario
+          </S.Button>
+          <S.Disclaimer>
+            *En Mundorail trabajamos exclusivamente con mayoristas.{" "}
+            <strong>
+              Para solicitar tu presupuesto no dudes en contactar con tu agencia
+              más cercana.
+            </strong>
+          </S.Disclaimer>
+        </S.DesktopContainer>
+      </S.Container>
+    </>
   );
 };
 

@@ -27,6 +27,14 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "background_image": {
+          "type": "Image",
+          "config": {
+            "label": "background_image",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

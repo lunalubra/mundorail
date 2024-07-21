@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  color: #001159;
+export const Container = styled.div<{ isSurvivors: boolean }>`
+  color: ${(props) => (props.isSurvivors ? "#001159" : "#001159")};
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,10 +9,14 @@ export const Container = styled.div`
   max-width: 1280px;
   margin: auto;
   position: relative;
+  padding-top: 64px;
 `;
 
-export const ShareButton = styled.div`
-  background-color: #27bd83;
+export const ShareButton = styled.div<{ isSurvivors: boolean }>`
+  background-color: ${(props) => (props.isSurvivors ? "#C4241F" : "#27bd83")};
+  position: absolute;
+  top: 0;
+  left: 0;
   border-radius: 100000px;
   padding: 8px 16px;
   align-self: flex-start;
@@ -27,7 +31,7 @@ export const Title = styled.div`
   }
 `;
 
-export const Description = styled.div`
+export const Description = styled.div<{ isSurvivors: boolean }>`
   p {
     all: unset;
     font-size: 20px;
@@ -36,7 +40,7 @@ export const Description = styled.div`
   }
 
   strong {
-    color: #27bd83;
+    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#27bd83")};
   }
 `;
 
@@ -44,7 +48,7 @@ export const Notes = styled.div`
   text-align: left;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ isSurvivors: boolean }>`
   all: unset;
   font-size: 25px;
   line-height: 30px;
@@ -57,16 +61,16 @@ export const Button = styled.button`
   white-space: nowrap;
   margin: auto;
 
-  color: #001159;
-  border-color: #001159;
+  color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
+  border-color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
 
   @media only screen and (min-width: 768px) {
     margin: unset;
   }
 `;
 
-export const CardContainer = styled.div`
-  background-color: #001159;
+export const CardContainer = styled.div<{ isSurvivors: boolean }>`
+  background-color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
   box-shadow: -10px 25px 40px 0px rgba(0, 0, 0, 0.3);
   color: white;
   border-radius: 18px;
@@ -81,13 +85,13 @@ export const CardContainer = styled.div`
   transform: scale(0.8) translateX(12.5%);
 `;
 
-export const CardDays = styled.div`
+export const CardDays = styled.div<{ isSurvivors: boolean }>`
   position: absolute;
   top: 11px;
   left: 11px;
   z-index: 2;
   border-radius: 16px;
-  background-color: #25be83;
+  background-color: ${(props) => (props.isSurvivors ? "#C4241F" : "#27bd83")};
   padding: 8px 16px;
   font-size: 33px;
   font-weight: 600;
@@ -97,13 +101,13 @@ export const CardDays = styled.div`
   }
 `;
 
-export const CardPrice = styled.div`
+export const CardPrice = styled.div<{ isSurvivors: boolean }>`
   position: absolute;
   top: 315px;
   right: 11px;
   z-index: 2;
   border-radius: 16px;
-  background-color: #25be83;
+  background-color: ${(props) => (props.isSurvivors ? "#C4241F" : "#27bd83")};
   font-size: 38px;
   font-weight: 700;
   line-height: 100%;
@@ -111,7 +115,7 @@ export const CardPrice = styled.div`
   width: 170px;
 
   div {
-    color: #001159;
+    color: ${(props) => (props.isSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 0;
     left: 0;
@@ -119,7 +123,7 @@ export const CardPrice = styled.div`
   }
 
   span {
-    color: #001159;
+    color: ${(props) => (props.isSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 3px;
     left: 16px;
@@ -178,14 +182,13 @@ export const DesktopImage = styled.div`
   top: 0;
   right: 0;
   z-index: -1;
-
   img {
     width: 577px;
     height: 577px;
   }
 `;
 
-export const Note = styled.div`
+export const Note = styled.div<{ isSurvivors: boolean }>`
   text-align: left;
   background-color: #25be83;
   padding: 16px;
@@ -196,7 +199,7 @@ export const Note = styled.div`
 
   p {
     all: unset;
-    color: #001159;
+    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
     font-weight: 700;
   }
 
@@ -205,7 +208,7 @@ export const Note = styled.div`
   }
 `;
 
-export const Price = styled.div`
+export const Price = styled.div<{ isSurvivors: boolean }>`
   position: absolute;
   top: 64px;
   right: 32px;
@@ -219,7 +222,7 @@ export const Price = styled.div`
   width: 170px;
 
   div {
-    color: #001159;
+    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
     position: absolute;
     top: 0;
     left: 0;
@@ -227,7 +230,7 @@ export const Price = styled.div`
   }
 
   span {
-    color: #001159;
+    color: ${(props) => (props.isSurvivors ? "#110DB7" : "#001159")};
     position: absolute;
     top: 3px;
     left: 16px;
@@ -257,4 +260,55 @@ export const DesktopContainer = styled.div`
     max-width: 550px;
     text-align: left;
   }
+`;
+
+export const ExtraSection = styled.div`
+  width: 100%;
+  height: 510px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ExtraSectionTitle = styled.div`
+  padding-top: 80px;
+  p {
+    all: unset;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 60px;
+  }
+
+  strong {
+    display: block;
+  }
+`;
+
+export const ExtraSectionDescription = styled.div`
+  p {
+    all: unset;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    max-width: 510px;
+    margin: auto;
+    padding-top: 16px;
+    line-height: 140%;
+  }
+`;
+
+export const ExtraSectionButton = styled.button`
+  all: unset;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 15px 30px;
+  border: 2px solid white;
+  border-radius: 1000px;
+  cursor: pointer;
+  white-space: nowrap;
+  margin: auto;
+
+  color: white;
+  border-color: white;
 `;

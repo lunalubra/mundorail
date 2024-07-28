@@ -2060,6 +2060,17 @@ export interface RouteCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * shouldShowFilter field in *Routes → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: route_card.default.primary.shouldshowfilter
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  shouldshowfilter: prismic.BooleanField;
 }
 
 /**

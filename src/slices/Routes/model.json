@@ -35,6 +35,15 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "shouldshowfilter": {
+          "type": "Boolean",
+          "config": {
+            "label": "shouldShowFilter",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

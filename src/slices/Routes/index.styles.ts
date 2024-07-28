@@ -4,10 +4,13 @@ import styled from "styled-components";
 export const Title = styled.div`
   color: #001159;
   text-align: center;
-  p {
+
+  p:first-of-type {
     all: unset;
     font-size: 48px;
     line-height: 58px;
+    margin-bottom: 32px;
+    display: block;
   }
 `;
 
@@ -190,3 +193,54 @@ export const CardBottomSection = styled.div`
     display: block;
   }
 `;
+
+export const FilterContainer = styled.div`
+  position: relative;
+`;
+
+export const FilterTrigger = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+`;
+
+export const FilterModal = styled.div`
+  position: absolute;
+  background: #f5f5f5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 32px;
+  z-index: 1000;
+  text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+`;
+
+export const SectionTitle = styled.div`
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 140%;
+  margin-bottom: 8px;
+
+  color: #001159;
+`;
+
+export const SectionRow = styled.div`
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+`;
+
+export const SectionLabel = styled.div`
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+
+  color: #001159;
+`;
+
+export const Checkbox = styled.input``;

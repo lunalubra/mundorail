@@ -116,16 +116,7 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <S.Title>
-        {slice.primary.alternative_title ? (
-          <Image
-            src={slice.primary.alternative_title.url!}
-            alt=""
-            width={360}
-            height={70}
-          />
-        ) : (
-          <PrismicRichText field={slice.primary.title} />
-        )}
+        <PrismicRichText field={slice.primary.title} />
         {slice.primary.shouldshowfilter && (
           <S.FilterContainer>
             <S.FilterTrigger onClick={() => setIsModalOpen(!isModalOpen)}>

@@ -90,7 +90,7 @@ const Navigation = ({ slice }: NavigationProps): JSX.Element => {
             $isPositive={slice.variation === "positive"}
             field={slice.primary.page_4}
           >
-            Contactanos
+            Contacto
           </S.Link>
         </S.InternalContainer>
       </S.FixedNavigationContainer>
@@ -106,7 +106,7 @@ const Navigation = ({ slice }: NavigationProps): JSX.Element => {
       <S.Link field={slice.primary.page_2}>Rutas</S.Link>
       <PrismicNextImage field={slice.primary.logo} alt="" />
       <S.Link field={slice.primary.page_3}>Nosotros</S.Link>
-      <S.Link field={slice.primary.page_4}>Contactanos</S.Link>
+      <S.Link field={slice.primary.page_4}>Contacto</S.Link>
     </S.NavigationContainer>
   );
 };

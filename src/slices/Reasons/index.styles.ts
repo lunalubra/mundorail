@@ -52,6 +52,7 @@ export const Reasons = styled.div`
     flex-wrap: unset;
     justify-content: unset;
     flex-direction: row;
+    max-width: 100%;
     overflow-x: auto;
     ::-webkit-scrollbar {
       display: none;

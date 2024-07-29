@@ -22,10 +22,12 @@ const ForMoreInfoContact = ({
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicNextImage field={slice.primary.background_image} alt="" />
-      <PrismicRichText field={slice.primary.title} />
-      <PrismicRichText field={slice.primary.subtitle} />
-      <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
+      <S.Content>
+        <PrismicNextImage field={slice.primary.background_image} alt="" />
+        <PrismicRichText field={slice.primary.title} />
+        <PrismicRichText field={slice.primary.subtitle} />
+        <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
+      </S.Content>
     </S.CustomBudgetsContainer>
   );
 };

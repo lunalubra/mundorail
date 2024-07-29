@@ -1,18 +1,19 @@
 import { PrismicNextLink } from "@prismicio/next";
 import styled from "styled-components";
 
-export const CustomBudgetsContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 550px;
+export const Content = styled.div`
   color: white;
   text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   gap: 36px;
+  margin: auto;
   margin-top: 72px;
-  padding-top: 72px;
+  padding-top: 92px;
+  padding-right: 72px;
+  max-width: 1280px;
+  text-align: center;
 
   img {
     position: absolute;
@@ -27,11 +28,14 @@ export const CustomBudgetsContainer = styled.div`
   & > p:first-of-type {
     all: unset;
     font-size: 48px;
-    line-height: 58.44px;
     text-align: center;
     max-width: 564px;
     position: relative;
     z-index: 10;
+    line-height: 110%;
+    text-align: center;
+
+    color: #ffffff;
   }
 
   & > p:not(:first-of-type) {
@@ -49,6 +53,7 @@ export const CustomBudgetsContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding: 32px;
+    align-items: center;
     & > p:first-of-type {
       font-size: 38px;
     }
@@ -56,6 +61,12 @@ export const CustomBudgetsContainer = styled.div`
       font-size: 16px;
     }
   }
+`;
+
+export const CustomBudgetsContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 550px;
 
   &::before {
     content: "";
@@ -67,7 +78,7 @@ export const CustomBudgetsContainer = styled.div`
     left: 0;
 
     background: linear-gradient(
-      360deg,
+      90deg,
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 1) 150%
     );
@@ -85,7 +96,12 @@ export const Button = styled(PrismicNextLink)`
   width: min-content;
   position: relative;
   z-index: 10;
+  margin-right: 135px;
 
   color: white;
   border-color: white;
+  @media only screen and (max-width: 768px) {
+    margin-right: unset;
+    margin: auto;
+  }
 `;

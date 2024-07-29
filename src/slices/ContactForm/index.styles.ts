@@ -132,6 +132,17 @@ export const Disclaimer = styled.div`
   color: #001159;
   font-size: 12px;
   max-width: 300px;
+
+  a {
+    all: unset;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
+    text-decoration-line: underline;
+    cursor: pointer;
+
+    color: #000000;
+  }
 `;
 
 export const CheckboxContainer = styled.div`

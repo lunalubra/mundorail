@@ -4,6 +4,7 @@ import { Content } from "@prismicio/client";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { useForm } from "react-hook-form";
+import { PrismicNextLink } from "@prismicio/next";
 
 /**
  * Props for `ContactForm`.
@@ -53,30 +54,36 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
           <S.InnerContainer onSubmit={handleSubmit(onSubmit)}>
             <S.InputSection>
               <S.InputContainer>
-                <S.Label>Nombre</S.Label>
+                <S.Label>*Nombre</S.Label>
                 <S.Input {...register("name", { required: true })} />
               </S.InputContainer>
               <S.InputContainer>
-                <S.Label>Apellido</S.Label>
+                <S.Label>*Apellido</S.Label>
                 <S.Input {...register("surname", { required: true })} />
               </S.InputContainer>
             </S.InputSection>
-            <S.InputContainer>
-              <S.Label>Nombre de la empresa</S.Label>
-              <S.Input {...register("company", { required: true })} />
-            </S.InputContainer>
             <S.InputSection>
               <S.InputContainer>
-                <S.Label>Correo electrónico</S.Label>
+                <S.Label>*Nombre de la empresa</S.Label>
+                <S.Input {...register("company", { required: true })} />
+              </S.InputContainer>
+              <S.InputContainer>
+                <S.Label>*País de origen</S.Label>
+                <S.Input {...register("country", { required: true })} />
+              </S.InputContainer>
+            </S.InputSection>
+            <S.InputSection>
+              <S.InputContainer>
+                <S.Label>*Correo electrónico</S.Label>
                 <S.Input {...register("email", { required: true })} />
               </S.InputContainer>
               <S.InputContainer>
-                <S.Label>Número de teléfono</S.Label>
+                <S.Label>*Número de teléfono</S.Label>
                 <S.Input {...register("number", { required: true })} />
               </S.InputContainer>
             </S.InputSection>
             <S.InputContainer>
-              <S.Label>Mensaje (opcional)</S.Label>
+              <S.Label>*Rutas de interés / Mensaje</S.Label>
               <S.Input {...register("message")} />
             </S.InputContainer>
             <S.BottomSection>
@@ -86,8 +93,11 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
                   {...register("checkbox", { required: true })}
                 />
                 <S.Disclaimer>
-                  *Estoy de acuerdo con el Política de privacidad y cómo utiliza
-                  mis datos mundorail.
+                  *Estoy de acuerdo con el{" "}
+                  <PrismicNextLink field={slice.primary.privacy_pdf}>
+                    Política de privacidad
+                  </PrismicNextLink>{" "}
+                  y cómo utiliza mis datos <strong>mundorail</strong>.
                 </S.Disclaimer>
               </S.CheckboxContainer>
               <S.SubmitButton

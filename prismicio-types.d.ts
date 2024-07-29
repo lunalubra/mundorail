@@ -654,6 +654,16 @@ export interface ContactFormSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * privacy pdf field in *ContactForm → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact_form.default.primary.privacy_pdf
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  privacy_pdf: prismic.LinkToMediaField;
 }
 
 /**

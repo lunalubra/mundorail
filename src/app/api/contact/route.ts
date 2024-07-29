@@ -34,6 +34,7 @@ export async function POST(request: Request) {
             <p>Teléfono: ${data.number} </p>
             <p>Empresa: ${data.company} </p>
             <p>Mensaje: ${data.message} </p>
+            <p>Mensaje: ${data.country} </p>
             `
     });
 

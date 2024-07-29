@@ -1461,6 +1461,16 @@ export interface InsuranceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * coverage field in *Insurance → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: insurance.default.primary.coverage
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  coverage: prismic.RichTextField;
 }
 
 /**

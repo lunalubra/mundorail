@@ -21,7 +21,7 @@ export const Title = styled.div`
 export const InsuranceContainer = styled.div`
   background-color: #fafafc;
   border: 1px solid #27bd83;
-  padding: 24px;
+  padding: 54px;
   margin: 32px;
   border-radius: 40px;
   display: flex;
@@ -38,12 +38,23 @@ export const Subtitle = styled.div`
     font-size: 24px;
   }
   text-align: center;
+  width: 100%;
+  max-width: 300px;
+  strong {
+    color: #001159;
+  }
 `;
 
 export const Description = styled.div`
+  margin-top: 32px;
   p {
     all: unset;
     font-size: 20px;
+    font-weight: 500;
+    line-height: 140%;
+    text-align: justify;
+
+    color: #001159;
   }
 
   strong {
@@ -59,7 +70,6 @@ export const Description = styled.div`
 `;
 
 export const Button = styled(PrismicNextLink)`
-  all: unset;
   font-size: 25px;
   line-height: 30px;
   padding: 15px 30px;
@@ -67,7 +77,7 @@ export const Button = styled(PrismicNextLink)`
   border-radius: 1000px;
   cursor: pointer;
   width: max-content;
-  margin: auto;
+  margin: 0 auto auto;
 
   color: #001159;
   border-color: #001159;
@@ -109,7 +119,7 @@ export const Preview = styled.div`
 export const InsuranceIconsContainer = styled.div`
   margin: auto;
   svg {
-    width: 200px;
+    width: 250px;
     height: auto;
   }
 `;
@@ -135,8 +145,9 @@ export const SecondSection = styled.div`
 `;
 
 export const Link = styled.div`
-  margin: auto;
+  margin-left: auto;
   font-size: 24px;
+  font-weight: 600;
   color: #001159;
   text-decoration: underline;
   cursor: pointer;

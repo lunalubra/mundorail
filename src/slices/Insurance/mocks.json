@@ -69,6 +69,17 @@
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com"
 				}
+			},
+			"coverage": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip commodo enim ad amet magna labore sit minim cillum sint velit commodo do. Duis consequat cupidatat occaecat nostrud."
+						}
+					}
+				]
 			}
 		},
 		"items": []

@@ -162,3 +162,51 @@ export const MobileTitle = styled.div`
     height: 0;
   }
 `;
+
+export const Card = styled.div<{ isHover: boolean }>`
+  position: relative;
+
+  img {
+    position: relative;
+    z-index: 10;
+    width: 300px;
+    height: 300px;
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+  }
+`;
+
+export const Gradient = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  border-radius: 20px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+`;
+
+export const HoverButton = styled.button`
+  all: unset;
+  font-size: 25px;
+  line-height: 30px;
+  padding: 15px 30px;
+  border: 2px solid white;
+  border-radius: 1000px;
+  cursor: pointer;
+  width: max-content;
+
+  color: #ffffff;
+  border-color: #ffffff;
+`;

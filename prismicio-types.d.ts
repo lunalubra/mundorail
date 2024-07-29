@@ -1331,6 +1331,16 @@ export interface HowDoesItWorkSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * alternative title field in *HowDoesItWork → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: how_does_it_work.default.primary.alternative_title
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  alternative_title: prismic.ImageField<never>;
 }
 
 /**
@@ -1516,6 +1526,16 @@ export interface MundorailRoutesSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * alternative title field in *MundorailRoutes → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mundorail_routes.default.primary.alternative_title
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  alternative_title: prismic.ImageField<never>;
 }
 
 /**

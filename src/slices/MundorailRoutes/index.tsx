@@ -7,6 +7,7 @@ import { createClient } from "@/prismicio";
 import { useEffect, useRef, useState } from "react";
 import { useHover } from "usehooks-ts";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const RouteCard = ({
   backgroundImage,
@@ -93,7 +94,16 @@ const MundorailRoutes = ({ slice }: MundorailRoutesProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <S.Title>
-        <PrismicRichText field={slice.primary.title} />
+        {slice.primary.alternative_title ? (
+          <Image
+            src={slice.primary.alternative_title.url!}
+            alt=""
+            width={360}
+            height={70}
+          />
+        ) : (
+          <PrismicRichText field={slice.primary.title} />
+        )}
       </S.Title>
       <S.RoutesContainer>
         {routes.map((route) => (

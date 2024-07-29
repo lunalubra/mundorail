@@ -4,7 +4,7 @@ const nextConfig = {
     styledComponents: true
   },
   images: {
-    domains: ["localhost", "images.prismic.io"]
+    domains: ["localhost", "images.prismic.io", "mundorail.cdn.prismic.io"]
   },
   productionBrowserSourceMaps: true
 };

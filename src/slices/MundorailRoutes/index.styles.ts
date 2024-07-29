@@ -9,6 +9,13 @@ export const Container = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
+
+  @media only screen and (max-width: 768px) {
+    img:first-of-type {
+      width: 300px;
+      height: auto;
+    }
+  }
 `;
 
 export const Title = styled.div`

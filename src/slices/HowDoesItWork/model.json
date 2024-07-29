@@ -33,6 +33,14 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "alternative_title": {
+          "type": "Image",
+          "config": {
+            "label": "alternative title",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {

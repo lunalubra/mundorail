@@ -7,6 +7,7 @@ import * as S from "./index.styles";
 import { PrismicRichText } from "@prismicio/react";
 import { useMediaQuery } from "usehooks-ts";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 /**
  * Props for `HowDoesItWork`.
@@ -56,10 +57,24 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <S.Title>{slice.primary.title}</S.Title>
+      {slice.primary.alternative_title ? (
+        <Image
+          src={slice.primary.alternative_title.url!}
+          alt=""
+          width={360}
+          height={118}
+        />
+      ) : (
+        <S.Title>{slice.primary.title}</S.Title>
+      )}
       <S.CardsContainer>
         {howDoesItWork.map((card, index) => (
-          <S.Card key={card?.uid}>
+          <S.Card
+            key={card?.uid}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
             <S.CardNumber>{index + 1}</S.CardNumber>
             {card?.data.title.length && (
               <PrismicRichText data-class="title" field={card?.data.title} />

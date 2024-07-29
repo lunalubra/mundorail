@@ -1,4 +1,5 @@
 import { PrismicNextLink } from "@prismicio/next";
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -12,6 +13,10 @@ export const Container = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding: 54px;
+    img:first-of-type {
+      width: 300px;
+      height: auto;
+    }
   }
 `;
 
@@ -34,7 +39,7 @@ export const CardsContainer = styled.div`
   max-width: 900px;
 `;
 
-export const Card = styled.div`
+export const Card = styled(motion.div)`
   width: 354px;
   height: 317px;
   padding: 32px;
@@ -101,6 +106,15 @@ export const CardNumber = styled.div`
     width: 103px;
     height: 103px;
     border-radius: 1000px;
+
+    @media only screen and (max-width: 768px) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    font-size: 48px;
   }
 `;
 

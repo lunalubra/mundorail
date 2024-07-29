@@ -53,7 +53,7 @@ export const ContactUsContainer = styled.div`
       background: linear-gradient(
         225deg,
         rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.5) 100%
+        rgba(0, 0, 0, 0.8) 100%
       );
     }
   }

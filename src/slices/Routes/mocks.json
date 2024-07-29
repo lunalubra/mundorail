@@ -29,6 +29,10 @@
 			"shouldshowfilter": {
 				"__TYPE__": "BooleanContent",
 				"value": false
+			},
+			"shouldspaceout": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": [

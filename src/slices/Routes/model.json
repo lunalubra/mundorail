@@ -44,6 +44,15 @@
             "placeholder_true": "true",
             "placeholder_false": "false"
           }
+        },
+        "shouldspaceout": {
+          "type": "Boolean",
+          "config": {
+            "label": "shouldSpaceOut",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {

@@ -169,7 +169,10 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
         )}
       </S.Title>
 
-      <S.CardsSection ref={cardsContainerRef}>
+      <S.CardsSection
+        ref={cardsContainerRef}
+        shouldSpaceOut={slice.primary.shouldspaceout}
+      >
         {formattedRoutes.map((card) => (
           <S.CardContainer
             key={card?.uid}

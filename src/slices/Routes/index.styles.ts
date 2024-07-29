@@ -56,12 +56,13 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const CardsSection = styled.div`
+export const CardsSection = styled.div<{ shouldSpaceOut: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 24px;
+  gap: ${(props) => (props.shouldSpaceOut ? "64px" : "24px")};
   width: 100%;
+  max-width: ${(props) => (props.shouldSpaceOut ? "800px" : "unset")};
   flex-wrap: wrap;
 
   @media only screen and (max-width: 768px) {

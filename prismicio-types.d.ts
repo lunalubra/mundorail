@@ -2091,6 +2091,17 @@ export interface RouteCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   shouldshowfilter: prismic.BooleanField;
+
+  /**
+   * shouldSpaceOut field in *Routes → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: route_card.default.primary.shouldspaceout
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  shouldspaceout: prismic.BooleanField;
 }
 
 /**

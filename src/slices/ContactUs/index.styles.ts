@@ -20,7 +20,7 @@ export const ContactUsContainer = styled.div`
   img {
     width: 100%;
     height: 100%;
-    max-height: 780px;
+    max-height: 650px;
     object-fit: cover;
     object-position: 50% 50%;
     @media only screen and (max-width: 768px) {
@@ -35,7 +35,7 @@ export const ContactUsContainer = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    max-height: 780px;
+    max-height: 650px;
     display: block;
     position: absolute;
     top: 0;
@@ -78,6 +78,7 @@ export const MainContentWrapper = styled.div`
     display: block;
     font-size: 20px;
     line-height: 140%;
+    text-align: justify;
   }
 
   strong {

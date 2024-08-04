@@ -5,14 +5,13 @@ export const CustomBudgetsContainer = styled.div`
   position: relative;
   width: 100%;
   height: 450px;
-  margin-top: 110px;
   color: #001159;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 36px;
-  margin: 72px 0 120px;
+  margin: 92px 0 32px;
 
   img {
     position: absolute;

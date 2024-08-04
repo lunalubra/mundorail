@@ -9,8 +9,15 @@ export const Title = styled.div`
     all: unset;
     font-size: 48px;
     line-height: 58px;
-    margin-bottom: 32px;
     display: block;
+  }
+
+  @media only screen and (max-width: 768px) {
+    text-align: left;
+    padding-left: 54px;
+    p:first-of-type {
+      font-size: 42px;
+    }
   }
 `;
 

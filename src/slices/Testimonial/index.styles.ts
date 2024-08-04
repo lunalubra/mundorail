@@ -24,12 +24,13 @@ export const TestimonialsContainer = styled.div`
 
 export const Content = styled.div`
   width: 100%;
+  height: 100%;
   max-width: 1280px;
   margin: auto;
-  padding-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 46px;
 
   & > p:first-of-type  {

@@ -273,6 +273,8 @@ export const ExtraSection = styled.div`
   height: 510px;
   display: flex;
   flex-direction: column;
+  background-repeat: no-repeat;
+  background-size: cover;
 `;
 
 export const ExtraSectionTitle = styled.div`

@@ -11,7 +11,6 @@ import { PrismicNextImage } from "@prismicio/next";
 import { useMediaQuery } from "usehooks-ts";
 import SeparatorImage from "../../lib/RouteSeparator.png";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 /**
  * Props for `RouteHero`.
@@ -24,7 +23,6 @@ export type RouteHeroProps = SliceComponentProps<Content.RouteHeroSlice>;
 const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const client = createClient();
-  const router = useRouter();
 
   const [route, setRoute] =
     useState<

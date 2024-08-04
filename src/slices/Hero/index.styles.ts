@@ -62,6 +62,7 @@ export const Title = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
+    text-align: center;
     em {
       line-height: 100%;
       display: block;

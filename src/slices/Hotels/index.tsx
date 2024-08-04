@@ -30,7 +30,9 @@ const Hotels = ({ slice }: HotelsProps): JSX.Element => {
             </S.CloseIconContainer>
             <PrismicRichText field={slice.primary.description} />
             <PrismicRichText field={slice.primary.second_description} />
-            <S.Button>{slice.primary.cta}</S.Button>
+            <S.Button field={slice.primary.cta_link}>
+              {slice.primary.cta}
+            </S.Button>
           </S.Modal>
         </S.ModalContainer>
       )}
@@ -55,7 +57,9 @@ const Hotels = ({ slice }: HotelsProps): JSX.Element => {
           {!isMobile && (
             <S.RightContainer>
               <PrismicRichText field={slice.primary.second_description} />
-              <S.DarkButton>{slice.primary.cta}</S.DarkButton>
+              <S.DarkButton field={slice.primary.cta_link}>
+                {slice.primary.cta}
+              </S.DarkButton>
             </S.RightContainer>
           )}
         </S.BottomSectionContainer>

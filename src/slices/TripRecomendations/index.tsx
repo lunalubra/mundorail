@@ -29,7 +29,7 @@ const TripRecomendations = ({
         <S.Description $isSurvivors={slice.primary.issurvivors}>
           <PrismicRichText field={slice.primary.recomendations} />
         </S.Description>
-        <S.Button>{slice.primary.cta}</S.Button>
+        <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
       </S.LeftSection>
       <S.RightSection>
         <PrismicNextImage field={slice.primary.image} alt="" />

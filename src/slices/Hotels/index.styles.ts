@@ -1,3 +1,4 @@
+import { PrismicNextLink } from "@prismicio/next";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -108,8 +109,9 @@ export const CloseIconContainer = styled.div`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(PrismicNextLink)`
   all: unset;
+  display: block;
   font-size: 20px;
   line-height: 30px;
   padding: 15px 30px;
@@ -123,8 +125,9 @@ export const Button = styled.button`
   margin-top: 32px;
 `;
 
-export const DarkButton = styled.button`
+export const DarkButton = styled(PrismicNextLink)`
   all: unset;
+  display: block;
   font-size: 20px;
   line-height: 30px;
   padding: 15px 30px;

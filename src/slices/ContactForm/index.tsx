@@ -5,6 +5,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { useForm } from "react-hook-form";
 import { PrismicNextLink } from "@prismicio/next";
+import { useState } from "react";
 
 /**
  * Props for `ContactForm`.
@@ -18,17 +19,27 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
   const {
     register,
     handleSubmit,
-    formState: { isValid }
+    formState: { isValid, isDirty },
+    reset
   } = useForm();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const onSubmit = async (data: any) => {
-    console.log(data);
+    setIsLoading(true);
     const response = await fetch("/api/contact", {
       method: "post",
       body: JSON.stringify(data)
     });
-
-    console.log(response);
+    if (response.ok) {
+      setIsSuccess(true);
+      reset();
+    }
+    setIsLoading(false);
   };
+
+  if (isDirty && isSuccess) {
+    setIsSuccess(false);
+  }
 
   return (
     <S.BigContainer>
@@ -102,8 +113,8 @@ const ContactForm = ({ slice }: ContactFormProps): JSX.Element => {
               </S.CheckboxContainer>
               <S.SubmitButton
                 type="submit"
-                value="Enviar"
-                disabled={!isValid}
+                value={isSuccess ? "✔" : "Enviar"}
+                disabled={!isValid || isLoading}
               />
             </S.BottomSection>
           </S.InnerContainer>

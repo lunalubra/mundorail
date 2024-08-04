@@ -16,7 +16,7 @@ export const Container = styled.div<{ $isSurvivors: boolean }>`
   padding-top: 64px;
 `;
 
-export const ShareButton = styled.div<{ $isSurvivors: boolean }>`
+export const ShareButton = styled.a<{ $isSurvivors: boolean }>`
   background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#27bd83")};
   position: absolute;
   top: 0;
@@ -53,7 +53,7 @@ export const Notes = styled.div`
   text-align: left;
 `;
 
-export const Button = styled.button<{ $isSurvivors: boolean }>`
+export const Button = styled.a<{ $isSurvivors: boolean }>`
   all: unset;
   font-size: 25px;
   line-height: 30px;

@@ -63,8 +63,9 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
   return (
     <S.Wrapper>
       <S.ShareButton
+        href={(route?.data.pdf as any)?.url}
+        target="_blank"
         $isSurvivors={slice.primary.issurvivors}
-        onClick={() => router.push((route?.data.pdf as any).url)}
       >
         <ShareIcons />
       </S.ShareButton>
@@ -139,7 +140,8 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
             <PrismicRichText field={route?.data.description} />
           </S.Description>
           <S.Button
-            onClick={() => router.push((route?.data.pdf as any).url)}
+            href={(route?.data.pdf as any)?.url}
+            target="_blank"
             $isSurvivors={slice.primary.issurvivors}
           >
             Ver itinerario

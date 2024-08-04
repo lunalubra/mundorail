@@ -61,7 +61,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
   }
 
   return (
-    <>
+    <S.Wrapper>
       <S.ShareButton
         $isSurvivors={slice.primary.issurvivors}
         onClick={() => router.push((route?.data.pdf as any).url)}
@@ -153,7 +153,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
           </S.Disclaimer>
         </S.DesktopContainer>
       </S.Container>
-    </>
+    </S.Wrapper>
   );
 };
 

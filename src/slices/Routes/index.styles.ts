@@ -182,16 +182,21 @@ export const CardBottomSection = styled.div`
   left: 20px;
   display: flex;
   flex-direction: column;
+  max-width: calc(100% - 40px);
+  text-overflow: ellipsis;
+  overflow: hidden;
 
   p {
     all: unset;
     font-size: 21px;
     display: block;
+    white-space: nowrap;
   }
 
   strong {
     font-size: 34px;
     display: block;
+    white-space: nowrap;
   }
 `;
 

@@ -14,6 +14,9 @@ export const NavigationContainer = styled.div`
   justify-content: space-between;
   margin: auto;
   padding: 55px 32px;
+  img {
+    cursor: pointer;
+  }
 `;
 
 export const Link = styled(PrismicNextLink)<{ $isPositive?: boolean }>`
@@ -120,4 +123,7 @@ export const InternalContainer = styled.div`
   justify-content: space-between;
   margin: auto;
   padding: 55px 32px;
+  img {
+    cursor: pointer;
+  }
 `;

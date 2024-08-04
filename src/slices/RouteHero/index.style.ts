@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div`
+  position: relative;
+`;
+
 export const Container = styled.div<{ $isSurvivors: boolean }>`
   color: ${(props) => (props.$isSurvivors ? "#001159" : "#001159")};
   display: flex;
@@ -22,7 +26,7 @@ export const ShareButton = styled.div<{ $isSurvivors: boolean }>`
   align-self: flex-start;
   margin: 16px;
   cursor: pointer;
-  z-index: 100000;
+  z-index: 15;
 `;
 
 export const Title = styled.div`

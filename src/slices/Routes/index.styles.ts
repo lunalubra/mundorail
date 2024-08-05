@@ -16,7 +16,7 @@ export const Title = styled.div`
     text-align: left;
     padding-left: 54px;
     p:first-of-type {
-      font-size: 42px;
+      font-size: 38px;
     }
   }
 `;
@@ -42,6 +42,9 @@ export const RoutesSectionContainer = styled.div`
   margin: auto;
   padding: 54px 0;
   max-width: 1280px;
+  @media only screen and (max-width: 768px) {
+    gap: 32px;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -61,6 +64,12 @@ export const CardContainer = styled.div`
   &:hover {
     box-shadow: -10px 25px 40px 0px #27bd83;
   }
+
+  @media only screen and (max-width: 768px) {
+    transform: scale(0.8);
+    margin-right: -64px;
+    margin-bottom: -91px;
+  }
 `;
 
 export const CardsSection = styled.div<{ shouldSpaceOut: boolean }>`
@@ -73,7 +82,7 @@ export const CardsSection = styled.div<{ shouldSpaceOut: boolean }>`
   flex-wrap: wrap;
 
   @media only screen and (max-width: 768px) {
-    padding-bottom: 64px;
+    padding-bottom: 48px;
     ::-webkit-scrollbar {
       display: none;
     }
@@ -83,6 +92,7 @@ export const CardsSection = styled.div<{ shouldSpaceOut: boolean }>`
     flex-wrap: nowrap;
     padding-left: 54px;
     justify-content: unset;
+    gap: 0;
   }
 `;
 

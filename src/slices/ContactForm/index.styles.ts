@@ -58,6 +58,7 @@ export const Title = styled.div`
   p {
     all: unset;
     font-size: 64px;
+    line-height: 100%;
   }
   strong {
     color: #27bd83;

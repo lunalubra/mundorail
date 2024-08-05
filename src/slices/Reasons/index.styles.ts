@@ -39,6 +39,8 @@ export const ReasonContainer = styled.div`
   position: relative;
   min-width: 300px;
   width: 300px;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Reasons = styled.div`
@@ -114,6 +116,12 @@ export const ReasonTitle = styled.div`
 `;
 
 export const ReasonDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
   p {
     all: unset;
     line-height: 140%;

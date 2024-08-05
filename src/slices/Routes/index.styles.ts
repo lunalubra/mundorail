@@ -209,6 +209,7 @@ export const CardBottomSection = styled.div`
 
 export const FilterContainer = styled.div`
   position: relative;
+  margin-top: 16px;
 `;
 
 export const FilterTrigger = styled.div`
@@ -216,6 +217,10 @@ export const FilterTrigger = styled.div`
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  svg {
+    width: 32px;
+    height: 32px;
+  }
 `;
 
 export const FilterModal = styled.div`

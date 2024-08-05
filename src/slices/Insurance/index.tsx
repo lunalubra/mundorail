@@ -6,7 +6,7 @@ import * as S from "./index.styles";
 import InsuranceIcons from "../../lib/InsuranceIcons";
 import { useState } from "react";
 import CloseIcon from "../../lib/CloseIcon";
-
+import InsuranceCompanyIcon from "../../lib/InsuranceCompanyIcon";
 /**
  * Props for `Insurance`.
  */
@@ -51,6 +51,9 @@ const Insurance = ({ slice }: InsuranceProps): JSX.Element => {
             <S.Button field={slice.primary.cta_link}>
               {slice.primary.cta}
             </S.Button>
+            <S.InsuranceCompanyContainer>
+              <InsuranceCompanyIcon />
+            </S.InsuranceCompanyContainer>
           </S.FirstSection>
           <S.SecondSection>
             <S.Header>¿Qué incluye?</S.Header>

@@ -27,7 +27,7 @@ export const Title = styled.div`
   }
 
   @media only screen and (min-width: 768px) {
-    margin: 70px 0;
+    margin: 70px 0 16px;
   }
 `;
 

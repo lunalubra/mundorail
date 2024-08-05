@@ -141,7 +141,9 @@ export const ImagesContainer = styled.div`
 `;
 
 export const DesktopTitle = styled.div`
+  margin-top: 24px;
   @media only screen and (max-width: 768px) {
+    margin: unset;
     display: none;
     visibility: hidden;
     width: 0;
@@ -193,6 +195,7 @@ export const Gradient = styled.div`
   background: radial-gradient(
     circle,
     rgba(0, 0, 0, 0.8) 50%,
+    rgba(0, 0, 0, 0) 70%,
     rgba(0, 0, 0, 0) 100%
   );
 `;

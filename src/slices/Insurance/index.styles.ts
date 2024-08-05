@@ -1,6 +1,10 @@
 import { PrismicNextLink } from "@prismicio/next";
 import styled from "styled-components";
 
+export const InsuranceCompanyContainer = styled.div`
+  margin-right: auto;
+`;
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -13,6 +17,7 @@ export const Container = styled.div`
 export const Title = styled.div`
   p {
     all: unset;
+    color: #001159;
     font-size: 42px;
   }
   text-align: center;
@@ -35,11 +40,12 @@ export const InsuranceContainer = styled.div`
 export const Subtitle = styled.div`
   p {
     all: unset;
-    font-size: 24px;
+    color: #001159;
+    font-size: 32px;
   }
   text-align: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 400px;
   strong {
     color: #001159;
   }

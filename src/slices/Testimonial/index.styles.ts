@@ -33,12 +33,13 @@ export const Content = styled.div`
   justify-content: center;
   gap: 46px;
 
-  & > p:first-of-type  {
+  & > p:first-of-type {
     all: unset;
     font-size: 48px;
 
     @media only screen and (max-width: 768px) {
-      font-size: 32px;
+      padding: 0 32px;
+      font-size: 28px;
       text-align: center;
     }
   }

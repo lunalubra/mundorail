@@ -44,12 +44,19 @@ export const CustomBudgetsContainer = styled.div`
 
   @media only screen and (max-width: 768px) {
     padding: 32px;
+
+    img {
+      object-position: 10%;
+    }
+
     & > p:first-of-type {
       all: unset;
-      font-size: 38px;
+      line-height: 100%;
+      font-size: 42px;
     }
     & > p:not(:first-of-type) {
-      font-size: 16px;
+      line-height: 140%;
+      font-size: 18px;
     }
   }
 `;

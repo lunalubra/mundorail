@@ -12,7 +12,7 @@ export const Container = styled.div`
   margin-top: 76px;
 
   @media only screen and (max-width: 768px) {
-    padding: 54px;
+    padding: 0 54px 54px 54px;
     img:first-of-type {
       width: 300px;
       height: auto;

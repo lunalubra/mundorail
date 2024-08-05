@@ -24,9 +24,9 @@ export const ContactUsContainer = styled.div`
     object-fit: cover;
     object-position: 50% 50%;
     @media only screen and (max-width: 768px) {
-      max-height: 780px;
-      height: 780px;
-      object-position: 30%;
+      max-height: 550px;
+      height: 550px;
+      object-position: 65%;
     }
   }
 
@@ -48,8 +48,8 @@ export const ContactUsContainer = styled.div`
     );
 
     @media only screen and (max-width: 768px) {
-      max-height: 780px;
-      height: 780px;
+      max-height: 550px;
+      height: 550px;
       background: linear-gradient(
         225deg,
         rgba(0, 0, 0, 0) 0%,
@@ -93,7 +93,7 @@ export const MainContentWrapper = styled.div`
     }
 
     p  {
-      font-size: 17px;
+      font-size: 14px;
     }
   }
 `;

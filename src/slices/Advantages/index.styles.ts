@@ -66,11 +66,10 @@ export const InternalContainer = styled.div`
 export const Title = styled.div`
   p {
     all: unset;
-    font-size: 32px;
+    font-size: 42px;
   }
 
   strong {
-    font-size: 42px;
     color: #27bd83;
   }
 

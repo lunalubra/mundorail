@@ -60,13 +60,13 @@ const Insurance = ({ slice }: InsuranceProps): JSX.Element => {
             <S.Preview>
               <PrismicRichText field={slice.primary.preview} />
             </S.Preview>
-            <S.Link onClick={() => setIsModalOpen(true)}>Ver más</S.Link>
             <S.Header style={{ marginTop: "32px" }}>
               Cobertura de anulación
             </S.Header>
             <S.Preview>
               <PrismicRichText field={slice.primary.coverage} />
             </S.Preview>
+            <S.Link onClick={() => setIsModalOpen(true)}>Ver más</S.Link>
           </S.SecondSection>
         </S.InsuranceContainer>
       </S.Container>

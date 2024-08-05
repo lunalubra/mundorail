@@ -4,11 +4,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 48px;
   max-width: 1280px;
   margin: auto;
   display: flex;
   flex-direction: column;
+  padding: 32px 0;
 
   @media only screen and (max-width: 768px) {
     img:first-of-type {

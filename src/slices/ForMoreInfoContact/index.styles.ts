@@ -54,10 +54,14 @@ export const Content = styled.div`
   @media only screen and (max-width: 768px) {
     padding: 32px;
     align-items: center;
+    padding-top: 128px;
+
     & > p:first-of-type {
+      line-height: 100%;
       font-size: 38px;
     }
     & > p:not(:first-of-type) {
+      line-height: 120%;
       font-size: 16px;
     }
   }
@@ -82,6 +86,16 @@ export const CustomBudgetsContainer = styled.div`
       rgba(0, 0, 0, 0) 0%,
       rgba(0, 0, 0, 1) 150%
     );
+  }
+
+  @media only screen and (max-width: 768px) {
+    &::before {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 1) 150%
+      );
+    }
   }
 `;
 

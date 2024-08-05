@@ -16,6 +16,7 @@ export const Container = styled.div`
     all: unset;
     font-size: 20px;
     max-width: 500px;
+    color: #001159;
 
     &:first-of-type {
       margin-bottom: -42px;
@@ -90,6 +91,7 @@ export const RouteTitle = styled.div`
     display: block;
     position: relative;
     z-index: 15;
+    color: #001159;
   }
 
   strong {
@@ -109,6 +111,7 @@ export const RouteDescription = styled.div`
   z-index: 15;
   p {
     all: unset;
+    color: #001159;
     font-size: 16px;
   }
   @media only screen and (min-width: 768px) {
@@ -152,6 +155,8 @@ export const DesktopTitle = styled.div`
 `;
 
 export const MobileTitle = styled.div`
+  margin-top: 24px;
+
   & > svg {
     width: 250px;
     height: auto;

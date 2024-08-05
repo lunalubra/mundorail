@@ -69,7 +69,6 @@ export const Description = styled.div`
 
   @media only screen and (max-width: 768px) {
     p {
-      all: unset;
       font-size: 16px;
     }
   }
@@ -128,6 +127,12 @@ export const InsuranceIconsContainer = styled.div`
     width: 250px;
     height: auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    svg {
+      width: 150px;
+    }
+  }
 `;
 
 export const FirstSection = styled.div`
@@ -137,10 +142,7 @@ export const FirstSection = styled.div`
   gap: 32px;
   flex-grow: 1;
   flex-basis: 0;
-
-  @media only screen and (max-width: 768px) {
-    gap: 16px;
-  }
+  text-align: justify;
 `;
 
 export const SecondSection = styled.div`
@@ -151,7 +153,7 @@ export const SecondSection = styled.div`
 `;
 
 export const Link = styled.div`
-  margin-left: auto;
+  margin: auto;
   font-size: 24px;
   font-weight: 600;
   color: #001159;

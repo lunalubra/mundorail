@@ -16,6 +16,12 @@ export const Title = styled.div<{ $isSurvivors: boolean }>`
     font-size: 48px;
     color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
   }
+
+  @media only screen and (max-width: 768px) {
+    p {
+      font-size: 42px;
+    }
+  }
 `;
 
 export const Description = styled.div<{ $isSurvivors: boolean }>`
@@ -27,6 +33,13 @@ export const Description = styled.div<{ $isSurvivors: boolean }>`
 
   strong {
     color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#27bd83")};
+  }
+
+  @media only screen and (max-width: 768px) {
+    li {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
   }
 `;
 

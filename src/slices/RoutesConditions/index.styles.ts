@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div<{ $isSurvivors: boolean }>`
+export const Container = styled.div<{ $isSurvivors: boolean; $url: string }>`
   h6 {
     all: unset;
     font-size: 42px;
@@ -19,17 +19,20 @@ export const Container = styled.div<{ $isSurvivors: boolean }>`
   flex-direction: column;
   gap: 32px;
   padding: 64px 0;
-  background-color: #f5f5f5;
   position: relative;
+  background-color: rgba(0, 0, 0, 0.05);
+  z-index: 1;
 
   &::before {
     content: "";
     position: absolute;
-    backdrop-filter: blur(10px);
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0.2;
+    background: ${(props) => props.$url};
+    z-index: 2;
   }
 `;
 
@@ -48,6 +51,11 @@ export const ListItem = styled.div<{ $isSurvivors: boolean }>`
   background-color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#25be83")};
   color: white;
   border-radius: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   strong {
     color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};

@@ -70,9 +70,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
         $isSurvivors={slice.primary.issurvivors}
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
-        style={{
-          backgroundImage: `url(${route?.data.signature_image.url!})`
-        }}
+        $url={`url(${route?.data.signature_image.url!})`}
       >
         {firstTitle && <PrismicRichText field={[firstTitle!]} />}
         {firstConditions.length && (

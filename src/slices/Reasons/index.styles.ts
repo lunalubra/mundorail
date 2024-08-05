@@ -85,6 +85,10 @@ export const Title = styled.div`
   padding: 0 32px;
   max-width: 550px;
   margin: auto;
+  img {
+    margin-top: 32px;
+  }
+
   p {
     all: unset;
     font-size: 42px;

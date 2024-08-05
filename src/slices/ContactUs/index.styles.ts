@@ -24,8 +24,8 @@ export const ContactUsContainer = styled.div`
     object-fit: cover;
     object-position: 50% 50%;
     @media only screen and (max-width: 768px) {
-      max-height: 550px;
-      height: 550px;
+      max-height: 600px;
+      height: 600px;
       object-position: 65%;
     }
   }
@@ -48,8 +48,8 @@ export const ContactUsContainer = styled.div`
     );
 
     @media only screen and (max-width: 768px) {
-      max-height: 550px;
-      height: 550px;
+      max-height: 600px;
+      height: 600px;
       background: linear-gradient(
         225deg,
         rgba(0, 0, 0, 0) 0%,
@@ -90,6 +90,7 @@ export const MainContentWrapper = styled.div`
 
     h1 {
       margin-top: 92px;
+      font-size: 42px;
     }
 
     p  {

@@ -30,6 +30,9 @@ export const RightContainer = styled.div`
   padding: 24px;
   border-radius: 20px;
   width: 100%;
+  @media only screen and (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const InnerContainer = styled.form`
@@ -75,6 +78,12 @@ export const Subtitle = styled.div`
   p {
     all: unset;
     font-size: 32px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    p  {
+      font-size: 24px;
+    }
   }
 `;
 

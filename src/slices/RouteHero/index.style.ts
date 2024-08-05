@@ -179,8 +179,10 @@ export const Disclaimer = styled.p`
   margin-top: 16px;
   padding: 0 32px;
   font-size: 12px;
+  margin-bottom: 64px;
   @media only screen and (min-width: 768px) {
     padding: unset;
+    margin-bottom: unset;
   }
 `;
 

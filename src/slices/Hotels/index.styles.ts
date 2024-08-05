@@ -26,6 +26,7 @@ export const TopSectionContainer = styled.div<{ $isSurvivors: boolean }>`
 
   p:not(:first-of-type) {
     all: unset;
+    margin-top: 16px;
 
     strong {
       color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#27bd83")};
@@ -41,6 +42,8 @@ export const TopSectionContainer = styled.div<{ $isSurvivors: boolean }>`
     line-height: 140%;
 
     p:not(:first-of-type) {
+      margin-top: unset;
+
       strong {
         color: ${(props) => (props.$isSurvivors ? "white" : "#27bd83")};
       }
@@ -50,6 +53,7 @@ export const TopSectionContainer = styled.div<{ $isSurvivors: boolean }>`
 
 export const BottomSectionContainer = styled.div<{ $isSurvivors: boolean }>`
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding: 32px;
 

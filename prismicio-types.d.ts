@@ -2020,6 +2020,16 @@ export interface ReasonsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * alternative title field in *Reasons → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: reasons.default.primary.alternative_title
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  alternative_title: prismic.ImageField<never>;
 }
 
 /**

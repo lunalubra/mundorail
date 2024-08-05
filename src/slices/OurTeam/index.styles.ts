@@ -16,6 +16,12 @@ export const Container = styled.div`
     width: 100%;
     height: auto;
   }
+
+  @media only screen and (max-width: 768px) {
+    img {
+      margin-top: -30px;
+    }
+  }
 `;
 
 export const Title = styled.div`
@@ -25,6 +31,12 @@ export const Title = styled.div`
   }
   strong {
     color: #27bd83;
+  }
+
+  @media only screen and (max-width: 768px) {
+    p {
+      font-size: 39px;
+    }
   }
 `;
 
@@ -36,5 +48,9 @@ export const Description = styled.div`
   }
   strong {
     color: #27bd83;
+  }
+
+  @media only screen and (max-width: 768px) {
+    text-align: justify;
   }
 `;

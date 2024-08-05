@@ -80,6 +80,9 @@ export const WhyEuropesControllers = styled.div`
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
+  @media only screen and (max-width: 768px) {
+    bottom: 48px;
+  }
 `;
 
 export const WhyEuropeController = styled.div<{ $isActive: boolean }>`

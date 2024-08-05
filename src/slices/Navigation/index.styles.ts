@@ -98,8 +98,10 @@ export const FixedContainer = styled.div<{ $isPositive?: boolean }>`
   svg {
     width: 32px;
     height: auto;
+
     path {
-      fill: #001159;
+      fill: ${(props) => (props.$isPositive ? "#001159" : "white")} !important;
+      stroke: black !important;
     }
   }
 

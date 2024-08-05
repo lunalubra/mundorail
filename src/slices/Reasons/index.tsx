@@ -5,6 +5,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { useEffect, useState } from "react";
 import { createClient } from "@/prismicio";
+import Image from "next/image";
 
 /**
  * Props for `Reasons`.
@@ -51,7 +52,16 @@ const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
         data-slice-variation={slice.variation}
       >
         <S.Title>
-          <PrismicRichText field={slice.primary.title} />
+          {slice.primary.alternative_title ? (
+            <Image
+              src={slice.primary.alternative_title.url!}
+              alt=""
+              width={300}
+              height={75}
+            />
+          ) : (
+            <PrismicRichText field={slice.primary.title} />
+          )}
         </S.Title>
         <S.Description>
           <PrismicRichText field={slice.primary.description} />

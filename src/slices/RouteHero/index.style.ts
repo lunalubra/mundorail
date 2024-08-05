@@ -29,9 +29,10 @@ export const ShareButton = styled.a<{ $isSurvivors: boolean }>`
   z-index: 15;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ $isSurvivors: boolean }>`
   p {
     all: unset;
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
     font-size: 42px;
   }
 `;
@@ -196,7 +197,7 @@ export const DesktopImage = styled.div`
 
 export const Note = styled.div<{ $isSurvivors: boolean }>`
   text-align: left;
-  background-color: #25be83;
+  background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#25be83")};
   padding: 16px;
   max-width: 260px;
   position: absolute;
@@ -205,7 +206,7 @@ export const Note = styled.div<{ $isSurvivors: boolean }>`
 
   p {
     all: unset;
-    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
     font-weight: 700;
   }
 
@@ -220,7 +221,7 @@ export const Price = styled.div<{ $isSurvivors: boolean }>`
   right: 32px;
   z-index: 2;
   border-radius: 16px;
-  background-color: #25be83;
+  background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#25be83")};
   font-size: 38px;
   font-weight: 700;
   line-height: 100%;
@@ -228,7 +229,7 @@ export const Price = styled.div<{ $isSurvivors: boolean }>`
   width: 170px;
 
   div {
-    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 0;
     left: 0;
@@ -236,7 +237,7 @@ export const Price = styled.div<{ $isSurvivors: boolean }>`
   }
 
   span {
-    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
+    color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 3px;
     left: 16px;

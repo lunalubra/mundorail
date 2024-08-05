@@ -10,6 +10,7 @@ import ShareIcons from "../../lib/ShareIcons";
 import { PrismicNextImage } from "@prismicio/next";
 import { useMediaQuery } from "usehooks-ts";
 import SeparatorImage from "../../lib/RouteSeparator.png";
+import SurvivorSeparatorImage from "../../lib/SurvivorRouteSeparator.png";
 import Image from "next/image";
 
 /**
@@ -91,7 +92,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
       >
         {isMobile && (
           <>
-            <S.Title>
+            <S.Title $isSurvivors={slice.primary.issurvivors}>
               <PrismicRichText field={route?.data.title} />
             </S.Title>
             <S.CardContainer $isSurvivors={slice.primary.issurvivors}>
@@ -128,10 +129,19 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
         <S.DesktopContainer>
           {!isMobile && (
             <>
-              <S.Title>
+              <S.Title $isSurvivors={slice.primary.issurvivors}>
                 <PrismicRichText field={route?.data.title} />
               </S.Title>
-              <Image alt="" src={SeparatorImage.src} width={500} height={20} />
+              <Image
+                alt=""
+                src={
+                  slice.primary.issurvivors
+                    ? SurvivorSeparatorImage.src
+                    : SeparatorImage.src
+                }
+                width={500}
+                height={20}
+              />
             </>
           )}
           <S.Description $isSurvivors={slice.primary.issurvivors}>

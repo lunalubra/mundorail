@@ -23,7 +23,7 @@ const TripRecomendations = ({
       data-slice-variation={slice.variation}
     >
       <S.LeftSection>
-        <S.Title>
+        <S.Title $isSurvivors={slice.primary.issurvivors}>
           <PrismicRichText field={slice.primary.title} />
         </S.Title>
         <S.Description $isSurvivors={slice.primary.issurvivors}>

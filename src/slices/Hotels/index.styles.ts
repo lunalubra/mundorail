@@ -72,7 +72,7 @@ export const RightContainer = styled.div`
     text-align: center;
     color: #001159;
   }
-  text-align: center;
+  text-align: justify;
   padding: 32px;
   margin: auto;
 `;

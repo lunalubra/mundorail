@@ -10,10 +10,11 @@ export const Container = styled.div`
   color: #001159;
 `;
 
-export const Title = styled.div`
+export const Title = styled.div<{ $isSurvivors: boolean }>`
   p {
     all: unset;
     font-size: 48px;
+    color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
   }
 `;
 

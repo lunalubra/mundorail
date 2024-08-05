@@ -21,6 +21,7 @@ export const Description = styled.div<{ $isSurvivors: boolean }>`
   li {
     font-size: 20px;
     line-height: 140%;
+    text-align: justify;
   }
 
   strong {

@@ -246,6 +246,7 @@ export const Price = styled.div<{ $isSurvivors: boolean }>`
 
   p {
     all: unset;
+    color: white;
     display: block;
     position: absolute;
     bottom: 5px;

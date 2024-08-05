@@ -64,6 +64,14 @@ export const BottomSectionContainer = styled.div<{ $isSurvivors: boolean }>`
 `;
 
 export const RightContainer = styled.div`
+  p {
+    all: unset;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 140%;
+    text-align: center;
+    color: #001159;
+  }
   text-align: center;
   padding: 32px;
   margin: auto;

@@ -101,7 +101,7 @@ export const DesktopContainer = styled.div<{ $isSurvivors: boolean }>`
     max-width: 620px;
     font-size: 20px;
     line-height: 28px;
-    text-align: justified;
+    text-align: justify;
 
     strong {
       color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#27bd83")};

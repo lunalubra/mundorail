@@ -18,7 +18,7 @@ const SurvivorsCard = ({ src, uid }: { src: string; uid: string }) => {
   const router = useRouter();
 
   return (
-    <S.Card ref={hoverRef} isHover={isHover}>
+    <S.Card ref={hoverRef}>
       {isHover && (
         <>
           <S.Gradient />

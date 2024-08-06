@@ -170,7 +170,7 @@ export const MobileTitle = styled.div`
   }
 `;
 
-export const Card = styled.div<{ isHover: boolean }>`
+export const Card = styled.div`
   position: relative;
 
   img {

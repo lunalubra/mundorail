@@ -59,7 +59,7 @@ export const ContactUsContainer = styled.div`
   }
 `;
 
-export const MainContentWrapper = styled.div`
+export const MainContentWrapper = styled.div<{ $isCentered: boolean }>`
   width: 100%;
   max-width: 540px;
   display: flex;
@@ -86,7 +86,12 @@ export const MainContentWrapper = styled.div`
   }
 
   @media only screen and (max-width: 768px) {
-    max-width: calc(80% - 64px);
+    align-items: ${(props) => (props.$isCentered ? "center" : "unset")};
+    max-width: ${(props) => (props.$isCentered ? "100%" : "calc(80% - 64px)")};
+
+    strong {
+      color: ${(props) => (props.$isCentered ? "white" : "#27bd83")};
+    }
 
     h1 {
       margin-top: 92px;
@@ -99,7 +104,7 @@ export const MainContentWrapper = styled.div`
   }
 `;
 
-export const MainContent = styled.div`
+export const MainContent = styled.div<{ $isCentered: boolean }>`
   position: absolute;
   top: 50%;
   left: 50%;
@@ -110,7 +115,8 @@ export const MainContent = styled.div`
   margin-left: 85px;
 
   @media only screen and (max-width: 768px) {
-    width: calc(100% - 32px);
-    margin-left: 32px;
+    width: ${(props) => (props.$isCentered ? "100%" : "calc(100% - 32px)")};
+    margin-left: ${(props) => (props.$isCentered ? "unset" : "32px")};
+    padding: ${(props) => (props.$isCentered ? "0 32px" : "")};
   }
 `;

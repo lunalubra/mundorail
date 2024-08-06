@@ -739,6 +739,17 @@ export interface ContactUsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * isCentered field in *ContactUs → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: contact_us.default.primary.iscentered
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  iscentered: prismic.BooleanField;
 }
 
 /**

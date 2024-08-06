@@ -43,6 +43,15 @@
             "placeholder": "",
             "select": null
           }
+        },
+        "iscentered": {
+          "type": "Boolean",
+          "config": {
+            "label": "isCentered",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
         }
       },
       "items": {}

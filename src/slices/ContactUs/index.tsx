@@ -19,8 +19,8 @@ const ContactUs = ({ slice }: ContactUsProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <PrismicNextImage field={slice.primary.image} alt="" />
-      <S.MainContent>
-        <S.MainContentWrapper>
+      <S.MainContent $isCentered={slice.primary.iscentered}>
+        <S.MainContentWrapper $isCentered={slice.primary.iscentered}>
           <PrismicRichText field={slice.primary.text} />
           <S.Button field={slice.primary.cta_link}>
             {slice.primary.cta}

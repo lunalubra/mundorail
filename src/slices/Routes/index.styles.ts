@@ -14,7 +14,7 @@ export const Title = styled.div`
 
   @media only screen and (max-width: 768px) {
     text-align: left;
-    padding-left: 54px;
+    padding: 0 32px;
     p:first-of-type {
       font-size: 38px;
     }
@@ -40,7 +40,7 @@ export const RoutesSectionContainer = styled.div`
   align-items: center;
   gap: 64px;
   margin: auto;
-  padding: 54px 0;
+  padding: 32px 0;
   max-width: 1280px;
   @media only screen and (max-width: 768px) {
     gap: 32px;
@@ -90,7 +90,7 @@ export const CardsSection = styled.div<{ shouldSpaceOut: boolean }>`
     scrollbar-width: none;
     overflow-x: auto;
     flex-wrap: nowrap;
-    padding-left: 54px;
+    padding-left: 32px;
     justify-content: unset;
     gap: 0;
   }
@@ -244,6 +244,7 @@ export const FilterModal = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 320px;
 `;
 
 export const SectionTitle = styled.div`

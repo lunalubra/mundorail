@@ -48,6 +48,10 @@
 					"__TYPE__": "ExternalLink",
 					"url": "https://slicemachine.dev"
 				}
+			},
+			"iscentered": {
+				"__TYPE__": "BooleanContent",
+				"value": true
 			}
 		},
 		"items": []

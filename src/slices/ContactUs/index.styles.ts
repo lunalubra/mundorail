@@ -89,17 +89,18 @@ export const MainContentWrapper = styled.div<{ $isCentered: boolean }>`
     align-items: ${(props) => (props.$isCentered ? "center" : "unset")};
     max-width: ${(props) => (props.$isCentered ? "100%" : "calc(80% - 64px)")};
 
-    strong {
-      color: ${(props) => (props.$isCentered ? "white" : "#27bd83")};
-    }
-
     h1 {
       margin-top: 92px;
       font-size: 42px;
+      strong {
+        color: ${(props) => (props.$isCentered ? "white" : "#27bd83")};
+      }
     }
 
     p  {
-      font-size: 14px;
+      font-size: ${(props) => (props.$isCentered ? "18px" : "14px")};
+      font-weight: 500;
+      text-align: ${(props) => (props.$isCentered ? "center" : "justify")};
     }
   }
 `;

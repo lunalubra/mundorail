@@ -201,15 +201,19 @@ export const Note = styled.div<{ $isSurvivors: boolean }>`
   text-align: left;
   background-color: ${(props) => (props.$isSurvivors ? "#C4241F" : "#25be83")};
   padding: 16px;
-  max-width: 260px;
+  max-width: 200px;
   position: absolute;
   bottom: -32px;
   right: 32px;
+  font-size: 12px;
 
   p {
     all: unset;
     color: ${(props) => (props.$isSurvivors ? "white" : "#001159")};
     font-weight: 700;
+  }
+  ul {
+    padding-left: 24px;
   }
 
   li {

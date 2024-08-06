@@ -121,6 +121,9 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
               <span>Desde</span>
               <p>{route?.data.price}€</p>
             </S.Price>
+            <S.Note $isSurvivors={slice.primary.issurvivors}>
+              <PrismicRichText field={route?.data.notes} />
+            </S.Note>
           </S.DesktopImage>
         )}
         <S.DesktopContainer>

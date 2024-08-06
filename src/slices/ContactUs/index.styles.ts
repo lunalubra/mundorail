@@ -110,6 +110,7 @@ export const MainContent = styled.div`
   margin-left: 85px;
 
   @media only screen and (max-width: 768px) {
-    margin-left: 8px;
+    width: calc(100% - 32px);
+    margin-left: 32px;
   }
 `;

@@ -53,7 +53,6 @@ export const TopSectionContainer = styled.div<{ $isSurvivors: boolean }>`
 
 export const BottomSectionContainer = styled.div<{ $isSurvivors: boolean }>`
   display: flex;
-  flex-direction: column;
   justify-content: center;
   padding: 32px;
 
@@ -64,6 +63,10 @@ export const BottomSectionContainer = styled.div<{ $isSurvivors: boolean }>`
 
   strong {
     color: ${(props) => (props.$isSurvivors ? "#110DB7" : "#001159")};
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 

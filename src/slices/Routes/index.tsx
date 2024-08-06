@@ -171,7 +171,7 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
 
       <S.CardsSection
         ref={cardsContainerRef}
-        shouldSpaceOut={slice.primary.shouldspaceout}
+        $shouldSpaceOut={slice.primary.shouldspaceout}
       >
         {formattedRoutes.map((card) => (
           <S.CardContainer

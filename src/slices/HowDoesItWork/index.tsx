@@ -22,6 +22,10 @@ export type HowDoesItWorkProps =
 const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const client = createClient();
+  const formattedCtaLink = {
+    ...slice.primary.cta_link,
+    url: (slice.primary.cta_link as any).url + "#por-que-trabajar-con-mundorail"
+  } as typeof slice.primary.cta_link;
 
   const [howDoesItWork, setHowDoesItWork] = useState<
     (Content.ReasonsDocument<string> | undefined)[]
@@ -89,7 +93,7 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
         ))}
       </S.CardsContainer>
       {!isMobile && (
-        <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
+        <S.Button field={formattedCtaLink}>{slice.primary.cta}</S.Button>
       )}
     </S.Container>
   );

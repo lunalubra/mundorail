@@ -51,7 +51,7 @@ const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
-        <S.Title>
+        <S.Title id="por-que-trabajar-con-mundorail">
           {slice.primary.alternative_title ? (
             <Image
               src={slice.primary.alternative_title.url!}

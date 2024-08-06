@@ -16,7 +16,6 @@ export const WhyEurope = styled.div`
   width: 100%;
 
   @media only screen and (max-width: 768px) {
-    height: 800px;
     align-items: flex-start;
     padding-top: 92px;
     background-position: 55%;

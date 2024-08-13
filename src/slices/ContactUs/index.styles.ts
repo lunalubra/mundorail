@@ -90,6 +90,7 @@ export const MainContentWrapper = styled.div<{ $isCentered: boolean }>`
     max-width: ${(props) => (props.$isCentered ? "100%" : "calc(80% - 64px)")};
 
     h1 {
+      text-align: center;
       margin-top: 92px;
       font-size: 42px;
       strong {

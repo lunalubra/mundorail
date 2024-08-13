@@ -38,6 +38,7 @@ export const Content = styled.div`
     font-size: 48px;
 
     @media only screen and (max-width: 768px) {
+      margin-top: -92px;
       padding: 0 32px;
       font-size: 28px;
       text-align: center;

@@ -74,6 +74,13 @@
 					"__TYPE__": "ExternalLink",
 					"url": "http://twitter.com"
 				}
+			},
+			"privacy_pdf": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "DocumentLink",
+					"id": "mock_document_id"
+				}
 			}
 		},
 		"items": []

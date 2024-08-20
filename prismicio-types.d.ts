@@ -1290,6 +1290,16 @@ export interface HotelsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * privacy_pdf field in *Hotels → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hotels.default.primary.privacy_pdf
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  privacy_pdf: prismic.ContentRelationshipField;
 }
 
 /**

@@ -21,6 +21,8 @@ export async function POST(request: Request) {
     }
   });
 
+  console.log("data!!!!!!!!!!", data);
+
   try {
     await transporter.sendMail({
       from: username,
@@ -35,11 +37,23 @@ export async function POST(request: Request) {
             <p>Empresa: ${data.company} </p>
             <p>Mensaje: ${data.message} </p>
             <p>Mensaje: ${data.country} </p>
+            ${data.route ? `<p>Ruta: ${data.route} </p>` : ""}
+            ${data.start_date ? `<p>Fecha de inicio: ${data.start_date} </p>` : ""}
+            ${data.amount?.senior ? `<p>Seniors: ${data.amount.senior} </p>` : ""}
+            ${data.amount?.adult ? `<p>Adultos: ${data.amount.adult} </p>` : ""}
+            ${
+              Object.values(data.kids ?? {})?.length
+                ? `<p>Jovenes:
+                ${(Object.values(data.kids ?? {}) as number[]).map((kid: number) => `<span> Edad: ${kid}</span>`)}
+             </p>`
+                : ""
+            }
             `
     });
 
     return NextResponse.json({ message: "Success: email was sent" });
   } catch (error) {
+    console.log(error);
     return NextResponse.json({ message: "error" });
   }
 }

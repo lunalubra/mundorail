@@ -36,7 +36,7 @@ export async function POST(request: Request) {
             <p>Teléfono: ${data.number} </p>
             <p>Empresa: ${data.company} </p>
             <p>Mensaje: ${data.message} </p>
-            <p>Mensaje: ${data.country} </p>
+            <p>País: ${data.country} </p>
             ${data.route ? `<p>Ruta: ${data.route} </p>` : ""}
             ${data.start_date ? `<p>Fecha de inicio: ${data.start_date} </p>` : ""}
             ${data.amount?.senior ? `<p>Seniors: ${data.amount.senior} </p>` : ""}

@@ -81,7 +81,6 @@ const FormModal = ({
       route: formattedPathname,
       kids
     };
-    console.log(formattedData);
     setIsLoading(true);
     const response = await fetch("/api/contact", {
       method: "post",
@@ -90,6 +89,8 @@ const FormModal = ({
     if (response.ok) {
       setIsSuccess(true);
       reset();
+      setKids({});
+      setFormIsModalOpen(false);
     }
     setIsLoading(false);
   };
@@ -102,7 +103,10 @@ const FormModal = ({
     isFormModalOpen && (
       <S.FormContainer>
         {!isMobile && (
-          <S.CloseIconContainer onClick={() => setFormIsModalOpen(false)}>
+          <S.CloseIconContainer
+            $fixEndAlignment
+            onClick={() => setFormIsModalOpen(false)}
+          >
             <CloseIcon />
           </S.CloseIconContainer>
         )}
@@ -172,20 +176,20 @@ const FormModal = ({
                     <S.RightSide>
                       <S.IconContainer
                         onClick={() => {
-                          setValue("amount.senior", watchPeople.senior + 1);
-                        }}
-                      >
-                        +
-                      </S.IconContainer>
-                      {watchPeople.senior}
-                      <S.IconContainer
-                        onClick={() => {
                           if (watchPeople.senior - 1 < 0) return;
 
                           setValue("amount.senior", watchPeople.senior - 1);
                         }}
                       >
                         -
+                      </S.IconContainer>
+                      {watchPeople.senior}
+                      <S.IconContainer
+                        onClick={() => {
+                          setValue("amount.senior", watchPeople.senior + 1);
+                        }}
+                      >
+                        +
                       </S.IconContainer>
                     </S.RightSide>
                   </S.Row>
@@ -197,20 +201,20 @@ const FormModal = ({
                     <S.RightSide>
                       <S.IconContainer
                         onClick={() => {
-                          setValue("amount.adult", watchPeople.adult + 1);
-                        }}
-                      >
-                        +
-                      </S.IconContainer>
-                      {watchPeople.adult}
-                      <S.IconContainer
-                        onClick={() => {
                           if (watchPeople.adult - 1 < 0) return;
 
                           setValue("amount.adult", watchPeople.adult - 1);
                         }}
                       >
                         -
+                      </S.IconContainer>
+                      {watchPeople.adult}
+                      <S.IconContainer
+                        onClick={() => {
+                          setValue("amount.adult", watchPeople.adult + 1);
+                        }}
+                      >
+                        +
                       </S.IconContainer>
                     </S.RightSide>
                   </S.Row>
@@ -220,18 +224,6 @@ const FormModal = ({
                       <S.AgeGuideline>De 0 a 26 años</S.AgeGuideline>
                     </S.LeftSide>
                     <S.RightSide>
-                      <S.IconContainer
-                        onClick={() => {
-                          setValue("amount.kid", watchPeople.kid + 1);
-                          setKids({
-                            ...kids,
-                            ["kid" + watchPeople.kid + 1]: 0
-                          });
-                        }}
-                      >
-                        +
-                      </S.IconContainer>
-                      {watchPeople.kid}
                       <S.IconContainer
                         onClick={() => {
                           if (watchPeople.kid - 1 < 0) return;
@@ -244,6 +236,18 @@ const FormModal = ({
                         }}
                       >
                         -
+                      </S.IconContainer>
+                      {watchPeople.kid}
+                      <S.IconContainer
+                        onClick={() => {
+                          setValue("amount.kid", watchPeople.kid + 1);
+                          setKids({
+                            ...kids,
+                            ["kid" + watchPeople.kid + 1]: 0
+                          });
+                        }}
+                      >
+                        +
                       </S.IconContainer>
                     </S.RightSide>
                   </S.Row>
@@ -287,7 +291,7 @@ const FormModal = ({
             </S.InputContainer>
           </S.InputSection>
           <S.InputContainer>
-            <S.Label>*Rutas de interés / Mensaje</S.Label>
+            <S.Label>Mensaje (opcional)</S.Label>
             <S.Input
               placeholder="Ejemplo: Indícanos si tu fecha de inicio del viaje es orientativa"
               {...register("message")}

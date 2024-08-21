@@ -115,12 +115,17 @@ export const Modal = styled.div`
   }
 `;
 
-export const CloseIconContainer = styled.div<{ $isNegative?: boolean }>`
+export const CloseIconContainer = styled.div<{
+  $isNegative?: boolean;
+  $fixEndAlignment?: boolean;
+}>`
   position: relative;
+  display: ${(props) => (props.$fixEndAlignment ? "flex" : "unset")};
   z-index: 1000;
   align-self: end;
 
   svg {
+    margin-left: ${(props) => (props.$fixEndAlignment ? "auto" : "unset")};
     width: 24px;
     height: auto;
 
@@ -243,6 +248,7 @@ export const Input = styled.input<{ $shouldPoint?: boolean }>`
   border: 1px solid #27bd83;
   border-radius: 15px;
   cursor: ${(props) => (props.$shouldPoint ? "pointer" : "inherit")};
+  min-height: 19px;
 `;
 
 export const InputContainer = styled.div`

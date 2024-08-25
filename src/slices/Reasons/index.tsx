@@ -41,17 +41,14 @@ const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
     return () => {};
   }, [client, isLoading, slice.items, reasons.length]);
 
-  if (isLoading) {
-    return <>loading...</>;
-  }
-
   return (
     <S.BigContainer>
       <S.Container
+        id="por-que-trabajar-con-mundorail"
         data-slice-type={slice.slice_type}
         data-slice-variation={slice.variation}
       >
-        <S.Title id="por-que-trabajar-con-mundorail">
+        <S.Title>
           {slice.primary.alternative_title ? (
             <Image
               src={slice.primary.alternative_title.url!}
@@ -67,19 +64,23 @@ const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
           <PrismicRichText field={slice.primary.description} />
         </S.Description>
         <S.Button field={slice.primary.cta_link}>{slice.primary.cta}</S.Button>
-        <S.Reasons>
-          {reasons.map((reason, index) => (
-            <S.ReasonContainer key={reason?.uid}>
-              <S.Index>{index + 1}</S.Index>
-              <S.ReasonTitle>
-                <PrismicRichText field={reason?.data.title} />
-              </S.ReasonTitle>
-              <S.ReasonDescription>
-                <PrismicRichText field={reason?.data.description} />
-              </S.ReasonDescription>
-            </S.ReasonContainer>
-          ))}
-        </S.Reasons>
+        {isLoading ? (
+          <div>loading...</div>
+        ) : (
+          <S.Reasons>
+            {reasons.map((reason, index) => (
+              <S.ReasonContainer key={reason?.uid}>
+                <S.Index>{index + 1}</S.Index>
+                <S.ReasonTitle>
+                  <PrismicRichText field={reason?.data.title} />
+                </S.ReasonTitle>
+                <S.ReasonDescription>
+                  <PrismicRichText field={reason?.data.description} />
+                </S.ReasonDescription>
+              </S.ReasonContainer>
+            ))}
+          </S.Reasons>
+        )}
       </S.Container>
     </S.BigContainer>
   );

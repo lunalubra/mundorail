@@ -35,6 +35,13 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "privacy_pdf": {
+          "type": "Link",
+          "config": {
+            "label": "privacy_pdf",
+            "select": "document"
+          }
         }
       },
       "items": {}

@@ -2234,6 +2234,16 @@ export interface RouteHeroSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   background_image: prismic.ImageField<never>;
+
+  /**
+   * privacy_pdf field in *RouteHero → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_hero.default.primary.privacy_pdf
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  privacy_pdf: prismic.ContentRelationshipField;
 }
 
 /**
@@ -2596,6 +2606,16 @@ export interface TripRecomendationsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   cta_link: prismic.LinkField;
+
+  /**
+   * privacy_pdf field in *TripRecomendations → Default → Primary*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: trip_recomendations.default.primary.privacy_pdf
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  privacy_pdf: prismic.ContentRelationshipField;
 }
 
 /**

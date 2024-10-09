@@ -49,7 +49,9 @@ export default async function Page({ params }: { params: Params }) {
 export async function generateStaticParams() {
   const client = createClient();
   const domainExtension =
-    location.hostname.split(".")[location.hostname.split(".").length - 1];
+    window.location.hostname.split(".")[
+      window.location.hostname.split(".").length - 1
+    ];
 
   /**
    * Query all Documents from the API, except the homepage.

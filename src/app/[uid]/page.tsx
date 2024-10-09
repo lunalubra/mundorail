@@ -6,6 +6,7 @@ import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
+import { headers } from "next/headers";
 
 type Params = { uid: string };
 
@@ -18,9 +19,14 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
+  const headersList = headers();
+  const host = headersList.get("X-Forwarded-Host")!;
+  const domainExtension = host.split(".")[host.split(".").length - 1];
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID("page", params.uid, {
+      lang: domainExtension === "com" ? "es-es" : "es-mx"
+    })
     .catch(() => notFound());
 
   return {
@@ -39,13 +45,13 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
-  const domainExtension =
-    window.location.hostname.split(".")[
-      window.location.hostname.split(".").length - 1
-    ];
+  const headersList = headers();
+  const host = headersList.get("X-Forwarded-Host")!;
+  const domainExtension = host.split(".")[host.split(".").length - 1];
+
   const page = await client
     .getByUID("page", params.uid, {
-      lang: domainExtension === "com" ? "es-ES" : "es-MX"
+      lang: domainExtension === "com" ? "es-es" : "es-mx"
     })
     .catch(() => notFound());
 
@@ -54,12 +60,15 @@ export default async function Page({ params }: { params: Params }) {
 
 export async function generateStaticParams() {
   const client = createClient();
-
+  const headersList = headers();
+  const host = headersList.get("X-Forwarded-Host")!;
+  const domainExtension = host.split(".")[host.split(".").length - 1];
   /**
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
-    predicates: [prismic.filter.not("my.page.uid", "home")]
+    predicates: [prismic.filter.not("my.page.uid", "home")],
+    lang: domainExtension === "com" ? "es-es" : "es-mx"
   });
 
   /**

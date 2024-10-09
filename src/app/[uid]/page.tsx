@@ -42,11 +42,11 @@ export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const headersList = headers();
   const host = headersList.get("X-Forwarded-Host")!;
-  const domainExtension = host.split(".")[host.split(".").length - 1];
+  const isMexico = host.includes("mx");
 
   const page = await client
     .getByUID("page", params.uid, {
-      lang: domainExtension === "mx" ? "es-mx" : "es-es"
+      lang: isMexico ? "es-mx" : "es-es"
     })
     .catch(() => notFound());
 

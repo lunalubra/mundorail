@@ -19,14 +19,9 @@ export async function generateMetadata({
 }: {
   params: Params;
 }): Promise<Metadata> {
-  const headersList = headers();
-  const host = headersList.get("X-Forwarded-Host")!;
-  const domainExtension = host.split(".")[host.split(".").length - 1];
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid, {
-      lang: domainExtension === "com" ? "es-es" : "es-mx"
-    })
+    .getByUID("page", params.uid)
     .catch(() => notFound());
 
   return {
@@ -60,15 +55,11 @@ export default async function Page({ params }: { params: Params }) {
 
 export async function generateStaticParams() {
   const client = createClient();
-  const headersList = headers();
-  const host = headersList.get("X-Forwarded-Host")!;
-  const domainExtension = host.split(".")[host.split(".").length - 1];
   /**
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
-    predicates: [prismic.filter.not("my.page.uid", "home")],
-    lang: domainExtension === "com" ? "es-es" : "es-mx"
+    predicates: [prismic.filter.not("my.page.uid", "home")]
   });
 
   /**

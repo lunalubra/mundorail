@@ -1294,12 +1294,12 @@ export interface HotelsSliceDefaultPrimary {
   /**
    * privacy_pdf field in *Hotels → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
    * - **API ID Path**: hotels.default.primary.privacy_pdf
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  privacy_pdf: prismic.ContentRelationshipField;
+  privacy_pdf: prismic.LinkToMediaField;
 }
 
 /**
@@ -2238,12 +2238,12 @@ export interface RouteHeroSliceDefaultPrimary {
   /**
    * privacy_pdf field in *RouteHero → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
    * - **API ID Path**: route_hero.default.primary.privacy_pdf
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  privacy_pdf: prismic.ContentRelationshipField;
+  privacy_pdf: prismic.LinkToMediaField;
 }
 
 /**
@@ -2610,12 +2610,12 @@ export interface TripRecomendationsSliceDefaultPrimary {
   /**
    * privacy_pdf field in *TripRecomendations → Default → Primary*
    *
-   * - **Field Type**: Content Relationship
+   * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
    * - **API ID Path**: trip_recomendations.default.primary.privacy_pdf
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  privacy_pdf: prismic.ContentRelationshipField;
+  privacy_pdf: prismic.LinkToMediaField;
 }
 
 /**

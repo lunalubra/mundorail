@@ -75,7 +75,8 @@
           "type": "Link",
           "config": {
             "label": "privacy_pdf",
-            "select": "document"
+            "placeholder": "",
+            "select": "media"
           }
         }
       },

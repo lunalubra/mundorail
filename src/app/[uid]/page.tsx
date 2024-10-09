@@ -14,7 +14,7 @@ type Params = { uid: string };
  */
 
 export async function generateMetadata({
-  params,
+  params
 }: {
   params: Params;
 }): Promise<Metadata> {
@@ -30,10 +30,10 @@ export async function generateMetadata({
       title: page.data.meta_title || undefined,
       images: [
         {
-          url: page.data.meta_image.url || "",
-        },
-      ],
-    },
+          url: page.data.meta_image.url || ""
+        }
+      ]
+    }
   };
 }
 
@@ -48,12 +48,15 @@ export default async function Page({ params }: { params: Params }) {
 
 export async function generateStaticParams() {
   const client = createClient();
+  const domainExtension =
+    location.hostname.split(".")[location.hostname.split(".").length - 1];
 
   /**
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
     predicates: [prismic.filter.not("my.page.uid", "home")],
+    lang: domainExtension === "com" ? "es-ES" : "es-MX"
   });
 
   /**

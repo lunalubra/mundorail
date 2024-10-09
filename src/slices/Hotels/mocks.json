@@ -78,8 +78,12 @@
 			"privacy_pdf": {
 				"__TYPE__": "LinkContent",
 				"value": {
-					"__TYPE__": "DocumentLink",
-					"id": "mock_document_id"
+					"id": "mock_Media_link",
+					"kind": "image/jpeg",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"__TYPE__": "FileLink"
 				}
 			}
 		},

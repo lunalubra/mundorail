@@ -39,8 +39,14 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
+  const domainExtension =
+    window.location.hostname.split(".")[
+      window.location.hostname.split(".").length - 1
+    ];
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID("page", params.uid, {
+      lang: domainExtension === "com" ? "es-ES" : "es-MX"
+    })
     .catch(() => notFound());
 
   return <SliceZone slices={page.data.slices} components={components} />;
@@ -48,17 +54,12 @@ export default async function Page({ params }: { params: Params }) {
 
 export async function generateStaticParams() {
   const client = createClient();
-  const domainExtension =
-    window.location.hostname.split(".")[
-      window.location.hostname.split(".").length - 1
-    ];
 
   /**
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
-    predicates: [prismic.filter.not("my.page.uid", "home")],
-    lang: domainExtension === "com" ? "es-ES" : "es-MX"
+    predicates: [prismic.filter.not("my.page.uid", "home")]
   });
 
   /**

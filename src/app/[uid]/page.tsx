@@ -43,7 +43,6 @@ export default async function Page({ params }: { params: Params }) {
   const headersList = headers();
   const host = headersList.get("X-Forwarded-Host")!;
   const domainExtension = host.split(".")[host.split(".").length - 1];
-  console.log(host, domainExtension);
 
   const page = await client
     .getByUID("page", params.uid, {
@@ -60,6 +59,7 @@ export async function generateStaticParams() {
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
+    lang: "*",
     predicates: [prismic.filter.not("my.page.uid", "home")]
   });
 

@@ -46,7 +46,7 @@ export default async function Page({ params }: { params: Params }) {
 
   const page = await client
     .getByUID("page", params.uid, {
-      lang: isMexico ? "es-mx" : "es-es"
+      lang: process.env.CUSTOM_LANG || "es-es"
     })
     .catch(() => notFound());
 

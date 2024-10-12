@@ -77,7 +77,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <PrismicNextImage field={slice.primary.hero} />
+      <PrismicNextImage field={slice.primary.hero} alt="" />
       <S.MainContentContainer>
         <S.MainContent>
           <S.Title>

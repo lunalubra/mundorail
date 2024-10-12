@@ -41,12 +41,13 @@ export async function generateMetadata({
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
   const headersList = headers();
-  const host = headersList.get("X-Forwarded-Host")!;
-  const isMexico = host.includes("mx");
+  // const host = headersList.get("X-Forwarded-Host")!;
+  // const isMexico = host.includes("mx");
+  const customLanguage = process.env.CUSTOM_LANG;
 
   const page = await client
     .getByUID("page", params.uid, {
-      lang: process.env.CUSTOM_LANG || "es-es"
+      lang: customLanguage || "es-es"
     })
     .catch(() => notFound());
 

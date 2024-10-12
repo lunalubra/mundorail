@@ -6,9 +6,10 @@ import * as prismic from "@prismicio/client";
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
-import { headers } from "next/headers";
 
 type Params = { uid: string };
+
+const customLanguage = process.env.CUSTOM_LANG || "es-es";
 
 /**
  * This page renders a Prismic Document dynamically based on the URL.
@@ -21,7 +22,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const client = createClient();
   const page = await client
-    .getByUID("page", params.uid)
+    .getByUID("page", params.uid, {
+      lang: customLanguage
+    })
     .catch(() => notFound());
 
   return {
@@ -40,19 +43,20 @@ export async function generateMetadata({
 
 export default async function Page({ params }: { params: Params }) {
   const client = createClient();
-  const headersList = headers();
-  // const host = headersList.get("X-Forwarded-Host")!;
-  // const isMexico = host.includes("mx");
-  const customLanguage = process.env.CUSTOM_LANG;
 
   const page = await client
     .getByUID("page", params.uid, {
-      // lang: customLanguage || "es-es"
-      lang: "es-mx"
+      lang: customLanguage
     })
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return (
+    <SliceZone
+      slices={page.data.slices}
+      components={components}
+      context={{ lang: customLanguage }}
+    />
+  );
 }
 
 export async function generateStaticParams() {
@@ -61,7 +65,7 @@ export async function generateStaticParams() {
    * Query all Documents from the API, except the homepage.
    */
   const pages = await client.getAllByType("page", {
-    lang: "*",
+    lang: customLanguage,
     predicates: [prismic.filter.not("my.page.uid", "home")]
   });
 

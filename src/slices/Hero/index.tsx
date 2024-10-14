@@ -70,7 +70,10 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     slice.primary.eight_option
   ] as string[];
 
-  const domain = location.host.split(".")[location.host.split(".").length - 1];
+  const domain =
+    window?.location?.host.split(".")[
+      window?.location?.host.split(".").length - 1
+    ];
   const isGlobalPage = domain === "com";
 
   const country = getCountry();
@@ -78,7 +81,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   const isInMexico = country === "Spain";
 
   if (isGlobalPage && (isInUSA || isInMexico)) {
-    window.location.replace("www.mundorail.mx");
+    window?.location?.replace("www.mundorail.mx");
   }
 
   return (

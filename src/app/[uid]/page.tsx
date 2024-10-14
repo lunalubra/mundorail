@@ -52,21 +52,19 @@ export default async function Page({ params }: { params: Params }) {
     })
     .catch(() => notFound());
 
-  useEffect(() => {
-    if (location) {
-      const domain =
-        location?.host.split(".")[location?.host.split(".").length - 1];
-      const isGlobalPage = domain === "com";
+  if (typeof window !== "undefined") {
+    const domain =
+      location?.host.split(".")[location?.host.split(".").length - 1];
+    const isGlobalPage = domain === "com";
 
-      const country = getCountry();
-      const isInUSA = country === "United States of America";
-      const isInMexico = country === "Spain";
+    const country = getCountry();
+    const isInUSA = country === "United States of America";
+    const isInMexico = country === "Spain";
 
-      if (isGlobalPage && (isInUSA || isInMexico)) {
-        window.location.host = "www.mundorail.mx";
-      }
+    if (isGlobalPage && (isInUSA || isInMexico)) {
+      window.location.host = "www.mundorail.mx";
     }
-  }, []);
+  }
 
   return (
     <SliceZone

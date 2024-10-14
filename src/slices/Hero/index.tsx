@@ -2,10 +2,10 @@
 
 import { useScroll, useTransform } from "framer-motion";
 import { Content } from "@prismicio/client";
-import { PrismicNextImage, PrismicNextLink } from "@prismicio/next";
+import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
-import { useMediaQuery } from "usehooks-ts";
+import { getCountry } from "../../lib/getCountry";
 
 const Carousel = ({
   carouselOptions,
@@ -56,8 +56,6 @@ export type HeroProps = SliceComponentProps<Content.HeroSlice>;
  * Component for "Hero" Slices.
  */
 const Hero = ({ slice }: HeroProps): JSX.Element => {
-  const isMobile = useMediaQuery("(max-width: 768px)");
-
   const firstCarouselOptions = [
     slice.primary.first_option,
     slice.primary.second_option,
@@ -71,6 +69,17 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     slice.primary.seventh_option,
     slice.primary.eight_option
   ] as string[];
+
+  const domain = location.host.split(".")[location.host.split(".").length - 1];
+  const isGlobalPage = domain === "com";
+
+  const country = getCountry();
+  const isInUSA = country === "United States of America";
+  const isInMexico = country === "Spain";
+
+  if (isGlobalPage && (isInUSA || isInMexico)) {
+    window.location.replace("www.mundorail.mx");
+  }
 
   return (
     <S.HeroContainer

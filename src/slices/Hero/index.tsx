@@ -82,7 +82,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
       const isInMexico = country === "Spain";
 
       if (isGlobalPage && (isInUSA || isInMexico)) {
-        // window.location.href = "https://www.mundorail.mx";
+        window.location.host = "www.mundorail.mx";
       }
     }
   }, []);

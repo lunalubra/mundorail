@@ -71,9 +71,7 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
   ] as string[];
 
   const domain =
-    window?.location?.host.split(".")[
-      window?.location?.host.split(".").length - 1
-    ];
+    location?.host.split(".")[location?.host.split(".").length - 1];
   const isGlobalPage = domain === "com";
 
   const country = getCountry();

@@ -58,7 +58,7 @@ export default async function Page({ params }: { params: Params }) {
 
     const country = getCountry();
     const isInUSA = country === "United States of America";
-    const isInMexico = country === "Spain";
+    const isInMexico = country === "Mexico";
 
     if (isGlobalPage && (isInUSA || isInMexico)) {
       window.location.host = "www.mundorail.mx";

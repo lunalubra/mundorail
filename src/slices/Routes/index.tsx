@@ -9,7 +9,9 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import FilterIcon from "../../lib/FilterIcon";
 import { useOnClickOutside } from "usehooks-ts";
-import Image from "next/image";
+
+const customLanguage = process.env.CUSTOM_LANG || "es-es";
+const isMexico = customLanguage.includes("mx");
 
 /**
  * Props for `RouteCard`.
@@ -186,7 +188,11 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
               <S.CardPrice>
                 <div>*</div>
                 <span>Desde</span>
-                <p>{card?.data.price}€</p>
+                <p>
+                  {isMexico && "$"}
+                  {card?.data.price}
+                  {!isMexico && "€"}
+                </p>
               </S.CardPrice>
             </S.CardTopSection>
             <S.CardBottomSection>

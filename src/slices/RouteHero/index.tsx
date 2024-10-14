@@ -16,6 +16,9 @@ import { usePathname } from "next/navigation";
 import { useForm } from "react-hook-form";
 import CloseIcon from "../../lib/CloseIcon";
 
+const customLanguage = process.env.CUSTOM_LANG || "es-es";
+const isMexico = customLanguage.includes("mx");
+
 /**
  * Props for `RouteHero`.
  */
@@ -420,7 +423,11 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
                 <S.CardPrice $isSurvivors={slice.primary.issurvivors}>
                   <div>*</div>
                   <span>Desde</span>
-                  <p>{route?.data.price}€</p>
+                  <p>
+                    {isMexico && "$"}
+                    {route?.data.price}
+                    {!isMexico && "€"}
+                  </p>
                 </S.CardPrice>
               </S.CardTopSection>
               <S.CardBottomSection>
@@ -435,7 +442,11 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
             <S.Price $isSurvivors={slice.primary.issurvivors}>
               <div>*</div>
               <span>Desde</span>
-              <p>{route?.data.price}€</p>
+              <p>
+                {isMexico && "$"}
+                {route?.data.price}
+                {!isMexico && "€"}
+              </p>
             </S.Price>
             <S.Note $isSurvivors={slice.primary.issurvivors}>
               <PrismicRichText field={route?.data.notes} />

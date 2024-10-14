@@ -70,16 +70,18 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     slice.primary.eight_option
   ] as string[];
 
-  const domain =
-    location?.host.split(".")[location?.host.split(".").length - 1];
-  const isGlobalPage = domain === "com";
+  if (location) {
+    const domain =
+      location?.host.split(".")[location?.host.split(".").length - 1];
+    const isGlobalPage = domain === "com";
 
-  const country = getCountry();
-  const isInUSA = country === "United States of America";
-  const isInMexico = country === "Spain";
+    const country = getCountry();
+    const isInUSA = country === "United States of America";
+    const isInMexico = country === "Spain";
 
-  if (isGlobalPage && (isInUSA || isInMexico)) {
-    window?.location?.replace("www.mundorail.mx");
+    if (isGlobalPage && (isInUSA || isInMexico)) {
+      window?.location?.replace("www.mundorail.mx");
+    }
   }
 
   return (

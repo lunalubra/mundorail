@@ -6,6 +6,7 @@ import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { getCountry } from "../../lib/getCountry";
+import { useEffect } from "react";
 
 const Carousel = ({
   carouselOptions,
@@ -70,19 +71,21 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     slice.primary.eight_option
   ] as string[];
 
-  if (location) {
-    const domain =
-      location?.host.split(".")[location?.host.split(".").length - 1];
-    const isGlobalPage = domain === "com";
+  useEffect(() => {
+    if (location) {
+      const domain =
+        location?.host.split(".")[location?.host.split(".").length - 1];
+      const isGlobalPage = domain === "com";
 
-    const country = getCountry();
-    const isInUSA = country === "United States of America";
-    const isInMexico = country === "Spain";
+      const country = getCountry();
+      const isInUSA = country === "United States of America";
+      const isInMexico = country === "Spain";
 
-    if (isGlobalPage && (isInUSA || isInMexico)) {
-      window?.location?.replace("www.mundorail.mx");
+      if (isGlobalPage && (isInUSA || isInMexico)) {
+        window?.location?.replace("www.mundorail.mx");
+      }
     }
-  }
+  }, []);
 
   return (
     <S.HeroContainer

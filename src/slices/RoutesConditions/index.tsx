@@ -17,7 +17,10 @@ export type RoutesConditionsProps =
 /**
  * Component for "RoutesConditions" Slices.
  */
-const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
+const RoutesConditions = ({
+  slice,
+  context
+}: RoutesConditionsProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const client = createClient();
 
@@ -40,7 +43,10 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
       ) {
         const route = await client.getByUID(
           "route_card",
-          slice.primary.route.uid
+          slice.primary.route.uid,
+          {
+            lang: (context as { lang: string }).lang
+          }
         );
 
         setRoute(route);
@@ -49,7 +55,7 @@ const RoutesConditions = ({ slice }: RoutesConditionsProps): JSX.Element => {
     };
 
     if (!route && !isLoading) getRoutes();
-  }, [client, isLoading, slice.items, route, slice.primary.route]);
+  }, [client, isLoading, slice.items, route, slice.primary.route, context]);
 
   if (isLoading) {
     return <>loading...</>;

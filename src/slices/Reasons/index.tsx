@@ -15,7 +15,7 @@ export type ReasonsProps = SliceComponentProps<Content.ReasonsSlice>;
 /**
  * Component for "Reasons" Slices.
  */
-const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
+const Reasons = ({ slice, context }: ReasonsProps): JSX.Element => {
   const client = createClient();
 
   const [reasons, setReasons] = useState<
@@ -29,7 +29,9 @@ const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
       const reasons = await Promise.all(
         slice.items.map((item) => {
           if (isFilled.contentRelationship(item.reasons) && item.reasons.uid) {
-            return client.getByUID("how_does_it_work", item.reasons.uid);
+            return client.getByUID("how_does_it_work", item.reasons.uid, {
+              lang: (context as { lang: string }).lang
+            });
           }
         })
       );
@@ -39,7 +41,7 @@ const Reasons = ({ slice }: ReasonsProps): JSX.Element => {
 
     if (!reasons.length && !isLoading) getRoutes();
     return () => {};
-  }, [client, isLoading, slice.items, reasons.length]);
+  }, [client, isLoading, slice.items, reasons.length, context]);
 
   return (
     <S.BigContainer>

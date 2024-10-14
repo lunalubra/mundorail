@@ -37,5 +37,11 @@ export default async function Index() {
     lang: customLanguage
   });
 
-  return <SliceZone slices={home.data.slices} components={components} />;
+  return (
+    <SliceZone
+      slices={home.data.slices}
+      components={components}
+      context={{ lang: customLanguage }}
+    />
+  );
 }

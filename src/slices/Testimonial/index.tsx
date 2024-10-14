@@ -19,7 +19,7 @@ export type TestimonialsProps = SliceComponentProps<Content.TestimonailsSlice>;
  * Component for "Testimonial" Slices.
  */
 
-const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
+const Testimonials = ({ slice, context }: TestimonialsProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [activeTab, setActiveTab] = useState(1);
   const [testimonials, setTestimonials] = useState<any[]>([]);
@@ -47,7 +47,9 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
             isFilled.contentRelationship(item.testimonial) &&
             item.testimonial.uid
           ) {
-            return client.getByUID("testimonail", item.testimonial.uid);
+            return client.getByUID("testimonail", item.testimonial.uid, {
+              lang: (context as { lang: string }).lang
+            });
           }
         })
       );
@@ -57,7 +59,7 @@ const Testimonials = ({ slice }: TestimonialsProps): JSX.Element => {
 
     if (!testimonials.length && !isLoading) getTestimonials();
     return () => {};
-  }, [client, isLoading, slice.items, testimonials.length]);
+  }, [client, context, isLoading, slice.items, testimonials.length]);
 
   const tabsNumber = Math.ceil(testimonials.length / 2);
 

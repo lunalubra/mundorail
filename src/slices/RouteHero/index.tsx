@@ -16,9 +16,6 @@ import { usePathname } from "next/navigation";
 import { useForm } from "react-hook-form";
 import CloseIcon from "../../lib/CloseIcon";
 
-const customLanguage = process.env.CUSTOM_LANG || "es-es";
-const isMexico = customLanguage.includes("mx");
-
 /**
  * Props for `RouteHero`.
  */
@@ -334,10 +331,11 @@ const FormModal = ({
 /**
  * Component for "RouteHero" Slices.
  */
-const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
+const RouteHero = ({ slice, context }: RouteHeroProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const client = createClient();
   const [isFormModalOpen, setFormIsModalOpen] = useState(false);
+  const isMexico = (context as { lang: string }).lang.includes("mx");
 
   const [route, setRoute] =
     useState<
@@ -358,7 +356,10 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
       ) {
         const route = await client.getByUID(
           "route_card",
-          slice.primary.route.uid
+          slice.primary.route.uid,
+          {
+            lang: (context as { lang: string }).lang
+          }
         );
 
         setRoute(route);
@@ -367,7 +368,7 @@ const RouteHero = ({ slice }: RouteHeroProps): JSX.Element => {
     };
 
     if (!route && !isLoading) getRoutes();
-  }, [client, isLoading, slice.items, route, slice.primary.route]);
+  }, [client, isLoading, slice.items, route, slice.primary.route, context]);
 
   if (isLoading) {
     return <>loading...</>;

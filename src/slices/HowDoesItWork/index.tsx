@@ -19,7 +19,7 @@ export type HowDoesItWorkProps =
  * Component for "HowDoesItWork" Slices.
  */
 
-const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
+const HowDoesItWork = ({ slice, context }: HowDoesItWorkProps): JSX.Element => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const client = createClient();
   const formattedCtaLink = {
@@ -41,7 +41,9 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
             isFilled.contentRelationship(item.how_does_it_work) &&
             item.how_does_it_work.uid
           ) {
-            return client.getByUID("reasons", item.how_does_it_work.uid);
+            return client.getByUID("reasons", item.how_does_it_work.uid, {
+              lang: (context as { lang: string }).lang
+            });
           }
         })
       );
@@ -50,7 +52,7 @@ const HowDoesItWork = ({ slice }: HowDoesItWorkProps): JSX.Element => {
     };
 
     if (!howDoesItWork.length && !isLoading) getHowDoesItWork();
-  }, [client, isLoading, slice.items, howDoesItWork.length]);
+  }, [client, isLoading, slice.items, howDoesItWork.length, context]);
 
   if (isLoading) {
     return <>loading...</>;

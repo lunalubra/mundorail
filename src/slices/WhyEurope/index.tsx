@@ -15,7 +15,7 @@ export type WhyEuropeProps = SliceComponentProps<Content.WhyEuropeSlice>;
 /**
  * Component for "WhyEurope" Slices.
  */
-const WhyEurope = ({ slice }: WhyEuropeProps): JSX.Element => {
+const WhyEurope = ({ slice, context }: WhyEuropeProps): JSX.Element => {
   const client = createClient();
   const [activeTab, setActiveTab] = useState(1);
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -53,7 +53,9 @@ const WhyEurope = ({ slice }: WhyEuropeProps): JSX.Element => {
             isFilled.contentRelationship(item.whyeurope) &&
             item.whyeurope.uid
           ) {
-            return client.getByUID("whyeurope", item.whyeurope.uid);
+            return client.getByUID("whyeurope", item.whyeurope.uid, {
+              lang: (context as { lang: string }).lang
+            });
           }
         })
       );
@@ -62,7 +64,7 @@ const WhyEurope = ({ slice }: WhyEuropeProps): JSX.Element => {
     };
 
     if (!whyEurope.length && !isLoading) getWhyEurope();
-  }, [client, isLoading, slice.items, whyEurope.length]);
+  }, [client, context, isLoading, slice.items, whyEurope.length]);
 
   if (isLoading) {
     return <>loading...</>;

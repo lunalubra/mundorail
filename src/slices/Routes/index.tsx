@@ -10,9 +10,6 @@ import { useRouter } from "next/navigation";
 import FilterIcon from "../../lib/FilterIcon";
 import { useOnClickOutside } from "usehooks-ts";
 
-const customLanguage = process.env.CUSTOM_LANG || "es-es";
-const isMexico = customLanguage.includes("mx");
-
 /**
  * Props for `RouteCard`.
  */
@@ -71,10 +68,11 @@ const getFormattedRoutes = (
   });
 };
 
-const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
+const RouteCard = ({ slice, context }: RouteCardProps): JSX.Element => {
   const client = createClient();
   const cardsContainerRef = useRef(null);
   const router = useRouter();
+  const isMexico = (context as { lang: string }).lang.includes("mx");
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [order, setOrder] = useState<
@@ -97,7 +95,9 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
             isFilled.contentRelationship(item.route_card) &&
             item.route_card.uid
           ) {
-            return client.getByUID("route_card", item.route_card.uid);
+            return client.getByUID("route_card", item.route_card.uid, {
+              lang: (context as { lang: string }).lang
+            });
           }
         })
       );
@@ -106,7 +106,7 @@ const RouteCard = ({ slice }: RouteCardProps): JSX.Element => {
     };
 
     if (!routes.length && !isLoading) getRoutes();
-  }, [client, isLoading, slice.items, routes.length]);
+  }, [client, isLoading, slice.items, routes.length, context]);
 
   if (isLoading) {
     return <>loading...</>;

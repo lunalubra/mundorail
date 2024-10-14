@@ -58,7 +58,10 @@ export type MundorailRoutesProps =
 /**
  * Component for "MundorailRoutes" Slices.
  */
-const MundorailRoutes = ({ slice }: MundorailRoutesProps): JSX.Element => {
+const MundorailRoutes = ({
+  slice,
+  context
+}: MundorailRoutesProps): JSX.Element => {
   const client = createClient();
 
   const [routes, setRoutes] = useState<
@@ -72,7 +75,9 @@ const MundorailRoutes = ({ slice }: MundorailRoutesProps): JSX.Element => {
       const routes = await Promise.all(
         slice.items.map((item) => {
           if (isFilled.contentRelationship(item.routes) && item.routes.uid) {
-            return client.getByUID("routes", item.routes.uid);
+            return client.getByUID("routes", item.routes.uid, {
+              lang: (context as { lang: string }).lang
+            });
           }
         })
       );
@@ -82,7 +87,7 @@ const MundorailRoutes = ({ slice }: MundorailRoutesProps): JSX.Element => {
 
     if (!routes.length && !isLoading) getRoutes();
     return () => {};
-  }, [client, isLoading, slice.items, routes.length]);
+  }, [client, isLoading, slice.items, routes.length, context]);
 
   if (isLoading) {
     return <>loading...</>;

@@ -15,7 +15,10 @@ export type RoutesDescriptionProps =
 /**
  * Component for "RoutesDescription" Slices.
  */
-const RoutesDescription = ({ slice }: RoutesDescriptionProps): JSX.Element => {
+const RoutesDescription = ({
+  slice,
+  context
+}: RoutesDescriptionProps): JSX.Element => {
   const client = createClient();
 
   const [routes, setRoutes] = useState<
@@ -32,7 +35,10 @@ const RoutesDescription = ({ slice }: RoutesDescriptionProps): JSX.Element => {
       ) {
         const routes = await client.getByUID(
           "routes",
-          slice.primary.routes.uid
+          slice.primary.routes.uid,
+          {
+            lang: (context as { lang: string }).lang
+          }
         );
         setRoutes(routes);
         setIsLoading(false);
@@ -40,7 +46,7 @@ const RoutesDescription = ({ slice }: RoutesDescriptionProps): JSX.Element => {
     };
 
     if (!routes && !isLoading) getRoutes();
-  }, [client, isLoading, slice.items, routes, slice.primary.routes]);
+  }, [client, isLoading, slice.items, routes, slice.primary.routes, context]);
 
   if (isLoading) {
     return <>loading...</>;

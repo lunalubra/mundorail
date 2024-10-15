@@ -6,10 +6,11 @@ import { SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { useMediaQuery } from "usehooks-ts";
 import MenuIcon from "../../lib/MenuIcon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TrainIcon from "../../lib/TrainIcon";
 import CloseIcon from "../../lib/CloseIcon";
 import { useRouter } from "next/navigation";
+import { redirect } from "../../lib/redirect";
 
 /**
  * Props for `Navigation`.
@@ -24,6 +25,10 @@ const Navigation = ({ slice }: NavigationProps): JSX.Element => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const isFixedSpace = slice.variation !== "default";
   const router = useRouter();
+
+  useEffect(() => {
+    redirect();
+  }, []);
 
   if (isMobile) {
     return (

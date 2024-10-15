@@ -5,7 +5,7 @@ import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
 import { createClient } from "@/prismicio";
 import { useEffect, useRef, useState } from "react";
-import { useInterval, useMediaQuery } from "usehooks-ts";
+import { useInterval } from "usehooks-ts";
 
 /**
  * Props for `WhyEurope`.

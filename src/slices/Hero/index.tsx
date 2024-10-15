@@ -8,6 +8,27 @@ import * as S from "./index.styles";
 import { getCountry } from "../../lib/getCountry";
 import { useEffect } from "react";
 
+const redirect = () => {
+  if (location) {
+    const domain =
+      location?.host.split(".")[location?.host.split(".").length - 1];
+    const isGlobalPage = domain === "com";
+    const isMexicoPage = domain === "mx";
+
+    const country = getCountry();
+    const isInUSA = country === "United States of America";
+    const isInMexico = country === "Spain";
+
+    if (isGlobalPage && (isInUSA || isInMexico)) {
+      window.location.host = "www.mundorail.mx";
+    }
+
+    if (isMexicoPage && (!isInUSA || !isInMexico)) {
+      window.location.host = "www.mundorail.com";
+    }
+  }
+};
+
 const Carousel = ({
   carouselOptions,
   isOposite = false
@@ -70,27 +91,6 @@ const Hero = ({ slice }: HeroProps): JSX.Element => {
     slice.primary.seventh_option,
     slice.primary.eight_option
   ] as string[];
-
-  useEffect(() => {
-    if (location) {
-      const domain =
-        location?.host.split(".")[location?.host.split(".").length - 1];
-      const isGlobalPage = domain === "com";
-      const isMexicoPage = domain === "mx";
-
-      const country = getCountry();
-      const isInUSA = country === "United States of America";
-      const isInMexico = country === "Spain";
-
-      if (isGlobalPage && (isInUSA || isInMexico)) {
-        window.location.host = "www.mundorail.mx";
-      }
-
-      if (isMexicoPage && (!isInUSA || !isInMexico)) {
-        window.location.host = "www.mundorail.com";
-      }
-    }
-  }, []);
 
   return (
     <S.HeroContainer

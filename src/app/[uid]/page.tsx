@@ -51,25 +51,6 @@ export default async function Page({ params }: { params: Params }) {
     })
     .catch(() => notFound());
 
-  if (typeof window !== "undefined") {
-    const domain =
-      location?.host.split(".")[location?.host.split(".").length - 1];
-    const isGlobalPage = domain === "com";
-    const isMexicoPage = domain === "mx";
-
-    const country = getCountry();
-    const isInUSA = country === "United States of America";
-    const isInMexico = country === "Mexico";
-
-    if (isGlobalPage && (isInUSA || isInMexico)) {
-      window.location.host = "www.mundorail.mx";
-    }
-
-    if (isMexicoPage && (!isInUSA || !isInMexico)) {
-      window.location.host = "www.mundorail.com";
-    }
-  }
-
   return (
     <SliceZone
       slices={page.data.slices}

@@ -5,29 +5,6 @@ import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
 import * as S from "./index.styles";
-import { getCountry } from "../../lib/getCountry";
-import { useEffect } from "react";
-
-const redirect = () => {
-  if (location) {
-    const domain =
-      location?.host.split(".")[location?.host.split(".").length - 1];
-    const isGlobalPage = domain === "com";
-    const isMexicoPage = domain === "mx";
-
-    const country = getCountry();
-    const isInUSA = country === "United States of America";
-    const isInMexico = country === "Spain";
-
-    if (isGlobalPage && (isInUSA || isInMexico)) {
-      window.location.host = "www.mundorail.mx";
-    }
-
-    if (isMexicoPage && (!isInUSA || !isInMexico)) {
-      window.location.host = "www.mundorail.com";
-    }
-  }
-};
 
 const Carousel = ({
   carouselOptions,

@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import FilterIcon from "../../lib/FilterIcon";
 import { useOnClickOutside } from "usehooks-ts";
+import Image from "next/image";
 
 /**
  * Props for `RouteCard`.
@@ -118,7 +119,16 @@ const RouteCard = ({ slice, context }: RouteCardProps): JSX.Element => {
       data-slice-variation={slice.variation}
     >
       <S.Title>
-        <PrismicRichText field={slice.primary.title} />
+        {slice.primary.alternativetitle?.url ? (
+          <Image
+            src={slice.primary.alternativetitle.url!}
+            alt=""
+            width={360}
+            height={50}
+          />
+        ) : (
+          <PrismicRichText field={slice.primary.title} />
+        )}
         {slice.primary.shouldshowfilter && (
           <S.FilterContainer>
             <S.FilterTrigger onClick={() => setIsModalOpen(!isModalOpen)}>

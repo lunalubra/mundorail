@@ -62,6 +62,14 @@
             "placeholder_true": "true",
             "default_value": false
           }
+        },
+        "alternativetitle": {
+          "type": "Image",
+          "config": {
+            "label": "alternativeTitle",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {

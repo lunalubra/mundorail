@@ -2164,6 +2164,16 @@ export interface RouteCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   shouldforcesurvivorstheme: prismic.BooleanField;
+
+  /**
+   * alternativeTitle field in *Routes → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: route_card.default.primary.alternativetitle
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  alternativetitle: prismic.ImageField<never>;
 }
 
 /**

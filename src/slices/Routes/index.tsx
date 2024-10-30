@@ -179,13 +179,18 @@ const RouteCard = ({ slice, context }: RouteCardProps): JSX.Element => {
           <S.CardContainer
             key={card?.uid}
             onClick={() => router.push("/" + card?.uid)}
+            $shouldForceSurvivors={slice.primary.shouldforcesurvivorstheme}
           >
             <S.CardTopSection>
-              <S.CardDays>
+              <S.CardDays
+                $shouldForceSurvivors={slice.primary.shouldforcesurvivorstheme}
+              >
                 {card?.data.days} <span>días</span>
               </S.CardDays>
               <PrismicNextImage field={card?.data.route_image} alt="" />
-              <S.CardPrice>
+              <S.CardPrice
+                $shouldForceSurvivors={slice.primary.shouldforcesurvivorstheme}
+              >
                 <div>*</div>
                 <span>Desde</span>
                 <p>

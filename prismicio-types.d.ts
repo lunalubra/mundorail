@@ -2153,6 +2153,17 @@ export interface RouteCardSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   shouldspaceout: prismic.BooleanField;
+
+  /**
+   * shouldForceSurvivorsTheme field in *Routes → Default → Primary*
+   *
+   * - **Field Type**: Boolean
+   * - **Placeholder**: *None*
+   * - **Default Value**: false
+   * - **API ID Path**: route_card.default.primary.shouldforcesurvivorstheme
+   * - **Documentation**: https://prismic.io/docs/field#boolean
+   */
+  shouldforcesurvivorstheme: prismic.BooleanField;
 }
 
 /**

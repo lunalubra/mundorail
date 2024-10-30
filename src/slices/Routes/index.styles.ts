@@ -47,8 +47,9 @@ export const RoutesSectionContainer = styled.div`
   }
 `;
 
-export const CardContainer = styled.div`
-  background-color: #001159;
+export const CardContainer = styled.div<{ $shouldForceSurvivors: boolean }>`
+  background-color: ${(props) =>
+    props.$shouldForceSurvivors ? "#110DB7" : "#001159"};
   box-shadow: -10px 25px 40px 0px rgba(0, 0, 0, 0.3);
   color: white;
   border-radius: 18px;
@@ -125,13 +126,14 @@ export const Indicator = styled.div`
   }
 `;
 
-export const CardDays = styled.div`
+export const CardDays = styled.div<{ $shouldForceSurvivors: boolean }>`
   position: absolute;
   top: 11px;
   left: 11px;
   z-index: 2;
   border-radius: 16px;
-  background-color: #25be83;
+  background-color: ${(props) =>
+    props.$shouldForceSurvivors ? "#C4241F" : "#27bd83"};
   padding: 8px 16px;
   font-size: 33px;
   font-weight: 600;
@@ -141,13 +143,14 @@ export const CardDays = styled.div`
   }
 `;
 
-export const CardPrice = styled.div`
+export const CardPrice = styled.div<{ $shouldForceSurvivors: boolean }>`
   position: absolute;
   top: 315px;
   right: 11px;
   z-index: 2;
   border-radius: 16px;
-  background-color: #25be83;
+  background-color: ${(props) =>
+    props.$shouldForceSurvivors ? "#C4241F" : "#27bd83"};
   font-size: 38px;
   font-weight: 700;
   line-height: 100%;
@@ -163,7 +166,7 @@ export const CardPrice = styled.div`
   }
 
   span {
-    color: #001159;
+    color: ${(props) => (props.$shouldForceSurvivors ? "white" : "#001159")};
     position: absolute;
     top: 3px;
     left: 16px;
